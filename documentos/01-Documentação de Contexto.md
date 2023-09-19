@@ -24,12 +24,9 @@ Este link pode ajudar a equipe a formular a justificativa: [Como montar a justif
 
 ## Público-Alvo
 
-[Aqui é necessário descrever os atores envolvidos no problema, destacando os diferentes perfis de usuários. O propósito é apresentar as características, necessidades, conhecimentos prévios e experiência com a tecnologia do público-alvo.
+TaskMaster tem objetivo fazer uma gestão de trabalho para facilitar o dia a dia dos seus usuários, no qual:
+	*Profissionais liberais e empreendedores, que buscam uma nova visão de mercado e querem se alinhar ao pensamento inovador de gestão baseada na transformação digital.
+	*Gestores e Profissionais de Empresas de Grande e Médio porte, que buscam compreender o novo desenho e a criação do ambiente digital.
+	*Público Habitual que deseja fazer sua autogestão.
 
-Sugere-se que a equipe utilize questionários e/ou entrevistas a fim de conhecer os atores que compõem o público alvo.]
-
-Os links abaixo podem ajudar a equipe a conhecer um pouco mais sobre o público-alvo. 
-
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
 
