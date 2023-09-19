@@ -7,15 +7,15 @@
 <table>
 <tbody>
 <tr align=center>
-<th colspan="2">Perfil Nome </th>
+<th colspan="2">Perfil: Gestor de PCP</th>
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
+<td width="600px">Funcionário de uma empresa do segmento industrial.</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
-<td>...</td>
+<td>Solução para controle e gestão dos prazos de produção e entrega dos produtos.</td>
 </tr>
 </tbody>
 </table>
@@ -23,15 +23,15 @@
 <table>
 <tbody>
 <tr align=center>
-<th colspan="2">Perfil Nome </th>
+<th colspan="2">Perfil: Analista Financeiro - Contas a Pagar </th>
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
+<td width="600px">Funcionário de uma empresa do segmento de automação industrial.</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
-<td>...</td>
+<td>Solução para controle das atividades relacionadas à rotina diária do “contas a pagar” e tesouraria.</td>
 </tr>
 </tbody>
 </table>
@@ -39,15 +39,15 @@
 <table>
 <tbody>
 <tr align=center>
-<th colspan="2">Perfil Nome </th>
+<th colspan="2">Perfil: Prestador de serviços autônomo </th>
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
+<td width="600px">Prestador de serviços diversos que trabalha por conta própria.</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
-<td>...</td>
+<td>Solução que torne o controle mais prático de sua agenda diária.</td>
 </tr>
 </tbody>
 </table>
@@ -55,15 +55,15 @@
 <table>
 <tbody>
 <tr align=center>
-<th colspan="2">Perfil Nome </th>
+<th colspan="2">Perfil: Dona de Casa </th>
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
+<td width="600px">Pessoa que cuida dos afazeres domésticos e cuidados com a família.</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
-<td>...</td>
+<td>Obter um recurso que auxilie na agenda diária das suas atividades pessoais e de sua família.</td>
 </tr>
 </tbody>
 </table>
