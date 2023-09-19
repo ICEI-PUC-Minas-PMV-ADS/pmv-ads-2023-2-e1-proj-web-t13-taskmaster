@@ -1,25 +1,25 @@
-# Título do Projeto
+# TaskMaster
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas - PUC Minas`
 
-`DISCIPLINA`
+`Desenvolvimento de Aplicação Web Front-End`
 
-`SEMESTRE`
+`1º semestre/2023`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
+O aplicativo visa otimizar a gestão de tarefas e projetos, garantindo coordenação eficiente e colaboração entre equipes e indivíduos. Com base em princípios ágeis, como Scrum e Kanban, o aplicativo adapta-se a diferentes fluxos de trabalho, permitindo personalização de etapas e categorias.
+Seja como um projeto pessoal individual ou em equipe, seja no âmbito corporativo ou freelance, o aplicativo busca manter todos os usuários/participantes atualizados e alinhados com as metas e projetos em curso.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Bruno Cesar Dias Santos
+* Ettore Motta Gazzinelli
+* Felipe Van Oorschot Gamarra
+* Marilda Inez de Araujo Pereira
+* Thiago Rodrigues Silva de Oliveira
 
 ## Orientador
 
-* Nome completo do professor
+* José Wilson da Costa
 
 # Documentação
 
