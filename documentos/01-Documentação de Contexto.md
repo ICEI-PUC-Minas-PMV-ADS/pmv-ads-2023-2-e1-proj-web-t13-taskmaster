@@ -6,23 +6,23 @@
 
 Hoje em dia, no meio dessa era de complexidade em tudo que fazemos, especialmente no trabalho, os desafios na gestão de horários, tarefas e equipes são super comuns. Abaixo seguem alguns dos impasses recorrentes em muitas empresas:
 
-## 1- Ineficiência na Coordenação e Colaboração:
+# 1- Ineficiência na Coordenação e Colaboração:
 Equipes e Indivíduos enfrentam dificuldades em coordenar suas atividades e colaborar eficazmente.
 Isso acaba resultando em atrasos, redundâncias e falta de sincronização entre a equipe.
 
-## 2 - Falta de Clareza nas Prioridades:
+# 2 - Falta de Clareza nas Prioridades:
 As prioridades das tarefas muitas vezes não estão claras para todos os membros da equipe.
 Isso pode levar a decisões equivocadas sobre onde alocar tempo e recursos.
 
-## 3 - Acompanhamento Inadequado do Progresso:
+# 3 - Acompanhamento Inadequado do Progresso:
 A falta de uma ferramenta centralizada dificulta  o monitoramento do progresso das tarefas da equipe.
 Isso pode resultar em tarefas esquecidas, falta de responsabilização e retrabalho.
 
-## 4 - Diversidade de Metodologias de Trabalho:
+# 4 - Diversidade de Metodologias de Trabalho:
 Equipes e Indivíduos adotam diferentes metodologias de trabalho, como Scrum, Kanban, ou outros processos personalizados.
 Isso cria desafios para harmonizar os fluxos de trabalho e compartilhar informações de maneira eficaz.
 
-## 5 - Complexidade de Gerenciamento Individual:
+# 5 - Complexidade de Gerenciamento Individual:
 Freelancers e profissionais individuais lutam para gerenciar múltiplos projetos e tarefas sem uma estrutura eficiente.
 Isso pode levar sobrecarga, perda de prazos e qualidade comprometida.
 
