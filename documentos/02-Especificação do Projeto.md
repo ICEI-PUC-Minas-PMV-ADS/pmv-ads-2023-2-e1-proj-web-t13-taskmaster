@@ -84,26 +84,30 @@
 
 ## Requisitos do Projeto
 
-[Com base nas Histórias de Usuários, enumere os requisitos da solução. Lembre-se que cada requisito deve corresponder a uma, e somente uma, característica alvo da solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.]
-
 ### Requisitos Funcionais
-
-[Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
 
 |ID    | Descrição                | Prioridade |
 |-------|---------------------------------|----|
-| RF-01 |  ...                    | ...   | 
+| RF-01 | Um usuário deve poder fazer login no sistema usando seu nome de usuário e senha. | Alta | 
+| RF-02 | Se o usuário for de conta pessoal ou gestor de projetos, ele deverá poder criar “Cards” de organização. | Alta |
+| RF-03 | Usuário responsável pela criação dos “Cards” poderá editar as informações nele, bem como adicionar tarefas, prazos, check-list, colaboradores. | Alta |
+| RF-04 | A criação do “Card” de tarefa deverá conter um título. | Alta |
+|  ...  |  ...                    | ...   |
+|  ...  |  ...                    | ...   |
+|  ...  |  ...                    | ...   |
+|  ...  |  ...                    | ...   |
+|  ...  |  ...                    | ...   |
 |  ...  |  ...                    | ...   |
 
 **Prioridade: Alta / Média / Baixa. 
 
 ### Requisitos não Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos não-funcionais]
 
 |ID      | Descrição               |Prioridade |
 |--------|-------------------------|----|
 | RNF-01 |  ...                    | ...   | 
+| ...    |  ...                    | ...   | 
 | ...    |  ...                    | ...   | 
 
 **Prioridade: Alta / Média / Baixa. 
