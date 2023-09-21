@@ -1,6 +1,6 @@
 # Introdução
 
-[Aqui a equipe deve criar um texto descritivo com a visão geral do problema abordado, apresentando o ambiente e as situações envolvidas no problema.]
+Este projeto apresenta o aplicativo como uma solução versátil e eficaz para aprimorar a organização e o gerenciamento de tarefas, tanto em âmbito corporativo como nas atividades pessoais. Com base em princípios ágeis, como Scrum e Kanban, o TaskMaster visa oferecer uma interface intuitiva e funcionalidades abrangentes que se adaptam às necessidades diversas de usuários individuais e equipes. Neste documento, serão detalhados os objetivos, requisitos, arquitetura e etapas de implementação do aplicativo, fornecendo um guia abrangente para a criação desta ferramenta gestão.
 
 ## Problema
 
@@ -50,7 +50,7 @@ Logo, diante do exposto, os objetivos específicos deste projeto são:
 
 ## Justificativa
 
-[Aqui a equipe deve descrever a importância ou a motivação para trabalhar com o problema definido. Indique as razões pelas quais a equipe escolheu o problema e definiu os objetivos.
+A implementação do aplicativo tem como intuito superar necessidades e limitações associadas à coordenação de tarefas, estruturação de projetos e processos em ambientes empresariais e pessoais. A falta de uma solução centralizada resulta em comunicação fragmentada, falta de visibilidade e ineficiências operacionais. Assim o aplicativo visa abordar esses problemas ao oferecer uma plataforma única que gerencia tarefas.
 
 Devem ser apresentados dados de fontes relevantes e confiáveis sobre o problema, inserindo-o como alvo de estudo. Sugere-se que a equipe utilize questionários, entrevistas e dados estatísticos, que devem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pela equipe.]
 
@@ -59,8 +59,8 @@ Este link pode ajudar a equipe a formular a justificativa: [Como montar a justif
 ## Público-Alvo
 
 TaskMaster tem objetivo fazer uma gestão de trabalho para facilitar o dia a dia dos seus usuários, no qual:
-	*Profissionais liberais e empreendedores, que buscam uma nova visão de mercado e querem se alinhar ao pensamento inovador de gestão baseada na transformação digital.
-	*Gestores e Profissionais de Empresas de Grande e Médio porte, que buscam compreender o novo desenho e a criação do ambiente digital.
-	*Público Habitual que deseja fazer sua autogestão.
+* Profissionais liberais e empreendedores, que buscam uma nova visão de mercado e querem se alinhar ao pensamento inovador de gestão baseada na transformação digital.
+* Gestores e Profissionais de Empresas de Grande e Médio porte, que buscam compreender o novo desenho e a criação do ambiente digital.
+* Público Habitual que deseja fazer sua autogestão.
 
 
