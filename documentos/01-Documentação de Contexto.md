@@ -52,9 +52,6 @@ Logo, diante do exposto, os objetivos específicos deste projeto são:
 
 A implementação do aplicativo tem como intuito superar necessidades e limitações associadas à coordenação de tarefas, estruturação de projetos e processos em ambientes empresariais e pessoais. A falta de uma solução centralizada resulta em comunicação fragmentada, falta de visibilidade e ineficiências operacionais. Assim o aplicativo visa abordar esses problemas ao oferecer uma plataforma única que gerencia tarefas.
 
-Devem ser apresentados dados de fontes relevantes e confiáveis sobre o problema, inserindo-o como alvo de estudo. Sugere-se que a equipe utilize questionários, entrevistas e dados estatísticos, que devem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pela equipe.]
-
-Este link pode ajudar a equipe a formular a justificativa: [Como montar a justificativa.](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
