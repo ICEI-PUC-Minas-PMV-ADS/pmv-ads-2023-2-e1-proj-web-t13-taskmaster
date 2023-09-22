@@ -95,6 +95,14 @@
 | ...                | ...                       | ...                              |
 | ...                | ...                       | ...                              |
 
+
+|EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
+|--------------------|---------------------------|----------------------------------|
+| ...Gestor de PCP (Projetista controlador de produção) Segmento Industrial                | ...Controlar e acompanhar a execução da produção diária.                       | ...Para agilizar a comunicação entre os processos de produção para cumprimento da meta diária e entrega dos produtos. |
+| ...Analista Financeiro - Contas à Pagar                | ...Fazer checklist digital das rotinas diárias de conciliação financeira e bancária, inclusão de pagamentos, e processos de tesouraria.                       | ...Fazer a gestão das atividades relacionadas ao contas a pagar, buscando agilidade e autonomia nos processos de rotina financeira. |                         
+| ...Profissional Prestador de Serviços Gerais      | ...Criar agenda de atendimento de prestação de serviços diários    | ...Para acompanhar e controlar os horários de atendimento, agendamentos, prazo para retorno de manutenção realizado, orçamentos e propostas.  |
+| ...Uma dona de casa com filhos       | ...Criar agenda de compromissos diários dos afazeres dos filhos e da casa.     | ...Para facilitar sua rotina diária buscando promover tempo para cuidado com casa, filhos e sua vida pessoal.  |
+
 ## Requisitos do Projeto
 
 ### Requisitos Funcionais
