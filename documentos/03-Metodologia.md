@@ -24,10 +24,10 @@ Para a organização e distribuição das tarefas do projeto, a equipe está emp
 - Done: Nesta lista, são registradas as tarefas que foram finalizadas e aquelas que passaram pelos testes e pelo controle de qualidade, estando prontas para serem entregues aos usuários.
 
 O quadro kanban do grupo no GitHub pode ser acessado através deste link: https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/624 e sua versão atual é exibida na figura abaixo:
-<figure>
-  <img src="![Kanban](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/66143166/9cc72185-3b5a-4b40-b8d4-95826f7660c7)"
-    <figcaption>Figura 2 - Configuração do Kanban utilizada no github
-</figure>
+
+![Kanban](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/Kanban.PNG)
+Figura 1 - Configuração do Kanban utilizada no github
+
 
 ### Etiquetas
 <p>As tarefas, além de serem direcionadas pelo fluxo do Kanban, serão identificadas por meio de ações ou situações específicas, utilizando as seguintes etiquetas:</p>
@@ -39,10 +39,11 @@ O quadro kanban do grupo no GitHub pode ser acessado através deste link: https:
   <li>ToFix (Necessita ser refeito ou corrigido)</li>
 </ul>
 
-<figure> 
-  <img src="![Labels](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/66143166/69dceeaf-1d2b-4152-9389-14508838714e)"
-    <figcaption>Figura 2 - Tela do esquema de cores e categorias</figcaption>
-</figure> 
+
+![Labels](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/Labels.PNG)
+
+Figura 2 - Tela do esquema de cores e categorias</figcaption>
+
   
 ### Ferramentas
 
