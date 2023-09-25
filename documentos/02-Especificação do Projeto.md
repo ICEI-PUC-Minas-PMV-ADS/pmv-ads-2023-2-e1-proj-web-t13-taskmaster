@@ -100,10 +100,10 @@
 | RF-02 | Se o usuário for de conta pessoal ou gestor de projetos, ele deverá poder criar “Cards” de organização. | Alta |
 | RF-03 | Usuário responsável pela criação dos “Cards” poderá editar as informações nele, bem como adicionar tarefas, prazos, check-list, colaboradores. | Alta |
 | RF-04 | A criação do “Card” de tarefa deverá conter um título. | Alta |
-|  ...  |  ...                    | ...   |
-|  ...  |  ...                    | ...   |
-|  ...  |  ...                    | ...   |
-|  ...  |  ...                    | ...   |
+| RF-05 | Usuário terá acesso a um calendário para ver e definir prazos de entregas. | Alta |
+| RF-06 | O usuário poderá adicionar comentários à tarefa | Média |
+| RF-07 | A aplicação permitirá ao usuário a customização dos “Cards” | Média |
+| RF-08 | Aplicação permitirá a integração de colaboradores no projeto | Média |
 |  ...  |  ...                    | ...   |
 |  ...  |  ...                    | ...   |
 
