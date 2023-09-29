@@ -5,13 +5,12 @@
 Simples, flexível e poderoso. Bastam quadros, listas e cartões para obter uma visualização clara de quem está fazendo o que e o que precisa ser feito.
 O fluxograma apresentado na figura que mostra o fucionamento e interação do usuário pelas telas do sistema.
 
+
 | Tela de Login                          | Tela Inicial                         | Criação de Projeto                           |
 |:-----------------------------:|:-----------------------------:|:-----------------------------:|
-| **![Login Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%2011.jpg)** | **![Clean Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%2013.jpg)** | **![First Project Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%2012.png)** |
+| **![Login Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%2011.jpg)** | **![Clean Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%2013.jpg)** | **![First Project Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%2012.png)** |
 | **Criação de Card**                          | **Projeto em Edição**                         | **Edição do Card**                           |
 | **![New Card Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%208.jpg)** | **![Edit Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%205.jpg)** | **![Card Editing Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/User%20Flow%2010.jpg)** |
-
-
 
 
 > **Links Úteis**:
