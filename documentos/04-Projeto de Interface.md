@@ -5,22 +5,13 @@
 Simples, flexível e poderoso. Bastam quadros, listas e cartões para obter uma visualização clara de quem está fazendo o que e o que precisa ser feito.
 O fluxograma apresentado na figura que mostra o fucionamento e interação do usuário pelas telas do sistema.
 
-![Login Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%2011.jpg
-) 
+| Foto 1                          | Foto 2                         | Foto 3                           |
+| ------------------------------- | ------------------------------ | ------------------------------ |
+| ![Login Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%2011.jpg) | ![Clean Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%201.jpg) | ![First Project Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%2012.png) |
+| Foto 4                          | Foto 5                         | Foto 6                           |
+| ![New Card Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%208.jpg) | ![Edit Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/UserFlow%205.jpg) | ![Card Editing Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/raw/main/User%20Flow%2010.jpg) |
 
-![Clean Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%201.jpg
-)
 
-![First Project Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%2012.png
-)
-
-![New Card Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%208.jpg
-)
-
-![Edit Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%205.jpg
-)
-
-![Card Editing Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/User%20Flow%2010.jpg)
 
 > **Links Úteis**:
 > - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
