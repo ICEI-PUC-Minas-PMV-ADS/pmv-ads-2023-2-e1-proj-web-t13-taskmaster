@@ -7,14 +7,19 @@ Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapea
 
 [Login Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%2011.jpg
 ) 
+
 [Clean Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%201.jpg
 )
+
 [First Project Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%2012.png
 )
+
 [New Card Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%208.jpg
 )
+
 [Edit Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/UserFlow%205.jpg
 )
+
 [Card Editing Screen](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/User%20Flow%2010.jpg)
 
 > **Links Úteis**:
