@@ -46,6 +46,7 @@ Figura 04 – Tela de Cadastro
 c)	Tela 03 – Tela de Login, onde o usuário entrará com seus dados de acesso ao aplicativo.
 
   ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/5fd5ec68-685a-4a49-b258-36db8f43fa0f)
+  
 Figura 05 – Tela de Login
 
 #### Tela Inicial de Criação de Projeto
