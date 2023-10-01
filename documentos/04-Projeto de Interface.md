@@ -76,6 +76,8 @@ Figura 08 – Tela de criação do card de tarefa.
 
 Ao adicionar o card do projeto, será possível criar etapas de gerenciamento das tarefas, bem como as próprias tarefas diárias; organizando-as conforme sua necessidade e movendo-as conforme sua fase de conclusão.
 
+Cada card poderá ter uma cor diferente, sendo esta destacada por meio de uma discreta linha, com a finalidade de indicar a prioridade da tarefa.
+
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/6af6a182-f6a5-450f-82df-8f8ad22f0568)
 
 Figura 09 – Tela de gerenciamento das tarefas.
