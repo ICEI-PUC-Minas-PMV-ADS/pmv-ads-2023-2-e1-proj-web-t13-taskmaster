@@ -74,7 +74,7 @@ Figura 08 – Tela de criação do card de tarefa.
 
 #### Tela de Edição do Projeto e suas Tarefas
 
-Ao adicionar o card do projeto, será possível criar etapas de gerenciamento das tarefas, bem como as próprias tarefas diárias; organizando-as conforme sua necessidade e movendo-as conforme sua fase de conclusão.
+Ao adicionar o card do projeto, será possível criar etapas de gerenciamento das tarefas, bem como as próprias tarefas diárias; organizando-as conforme sua necessidade e movendo-as conforme sua fase de conclusão. 
 
 Cada card poderá ter uma cor diferente, sendo esta destacada por meio de uma discreta linha, com a finalidade de indicar a prioridade da tarefa.
 
