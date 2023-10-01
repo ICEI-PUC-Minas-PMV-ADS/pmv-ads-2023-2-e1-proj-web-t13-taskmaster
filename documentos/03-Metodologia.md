@@ -58,7 +58,7 @@ As escolhas de ferramentas foram feitas com base na eficiência e colaboração.
 |-------------------------------------|------------------------------------|----------------------------------------|
 | Repositório de código fonte         | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/codigo-fonte/README.md                           |
 | Documentos do projeto               | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/tree/main                           |
-| Projeto de Interface                | Figma                              | http://....                            |
+| Projeto de Interface                | Figma                              | https://www.figma.com/file/ZRfEH7Ju0wuMJebkO1KtsT/TaskMaster---Userflow?type=design&mode=design&t=wLOWJNDP49SSRe7y-1 |
 | Gerenciamento do Projeto            | GitHub Projects                    | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/624                          |
 
 
