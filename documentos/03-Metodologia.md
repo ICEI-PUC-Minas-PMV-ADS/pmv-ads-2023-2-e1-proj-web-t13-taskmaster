@@ -25,7 +25,7 @@ Para a organização e distribuição das tarefas do projeto, a equipe está emp
 
 O quadro kanban do grupo no GitHub pode ser acessado através deste link: https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/624 e sua versão atual é exibida na figura abaixo:
 
-![Kanban](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/Kanban.PNG)
+![Kanban](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/documentos/img/Kanban.PNG)
 Figura 1 - Configuração do Kanban utilizada no github
 
 
@@ -40,7 +40,7 @@ Figura 1 - Configuração do Kanban utilizada no github
 </ul>
 
 
-![Labels](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/Labels.PNG)
+![Labels](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/blob/main/documentos/img/Labels.PNG)
 
 Figura 2 - Tela do esquema de cores e categorias</figcaption>
 
