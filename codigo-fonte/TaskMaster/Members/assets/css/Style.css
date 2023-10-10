@@ -8,16 +8,24 @@ body{
     display: grid;
 }
 
+body {
+    background-color: #BFD3F2;
+
+}
+
 nav{
     display: grid;
     height: 80px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+    
 }
 
 .item {
 	margin: 5px;
-	background: tomato;
+	background:  #f0f0f0;
 	text-align: center;
 	font-size: 1.5em;
+    
 }
 
 .content{
@@ -33,20 +41,32 @@ nav{
 #add-project{
     display: flex;
     flex-direction: column;
-    background-color: #A9A9A9;
+    background-color:   #A9A3A3;
     margin: 30px;
     border-radius: 30px;
     font-weight: bold;
     color: white;
+    cursor: pointer;
 }
 
 #column{
     display: flex;
     width: 20%;
     flex-direction: column;
-    background-color: #A9A9A9;
+    background-color: #A9A3A3;
     margin: 30px;
     border-radius: 30px;
     font-weight: bold;
     color: white;
+}
+.pedacinho
+ {
+    flex-direction: column;
+    font-weight: bold;
+    color: white;
+}
+
+.dragging {
+    opacity: 0.5;
+
 }
