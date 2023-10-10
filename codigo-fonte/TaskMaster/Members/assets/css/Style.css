@@ -1,4 +1,52 @@
 body{
-    background-color: lightblue;
-    font-family: 'Courier New', Courier, monospace;
+    max-width: 100vw;
+    max-height: 100vh;
+    /* background: #BFD3F2; */
+}
+
+.container{
+    display: grid;
+}
+
+nav{
+    display: grid;
+    height: 80px;
+}
+
+.item {
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.content{
+    border-radius: 15px;
+    /* background: white; */
+}
+
+.grid-template-areas{
+    grid-template-columns: 0.5fr 3fr;
+    grid-template-rows: 90vh;
+}
+
+#add-project{
+    display: flex;
+    flex-direction: column;
+    background-color: #A9A9A9;
+    margin: 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+#column{
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    background-color: #A9A9A9;
+    margin: 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
 }
