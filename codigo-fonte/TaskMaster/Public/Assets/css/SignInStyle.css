@@ -29,15 +29,23 @@ body {
     width: 91%;
     height: 8vh;
     margin: 10px;
-    background-color: azure;
+    background-color: #949494;
     transform: translateX(1%) translateY(12%); /* Alinha os elementos ao centro da box-pai */
 }
 
 .signup-button{
     width: 80%;
-    height: 8vh;
+    height: 6vh;
     background-color: #3498db;
-    transform: translateX(12%) translateY(8%)
+    transform: translateX(12%) translateY(12%);
+    border-radius: 30px;
+}
+
+input{
+    background-color: #949494;
+    width: 96%;
+    transform: translateY(70%);
+    border: none; /* Retirando as bordas da caixa de texto */
 }
 
 
