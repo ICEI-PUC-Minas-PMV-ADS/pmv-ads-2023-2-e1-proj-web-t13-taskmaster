@@ -3,33 +3,30 @@ document.addEventListener("DOMContentLoaded", function(){
     var projects = document.getElementById('projects')
 
     addProjectButton.addEventListener("click", function(){
-        const cardText = prompt("Insira o título do cartão:");
+        const cardText = prompt("Insira o título do projeto:");
         if (cardText) {
             const card = document.createElement("div")
             card.className = "card"
-            card.style.backgroundColor = "white"
-            card.style.marginTop = "30px"
-            card.style.display = "grid"
-            card.style.rowGap = "20px"
-            card.style.paddingTop = "20px"
-            card.style.paddingBottom = "20px"
-            card.style.paddingLeft = "20px"
-            card.style.paddingRight = "20px"
-            card.style.textAlign = "left"
-            card.style.gridTemplateRows = "1fr 2fr"
-            card.style.height = "15vh"
-            card.style.borderRadius = "30px"
             card.innerText = cardText;
-
-            const cardText1 = prompt("Insira o título do cartão:");
-            const secondRow = document.createElement("div")
-            secondRow.style.marginTop = "10px"
-            secondRow.innerText = cardText1
-
-            card.appendChild(secondRow)
 
             projects.appendChild(card);
         }
+        
+        const cardText1 = prompt("Insira o título do cartão:");
+        const descriptionRow = prompt("Insira uma descrição do projeto")
+        if(cardText1){
+            const secondRow = document.createElement("div")
+            const descriptionProject = document.createElement("p")
+            secondRow.className = "description"
+            secondRow.innerText = cardText1
+            descriptionProject.id = "p-description"
+            descriptionProject.innerText = descriptionRow
+            
+            secondRow.appendChild(descriptionProject)
+
+            projects.appendChild(secondRow)
+        }
+
     })
 })
 

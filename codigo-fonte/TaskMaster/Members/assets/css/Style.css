@@ -69,3 +69,30 @@ nav{
     text-align: left;
     margin-left: 20px;
 }
+
+.card{
+    background-color: white;
+    margin-top: 30px;
+    row-gap: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    text-align: left;
+    border-radius: 8px;
+    font-weight: bold;    
+}
+
+.description{
+    background-color: white;
+    margin-top: 10px;
+    row-gap: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    height: auto;
+    text-align: left;
+    border-radius: 8px;    
+}
+
+#p-description{
+    margin-top: 10px;
+    opacity: 0.5;
+}
