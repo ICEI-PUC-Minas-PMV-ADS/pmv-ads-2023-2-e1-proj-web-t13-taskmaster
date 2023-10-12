@@ -1,3 +1,45 @@
+document.addEventListener("DOMContentLoaded", function(){
+    var addProjectButton = document.getElementById('add-project')
+    var projects = document.getElementById('projects')
+
+    addProjectButton.addEventListener("click", function(){
+        const cardText = prompt("Insira o título do cartão:");
+        if (cardText) {
+            const card = document.createElement("div")
+            card.className = "card"
+            card.style.backgroundColor = "white"
+            card.style.marginTop = "30px"
+            card.style.display = "grid"
+            card.style.rowGap = "20px"
+            card.style.paddingTop = "20px"
+            card.style.paddingBottom = "20px"
+            card.style.paddingLeft = "20px"
+            card.style.paddingRight = "20px"
+            card.style.textAlign = "left"
+            card.style.gridTemplateRows = "1fr 2fr"
+            card.style.height = "15vh"
+            card.style.borderRadius = "30px"
+            card.innerText = cardText;
+
+            const cardText1 = prompt("Insira o título do cartão:");
+            const secondRow = document.createElement("div")
+            secondRow.style.marginTop = "10px"
+            secondRow.innerText = cardText1
+
+            card.appendChild(secondRow)
+
+            projects.appendChild(card);
+        }
+    })
+})
+
+
+
+
+
+
+
+/*
 document.addEventListener("DOMContentLoaded", function () {
     // Obtém o botão de adicionar projeto e a coluna
     const addProjectButton = document.getElementById("add-project");
@@ -25,3 +67,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+*/
