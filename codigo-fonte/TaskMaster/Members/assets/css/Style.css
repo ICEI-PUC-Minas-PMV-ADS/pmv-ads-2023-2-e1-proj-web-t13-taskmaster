@@ -70,6 +70,11 @@ nav{
     margin-left: 20px;
 }
 
+.project{
+    width: 100%;
+    max-width: 250px;
+}
+
 .card{
     background-color: #84BEE9;
     margin-top: 30px;
@@ -80,7 +85,6 @@ nav{
     border-radius: 8px;
     font-weight: bold;
     word-wrap: break-word; 
-    width: 250.562px;
 }
 
 .description{
@@ -90,7 +94,6 @@ nav{
     padding: 5px;
     padding-left: 15px;
     height: auto;
-    width: 250.562px;
     text-align: left;
     border-radius: 8px;
     word-wrap: break-word;

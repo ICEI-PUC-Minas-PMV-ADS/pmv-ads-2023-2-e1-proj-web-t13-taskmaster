@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     addProjectButton.addEventListener("click", function(){
         const containerDiv = document.createElement("div")
-        containerDiv.className = "project-" + containerCount
+        containerDiv.className = "project" 
+        containerDiv.id = "project-" + containerCount
 
         const cardText = prompt("Insira o título do projeto:");
         if (cardText) {
