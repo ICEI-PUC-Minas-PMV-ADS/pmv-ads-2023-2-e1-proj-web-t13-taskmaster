@@ -71,7 +71,7 @@ nav{
 }
 
 .card{
-    background-color: white;
+    background-color: #84BEE9;
     margin-top: 30px;
     row-gap: 20px;
     padding: 5px;
@@ -80,7 +80,7 @@ nav{
     border-radius: 8px;
     font-weight: bold;
     word-wrap: break-word; 
-    width: 250.562px;   
+    width: 250.562px;
 }
 
 .description{
@@ -93,7 +93,7 @@ nav{
     width: 250.562px;
     text-align: left;
     border-radius: 8px;
-    word-wrap: break-word;    
+    word-wrap: break-word;
 }
 
 #p-description{

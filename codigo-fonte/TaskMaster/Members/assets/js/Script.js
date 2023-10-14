@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", function(){
     var addProjectButton = document.getElementById('add-project')
     var projects = document.getElementById('projects')
+    var containerCount = 1
 
     addProjectButton.addEventListener("click", function(){
+        const containerDiv = document.createElement("div")
+        containerDiv.className = "project-" + containerCount
+
         const cardText = prompt("Insira o título do projeto:");
         if (cardText) {
             const card = document.createElement("div")
             card.className = "card"
             card.innerText = cardText;
 
-            projects.appendChild(card);
+            containerDiv.appendChild(card);
         }
         
         const cardText1 = prompt("Insira o título do cartão:");
@@ -24,9 +28,12 @@ document.addEventListener("DOMContentLoaded", function(){
             
             secondRow.appendChild(descriptionProject)
 
-            projects.appendChild(secondRow)
+            containerDiv.appendChild(secondRow)
         }
 
+        projects.appendChild(containerDiv)
+
+        containerCount++
     })
 })
 
