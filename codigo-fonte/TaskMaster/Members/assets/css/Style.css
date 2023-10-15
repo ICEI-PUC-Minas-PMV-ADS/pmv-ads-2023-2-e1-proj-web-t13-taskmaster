@@ -25,7 +25,6 @@ nav{
 .content{
     border-radius: 15px;
     background: white;
-  
 }
 
 .grid-template-areas{
@@ -44,6 +43,28 @@ nav{
     cursor: pointer;
 }
 
+#column{
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    background-color: #A9A3A3;
+    margin: 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+}
+.pedacinho
+ {
+    flex-direction: column;
+    font-weight: bold;
+    color: white;
+}
+
+.dragging {
+    opacity: 0.5;
+
+}
+
 #name-project{
     text-align: left;
     margin-left: 20px;
@@ -54,40 +75,31 @@ nav{
     max-width: 250px;
 }
 
-#column{
-    display: flex;
-    width: 20%;  
-}
-
-.card-container {
-    display: flex;
-    flex-direction: column;
-    background-color: #A9A3A3;
-    margin: 30px;
-    padding: 10px;
-    border-radius: 30px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .card {
+.card{
     background-color: #84BEE9;
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 30px;
+    row-gap: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    text-align: left;
     border-radius: 8px;
     font-weight: bold;
-    word-wrap: break-word;
-  }
-  
-  .add-card-button {
-    display: flex;
-    flex-direction: column;
-    background-color: #A9A3A3;
+    word-wrap: break-word; 
+}
+
+.description{
+    background-color: white;
     margin-top: 10px;
-    border-radius: 30px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-  }
-  
+    row-gap: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    height: auto;
+    text-align: left;
+    border-radius: 8px;
+    word-wrap: break-word;
+}
+
+#p-description{
+    margin-top: 10px;
+    opacity: 0.5;
+}
