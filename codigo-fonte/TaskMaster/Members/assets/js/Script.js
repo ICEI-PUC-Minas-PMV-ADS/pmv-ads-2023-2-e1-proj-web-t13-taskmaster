@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     var addProjectButton = document.getElementById('add-project')
-    var projects = document.getElementById('projects')
+    var projects = document.getElementById('projects' )
     var containerCount = 1
 
     addProjectButton.addEventListener("click", function(){
@@ -37,39 +37,49 @@ document.addEventListener("DOMContentLoaded", function(){
         containerCount++
     })
 })
+document.addEventListener("DOMContentLoaded", function(){
+    var addCardButton = document.getElementById('add-card');
+    var addCardRightButton = document.getElementById('add-card-right'); // Botão na coluna à direita
+    var cardContainer = document.getElementById('column'); // Selecionar a coluna onde os cartões devem ser adicionados
+    var cardCount = 1;
+    var cardCountRight = 1; // Contagem de cartões na coluna à direita
 
+    addCardButton.addEventListener("click", function(){
+        const card = document.createElement("div");
+        card.className = "card";
 
-
-
-
-
-
-/*
-document.addEventListener("DOMContentLoaded", function () {
-    // Obtém o botão de adicionar projeto e a coluna
-    const addProjectButton = document.getElementById("add-project");
-    const column = document.getElementById("column");
-
-    // Adiciona um evento de clique ao botão de adicionar projeto
-    addProjectButton.addEventListener("click", function () {
-        const cardText = prompt("Insira o título do cartão:");
+        const cardText = prompt("Insira o título do projeto:");
         if (cardText) {
-            const card = document.createElement("div");
-            card.className = "card";
             card.innerText = cardText;
 
-            // Adiciona um botão de exclusão ao cartão
-            const deleteButton = document.createElement("button");
-            deleteButton.className = "delete-card";
-            deleteButton.innerText = "X";
-
-            deleteButton.addEventListener("click", function () {
-                card.remove();
-            });
-
-            card.appendChild(deleteButton);
-            column.appendChild(card);
+            // Mostrar o botão "Adicionar Card" na coluna à direita
+            addCardRightButton.style.display = "block";
+        } else {
+            card.innerText = "Card " + cardCount;
         }
+
+        cardContainer.appendChild(card);
+
+        cardCount++;
+        addCardButton.style.display = "none"; // Oculta o botão "+" após a criação do cartão
+    });
+
+    addCardRightButton.addEventListener("click", function(){
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const cardText = prompt("Insira o título do cartão:");
+        if (cardText) {
+            card.innerText = cardText;
+        } else {
+            card.innerText = "Card " + cardCountRight;
+        }
+
+        // Adicionar o card na coluna à direita (implemente a lógica para a coluna à direita aqui)
+
+        cardCountRight++;
     });
 });
-*/
+
+
+
