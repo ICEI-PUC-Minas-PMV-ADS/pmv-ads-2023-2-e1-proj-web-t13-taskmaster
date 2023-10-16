@@ -49,20 +49,20 @@ input{
 }
 
 input#signup{
-    width: 80%;
-    height: 6vh;
-    background-color: #3498db;
-    transform: translateX(12%) translateY(35%);
+    width: 90%;
+    height: 5vh;
+    background-color: #146C94;
+    transform: translateX(6%) translateY(40%);
     border-radius: 30px;
     font-family: 'Lilita One', sans-serif;
-    font-size: 19px;
-    color: #f2f2f2
+    font-size: 15px;
+    color: #f2f2f2;
 }
 
 input.formbox{
     border-bottom: 1px solid #000;
     font-family: 'Nunito', sans-serif;
-    color: #000
+    color: #000;
 }
 
 input.formbox::placeholder {
