@@ -1,82 +1,107 @@
-body{
-    max-width: 100vw;
-    max-height: 100vh;
-    background: #BFD3F2;
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+  background: #bfd3f2;
 }
 
-.container{
-    display: grid;
+.container {
+  display: grid;
 }
 
-nav{
-    display: grid;
-    height: 80px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-    
+nav {
+  display: grid;
+  height: 80px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .item {
-	margin: 5px;
-	text-align: center;
-	font-size: 1.5em;
-    
+  margin: 5px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.content{
-    border-radius: 15px;
-    background: white;
+.content {
+  border-radius: 15px;
+  background: white;
 }
 
-.grid-template-areas{
-    grid-template-columns: 0.5fr 3fr;
-    grid-template-rows: 90vh;
+.grid-template-areas {
+  grid-template-columns: 0.5fr 3fr;
+  grid-template-rows: 90vh;
 }
 
-#add-project{
+#add-project {
+  background-color: #a9a3a3;
+  margin-top: 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+#name-project {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.project {
+  width: 100%;
+  max-width: 250px;
+}
+
+.card {
+  background-color: #84bee9;
+  margin-top: 30px;
+  row-gap: 20px;
+  padding: 5px;
+  padding-left: 15px;
+  text-align: left;
+  border-radius: 8px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.description {
+  background-color: white;
+  margin-top: 10px;
+  row-gap: 20px;
+  padding: 5px;
+  padding-left: 15px;
+  height: auto;
+  text-align: left;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+#p-description {
+  margin-top: 10px;
+  opacity: 0.5;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.columns{
     display: flex;
-    flex-direction: column;
-    background-color:   #A9A3A3;
+    flex-wrap: nowrap;
+
+}
+
+#add-card {
+    background-color: #a9a3a3;
     margin-top: 30px;
     border-radius: 30px;
     font-weight: bold;
     color: white;
     cursor: pointer;
-}
-
-#column{
-    display: flex;
-    width: 20%;
-    flex-direction: column;
-    background-color: #A9A3A3;
-    margin: 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    color: white;
-}
-.pedacinho
- {
-    flex-direction: column;
-    font-weight: bold;
-    color: white;
-}
-
-.dragging {
-    opacity: 0.5;
-
-}
-
-#name-project{
-    text-align: left;
+    width: 19.6vw;
     margin-left: 20px;
 }
 
-.project{
-    width: 100%;
-    max-width: 250px;
-}
-
-.card{
-    background-color: #84BEE9;
+.cardMeu{
+    background-color: #84bee9;
     margin-top: 30px;
     row-gap: 20px;
     padding: 5px;
@@ -84,22 +109,6 @@ nav{
     text-align: left;
     border-radius: 8px;
     font-weight: bold;
-    word-wrap: break-word; 
-}
-
-.description{
-    background-color: white;
-    margin-top: 10px;
-    row-gap: 20px;
-    padding: 5px;
-    padding-left: 15px;
-    height: auto;
-    text-align: left;
-    border-radius: 8px;
     word-wrap: break-word;
-}
 
-#p-description{
-    margin-top: 10px;
-    opacity: 0.5;
 }
