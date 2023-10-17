@@ -13,6 +13,7 @@ body {
     border-radius: 20px; /* Arredonda as bordas */
     width: 20%; /* Define a largura da box como 20% da largura da tela */
     height: 80vh; /* Define a altura como 80% da altura da tela */
+    overflow: hidden;
 }
 
 .inside-box {
@@ -76,11 +77,39 @@ input.formbox::placeholder {
     z-index: 1;
 }
 
+#figure_1{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    background-color: #d9d9d9;
+    transform: translateX(-25%) translateY(-25%);
+}
 
+#figure_2{
+    position: absolute;
+    width: 132px;
+    height: 90px;
+    border-radius: 48px;
+    background-color: #BFBFBF;
+    transform: translateX(140%) translateY(-15%) rotate(12.68deg);
+}
 
+#figure_3{
+    position: absolute;
+    width: 260px;
+    height: 120px;
+    border-radius: 48px;
+    background-color: #146C94;
+    transform: translateX(-1%) translateY(-40%) rotate(11.51deg);
+}
 
-
-
-
-
-  
+#signup-text{
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    color: #f2f2f2;
+    transform: translateX(65%) translateY(20%);
+    font-size: 30px;
+    font-family: 'Preahvihear', sans-serif;;
+}
