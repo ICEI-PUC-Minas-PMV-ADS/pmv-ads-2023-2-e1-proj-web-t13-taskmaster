@@ -30,7 +30,7 @@ function ValidarFormulario(){
 }
 
 //adiciona um ouvinte de evento de envio do formulário
-document.getElementById("myForm").addEventListener("submit", function(event){
+document.getElementById("myForm").addEventListener("click", function(event){
     if(!ValidarFormulario()){
         event.preventDefault();
     }
