@@ -78,14 +78,15 @@ nav {
   opacity: 0.5;
 }
 
-.card-container {
+/* .card-container {
   display: flex;
   flex-wrap: nowrap;
-}
+} */
 
-.columns{
+#columns{
     display: flex;
     flex-wrap: nowrap;
+    
 
 }
 
@@ -100,15 +101,30 @@ nav {
     margin-left: 20px;
 }
 
-.cardMeu{
-    background-color: #84bee9;
-    margin-top: 30px;
-    row-gap: 20px;
-    padding: 5px;
-    padding-left: 15px;
-    text-align: left;
-    border-radius: 8px;
-    font-weight: bold;
-    word-wrap: break-word;
+.cardMeu {
+  background-color: #84bee9;
+  margin-top: 30px;
+  row-gap: 20px;
+  padding: 5px;
+  padding-left: 15px;
+  text-align: left;
+  border-radius: 25px;
+  font-weight: bold;
+  word-wrap: break-word;
+  width: 18.6vw;
+  margin-left: 20px;
+}
 
+.description1 {
+  background-color: rgb(173, 173, 173);
+  margin-top: 10px;
+  padding: 5px;
+  padding-left: 15px;
+  height: auto;
+  text-align: left;
+  border-radius: 8px;
+  word-wrap: break-word;
+  border: 1px solid #333;
+  width: 18.4vw;
+  margin-left: 20px;
 }
