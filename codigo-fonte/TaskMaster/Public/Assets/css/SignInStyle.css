@@ -34,18 +34,10 @@ body {
     transform: translateX(2%) translateY(0%); /* Alinha os elementos ao centro da box-pai */
 }
 
-/* .signup-button{
-    width: 80%;
-    height: 6vh;
-    background-color: #3498db;
-    transform: translateX(12%) translateY(70%);
-    border-radius: 30px;
-} */
-
 input{
     background-color: #BFBFBF;
     width: 96%;
-    transform: translateY(75%);
+    transform: translateY(60%);
     border: none; /* Retirando as bordas da caixa de texto */
 }
 
