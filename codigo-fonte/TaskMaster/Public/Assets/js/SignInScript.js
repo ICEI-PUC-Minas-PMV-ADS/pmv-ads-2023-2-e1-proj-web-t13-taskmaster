@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     function ValidarFormulario(){
         //criação de constantes que têm o mesmo valor dos formulários preenchidos
-        const email = document.getElementById("email").value;
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        const confirm_password = document.getElementById("confirm_password").value;
+        const email = document.querySelector("#email").value;
+        const username = document.querySelector("#username").value;
+        const password = document.querySelector("#password").value;
+        const confirm_password = document.querySelector("#confirm_password").value;
 
         //realiza validação dos formulários
         if(!ValidarEmail(email)){
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     //adiciona um ouvinte de evento de envio do formulário
-    document.getElementById("myForm").addEventListener("Submit", function(event){
+    document.querySelector("#myForm").addEventListener("Submit", function(event){
         if(ValidarFormulario()){
             event.preventDefault();
         }

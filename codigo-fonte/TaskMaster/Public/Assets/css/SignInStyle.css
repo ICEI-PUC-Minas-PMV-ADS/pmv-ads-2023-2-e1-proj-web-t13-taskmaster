@@ -24,6 +24,7 @@ body {
     position: absolute; /* Posiciona o elemento dentro do pai */
     bottom: 0; /* Alinha na parte inferior */
     box-shadow: 0px -3px 3px #B2B2B2; /* Efeito de sombreamento */
+    padding-left: 4.5px ;
 }
 
 .textbox{
@@ -31,7 +32,6 @@ body {
     height: 7vh;
     margin: 10px;
     background-color: #BFBFBF;
-    transform: translateX(2%) translateY(0%); /* Alinha os elementos ao centro da box-pai */
 }
 
 input{
@@ -45,13 +45,17 @@ button#signup{
     width: 90%;
     height: 5vh;
     background-color: #146C94;
-    transform: translateX(5.5%) translateY(100%);
+    margin-left: 9px;
+    margin-top: 30px;
     border-radius: 30px;
     font-family: 'Lilita One', sans-serif;
     font-size: 15px;
     color: #f2f2f2;
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
     border: none;
+    cursor: pointer;
+    box-shadow: 0px 2.5px 2.5px rgb(0, 0, 0, 0.25);
+    padding-bottom: 10px;
 }
 
 input.formbox{
@@ -67,7 +71,9 @@ input.formbox::placeholder {
 #boy-in-chair{
     position: absolute;
     width: 120px;
-    transform: translateX(60%) translateY(80%);
+    /* transform: translateX(60%) translateY(80%); */
+    margin-top: 95px;
+    margin-left: 80px;
     z-index: 1;
 }
 
@@ -78,6 +84,7 @@ input.formbox::placeholder {
     border-radius: 120px;
     background-color: #d9d9d9;
     transform: translateX(-25%) translateY(-25%);
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.25);
 }
 
 #figure_2{
@@ -87,6 +94,7 @@ input.formbox::placeholder {
     border-radius: 48px;
     background-color: #BFBFBF;
     transform: translateX(140%) translateY(-15%) rotate(12.68deg);
+    box-shadow: 0px 2.5px 2.5px rgb(0, 0, 0, 0.2);
 }
 
 #figure_3{
@@ -96,6 +104,7 @@ input.formbox::placeholder {
     border-radius: 48px;
     background-color: #146C94;
     transform: translateX(-1%) translateY(-40%) rotate(11.51deg);
+    box-shadow: 0px 2.5px 2.5px rgb(0, 0, 0, 0.25);
 }
 
 #signup-text{
@@ -107,9 +116,11 @@ input.formbox::placeholder {
     font-size: 30px;
     font-family: 'Preahvihear', sans-serif;
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
+    cursor: default;
 }
 
 #signup-icon{
-    height: 1px;
-    width: 1px;
+    height: 20px;
+    width: 20px;
+    transform: translateY(25%);
 }
