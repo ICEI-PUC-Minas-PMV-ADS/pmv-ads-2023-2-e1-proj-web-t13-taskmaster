@@ -38,50 +38,18 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 })
 
-document.addEventListener("DOMContentLoaded", function(){
-    var addCardButton = document.querySelector('#add-card')
-    var columns = document.querySelector('#columns')
-    var containerCount = 1
+document.addEventListener("DOMContentLoaded", function () {
+    const addButton = document.querySelector('.add-button');
+    const cubeContainer = document.querySelector('.cube-container');
+    
+    addButton.addEventListener('click', function () {
+        const cube = document.createElement('div');
+        cube.className = 'cube';
+        cube.textContent = 'Cubo';
 
-    addCardButton.addEventListener("click", function(){
-        const containerDiv = document.createElement("div")
-        containerDiv.className = "text"
-        containerDiv.id = "text-" + containerCount
+        cubeContainer.appendChild(cube);
+    });
 
-        const cardText = prompt("Insira o título da coluna:");
-        if (cardText) {
-            const card = document.createElement("div")
-            card.className = "cardMeu"
-            card.innerText = cardText;
-
-            containerDiv.appendChild(card);   
-
-        }
-
-        const cardText1 = prompt("Insira o título do cartão:");
-        const descriptionRow = prompt("Insira uma ação para o CARD")
-        if(cardText1){
-            const secondRow = document.createElement("div")
-            const descriptionProject = document.createElement("p")
-            secondRow.className = "description1"
-            secondRow.innerText = cardText1
-            descriptionProject.id = "p-description1"
-            descriptionProject.innerText = descriptionRow
-            
-            secondRow.appendChild(descriptionProject)
-
-            containerDiv.appendChild(secondRow)
-        }
-
-        columns.appendChild(containerDiv)
-
-        containerCount++
-        
-
-    })
-
-
-})
-
+});
 
 

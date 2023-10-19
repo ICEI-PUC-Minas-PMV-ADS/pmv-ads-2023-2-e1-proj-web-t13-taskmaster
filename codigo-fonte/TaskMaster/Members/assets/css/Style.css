@@ -83,7 +83,7 @@ nav {
   flex-wrap: nowrap;
 } */
 
-#columns{
+/* #columns{
     display: flex;
     flex-wrap: nowrap;
     
@@ -127,4 +127,34 @@ nav {
   border: 1px solid #333;
   width: 18.4vw;
   margin-left: 20px;
+} */
+
+.column {
+  width: 20vw;
+  margin: 20px;
+  background-color: lightgray;
+  padding: 10px;
+  text-align: center;
+}
+
+.cube-container {
+  display: flex;
+  flex-direction: column; /* Altera a direção da flexbox para empilhar verticalmente */
+}
+
+.cube {
+  height: 50px;
+  background-color: skyblue;
+  margin: 5px;
+  display: inline-block;
+}
+
+.add-button {
+  width: 70%;
+  height: 30px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
 }
