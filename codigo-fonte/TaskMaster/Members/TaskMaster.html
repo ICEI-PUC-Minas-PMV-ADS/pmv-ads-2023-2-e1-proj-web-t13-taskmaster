@@ -12,30 +12,35 @@
   <body>
     <nav class="item">
       <h1 id="name-project">TaskMaster</h1>
-    </nav>
+  </nav>
 
-    <div class="container grid-template-areas">
-
+  <div class="container grid-template-areas">
       <div class="item sidenav">
-        <div id="projects"></div>
-        <div id="add-project">+</div>
+          <div id="projects"></div>
+          <div id="add-project">+</div>
       </div>
-      
+
       <div class="item content">
-        
-          <div id="columns"></div>
-          <div id="add-card">+</div>
-          
+          <div class="column">
+              <div class="cube-container"></div>
+              <button class="add-button">+</button>
+          </div>
+      </div>
+  </div>
       </div>
     </div>
 
-    <div class="modal hidden">
+    <div class="hide" id="fade"></div>
+    <div class="modal hide">
       <div class="modal-content">
         <h1>Criar Projeto</h1>
         <input type="text" value="" id="project-name" placeholder="Nome do Projeto"><br>
         <input type="text" value="" id="project-card-title" placeholder="Título do Card"><br>
-        <input type="text" value="" id="project-description" placeholder="Descrição do Projeto">
-        <button class="btn">creat</button>
+        <input type="text" value="" id="project-description" placeholder="Descrição do Projeto"><br>
+        <div id="creat-modal">
+          <button class="btn" id="cancel">cancel</button>
+          <button class="btn" id="create-project">creat</button>
+        </div>
       </div>
     </div>
   </body>
