@@ -55,16 +55,18 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 })
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const addButton = document.querySelector('.add-button');
     const cubeContainer = document.querySelector('.cube-container');
-
+    
     addButton.addEventListener('click', function () {
         const cube = document.createElement('div');
         cube.className = 'cube';
         cube.textContent = 'Cubo';
 
         cubeContainer.appendChild(cube);
-
-    })
     });
+
+});
+
+
