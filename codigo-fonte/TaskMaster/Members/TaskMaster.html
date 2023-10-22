@@ -8,6 +8,7 @@
     <title>TaskMaster</title>
   </head>
 
+ 
   <body>
     <nav class="item">
       <h1 id="name-project">TaskMaster</h1>
@@ -21,10 +22,28 @@
       </div>
       
       <div class="item content">
-        <div class="card-container">
-          <div id="columns"></div>
-          <div id="add-card">+</div>
+        
+        <div class="column">
+          <div class="cube-container"></div>
+          <div id="add-button">+</div>
         </div>
-    </div>    
+          
+      </div>
+    </div>
+
+    <div class="hide" id="fade"></div>
+    <div class="modal hide">
+      <div class="modal-content">
+        <h1>Criar Projeto</h1>
+        <input type="text" maxlength="30" id="project-name" placeholder="Nome do Projeto"><br>
+        <input type="text" maxlength="30" id="project-card-title" placeholder="Título do Card"><br>
+        <textarea type="text" maxlength="100" id="project-description" placeholder="Descrição do Projeto"></textarea><br>
+        <div id="creat-modal">
+          <button class="btn" id="cancel">cancel</button>
+          <button class="btn" id="create-project">creat</button>
+        </div>
+      </div>
+    </div>
   </body>
-</html>
+  </html>
+  
