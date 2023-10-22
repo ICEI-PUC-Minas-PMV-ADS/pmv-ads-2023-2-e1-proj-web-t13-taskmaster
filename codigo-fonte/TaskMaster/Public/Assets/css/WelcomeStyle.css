@@ -1,4 +1,37 @@
-body{
-    background-color: lightblue;
-    font-family: 'Courier New', Courier, monospace;
+h1 {        
+    color: black;   
+    text-align: center;
+    margin: auto;
+}
+
+title   {   
+    font-size: 40px
+}
+
+body {
+    font-family: Arial;
+    text-align: center
+}
+
+button {
+    width: 300px;
+    height: 60px;
+    margin: left 400px;
+    margin-right: 400px;
+    border-collapse: var();
+    top: 802px;
+    left: 64px;
+    border-radius: 20px;
+    border: 3px;
+    color: white;
+    font-family: Paytone One;
+   background-color: #146C94;
+   text-align: center;
+    }
+
+p {
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: justify;
+    font: Preahvihear;
 }
