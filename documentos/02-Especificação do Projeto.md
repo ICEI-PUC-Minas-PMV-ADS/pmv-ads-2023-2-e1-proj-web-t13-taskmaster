@@ -104,8 +104,8 @@
 | RF-06 | O usuário poderá adicionar comentários à tarefa | Média |
 | RF-07 | A aplicação permitirá ao usuário a customização dos “Cards” | Média |
 | RF-08 | Aplicação permitirá a integração de colaboradores no projeto | Média |
-|  ...  |  ...                    | ...   |
-|  ...  |  ...                    | ...   |
+| RF-09 | A aplicação permitirá ao usuário a customização do plano de fundo | Baixa |
+| RF-10 | A aplicação terá a função de alertas e lembretes na tarefa | Baixa |
 
 **Prioridade: Alta / Média / Baixa. 
 
