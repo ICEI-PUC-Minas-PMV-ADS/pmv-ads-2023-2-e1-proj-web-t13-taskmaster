@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 error.className = "error-name-project"
                 error.innerHTML = "* Título do projeto obrigatório"
 
-                errorNameProject.after(error)
+                errorNameProject.before(error)
             }            
         }
         
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 error.className = "error-card-title"
                 error.innerHTML = "* Título do card obrigatório"
 
-                errorCardTitle.after(error)
+                errorCardTitle.before(error)
             }
         }
 
