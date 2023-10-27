@@ -23,13 +23,17 @@ document.addEventListener("DOMContentLoaded", function(){
             element.value = ""
         }
 
-        try{
-            document.querySelector('.error-name-project').remove();
-            document.querySelector('.error-card-title').remove();
-        }
-        catch{
+        
+        var projectNameError = document.querySelector('.error-name-project')
+        var cardTitleError = document.querySelector('.error-card-title')
 
+        if(projectNameError){
+            projectNameError.remove()
         }
+        if(cardTitleError){
+            cardTitleError.remove()
+        }
+        
     }
 
     [addProjectButton, cancelProject, fade, modal].forEach(el => {

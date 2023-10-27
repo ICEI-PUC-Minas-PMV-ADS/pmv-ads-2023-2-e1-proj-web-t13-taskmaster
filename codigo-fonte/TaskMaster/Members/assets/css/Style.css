@@ -2,6 +2,7 @@ body {
   max-width: 100vw;
   max-height: 100vh;
   background: #bfd3f2;
+  overflow: hidden;
 }
 
 .container {
@@ -18,6 +19,11 @@ nav {
   margin: 5px;
   text-align: center;
   font-size: 1.5em;
+}
+
+.sidenav{
+  overflow: auto;
+  padding-right: 5px;
 }
 
 .content {
@@ -246,3 +252,45 @@ textarea#project-description{
   color: #f30022;
 }
 /*  */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+  }
+
+  *::-webkit-scrollbar-button {
+    width: 30px;
+    height: 30px;
+  }
+
+/* Media Query */
+@media (max-height: 890px){
+  .grid-template-areas {
+    grid-template-columns: 0.5fr 3fr;
+    grid-template-rows: 88vh;
+  }  
+
+  .modal{
+    top: 40%;
+  }
+}
+
+@media (max-height: 760px){
+  .grid-template-areas {
+    grid-template-columns: 0.5fr 3fr;
+    grid-template-rows: 86vh;
+  }  
+}
+
