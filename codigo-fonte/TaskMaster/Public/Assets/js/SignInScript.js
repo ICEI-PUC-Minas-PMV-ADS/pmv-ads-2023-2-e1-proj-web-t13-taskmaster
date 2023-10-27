@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //adiciona um ouvinte de evento de envio do formulário
     document.querySelector("#myForm").addEventListener("Submit", function(event){
-        if(ValidarFormulario()){
+        if(!ValidarFormulario()){
             event.preventDefault();
         }
     })
