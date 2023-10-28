@@ -114,20 +114,66 @@ document.addEventListener("DOMContentLoaded", function(){
             containerCount++
         }
     })
+
 })
 
-document.addEventListener("DOMContentLoaded", function () {
-    const addButton = document.querySelector('.add-button');
-    const cubeContainer = document.querySelector('.cube-container');
-    
-    addButton.addEventListener('click', function () {
-        const cube = document.createElement('div');
-        cube.className = 'cube';
-        cube.textContent = 'Cubo';
 
-        cubeContainer.appendChild(cube);
+
+
+function createCard(column) {
+    const cardText = window.prompt("Digite o título do cartão:");
+    if (cardText) {
+        const card = document.createElement("div");
+        card.className = "card1";
+        card.draggable = true;
+        card.innerText = cardText;
+
+        makeCardDraggable(card);
+
+        
+        column.appendChild(card);
+    }
+}
+document.querySelectorAll('.add-card-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const currentColumn = btn.closest('.column');
+        createCard(currentColumn);
     });
-
 });
 
+let draggedCard = null;
+
+function makeCardDraggable(card) {
+    card.addEventListener('dragstart', () => {
+        draggedCard = card;
+        setTimeout(() => {
+            card.style.display = 'none';
+        }, 0);
+    });
+
+    card.addEventListener('dragend', () => {
+        setTimeout(() => {
+            card.style.display = 'block';
+            draggedCard = null;
+        }, 0);
+    })
+}
+
+
+document.querySelectorAll('.column').forEach(column => {
+    column.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+
+    column.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (draggedCard) {
+            column.appendChild(draggedCard);
+        }
+    });
+});
+
+document.querySelectorAll('.card1').forEach(card => {
+    makeCardDraggable(card);
+});
 

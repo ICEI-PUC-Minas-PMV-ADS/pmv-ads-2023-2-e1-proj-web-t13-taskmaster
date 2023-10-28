@@ -84,25 +84,6 @@ nav {
   opacity: 0.5;
 }
 
-.column {
-  width: 20vw;
-  margin: 20px;
-  background-color: lightgray;
-  padding: 10px;
-  text-align: center;
-}
-
-.cube-container {
-  display: flex;
-  flex-direction: column; /* Altera a direção da flexbox para empilhar verticalmente */
-}
-
-.cube {
-  height: 50px;
-  background-color: skyblue;
-  margin: 5px;
-  display: inline-block;
-}
 
 /* Modal Style */
 .add-button {
@@ -294,3 +275,51 @@ textarea#project-description{
   }  
 }
 
+
+
+.board {
+  display: flex;
+  
+  padding: 10px;
+}
+.column {
+  width: 300px;
+  background-color: #f0f0f0;
+  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+}
+
+.column h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 21px;
+  text-align: left;
+}
+
+.card1 {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  text-align: left;
+  font-size: 19px;
+}
+
+.add-card-btn {
+  background-color: #e2e4e6;
+  border: none;
+  color: #5e6c84;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 15px 2px;
+  cursor: pointer;
+}
