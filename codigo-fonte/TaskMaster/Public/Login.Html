@@ -29,9 +29,9 @@
             <div id="logo">
                 <img src="Assets/Img/menino logo.png" alt="Logo do menino">
             </div>
-            <input type="text" placeholder="Email">
+            <input type="text" id="email" placeholder="Email">
             <br><br>
-            <input type="password" placeholder="password">
+            <input type="password" id="password" placeholder="Password">
             <br><br>
             <div class="senha">
                 <div id="remember">
@@ -44,13 +44,26 @@
                 </div>
             </div>
             <br>
-            <button class="botao-login"><a href="../Members/TaskMaster.html" class="texto-em-branco">Login</button>
+            <button class="botao-login" id="login-button">Login</button>
 
                     <p>Don’t have an Account ?<a href="../Public/SignIn.html"> Sign up </a></p>
             </div>
         </div>
     </main>
-
+    <script>
+        document.getElementById("login-button").onclick = function () {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+    
+            if (email === "" || password === "") {
+                alert("Por favor, preencha todos os campos.");
+            } else {
+                
+                
+                window.location.href = "http://127.0.0.1:5500/codigo-fonte/TaskMaster/Members/TaskMaster.html";
+            }
+        };
+    </script>
 </body>
 
 </html>
