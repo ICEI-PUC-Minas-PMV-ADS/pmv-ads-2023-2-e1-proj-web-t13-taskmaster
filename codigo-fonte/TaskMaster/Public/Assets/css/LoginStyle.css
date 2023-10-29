@@ -163,3 +163,6 @@ button:hover {
         padding: 3rem 2rem;
     }
 }
+.texto-em-branco {
+    color: white;
+}
