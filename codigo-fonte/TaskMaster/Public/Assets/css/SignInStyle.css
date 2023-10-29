@@ -43,10 +43,10 @@ input{
 
 button#signup{
     width: 90%;
-    height: 5vh;
+    height: 10%;
     background-color: #146C94;
     margin-left: 9px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-radius: 30px;
     font-family: 'Lilita One', sans-serif;
     font-size: 15px;
@@ -71,7 +71,7 @@ input.formbox::placeholder {
 
 #boy-in-chair{
     position: absolute;
-    width: 120px;
+    width: 45%;
     /* transform: translateX(60%) translateY(80%); */
     margin-top: 95px;
     margin-left: 80px;
@@ -80,8 +80,8 @@ input.formbox::placeholder {
 
 #figure_1{
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 45%;
+    height: 25%;
     border-radius: 120px;
     background-color: #d9d9d9;
     transform: translateX(-25%) translateY(-25%);
@@ -90,8 +90,8 @@ input.formbox::placeholder {
 
 #figure_2{
     position: absolute;
-    width: 132px;
-    height: 90px;
+    width: 47%;
+    height: 17.5%;
     border-radius: 48px;
     background-color: #BFBFBF;
     transform: translateX(140%) translateY(-15%) rotate(12.68deg);
@@ -125,4 +125,57 @@ input.formbox::placeholder {
     width: 20px;
     transform: translateY(25%);
     
+}
+#redireciona{
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+
+
+@media(max-width:480px){
+    body{
+        font-size: 1px;
+    }
+    .signup-box{
+        width: 60%;
+        height:100vh;
+    }
+    .textbox{
+        margin: 10px;
+        height: 10px;
+    }
+    #boy-in-chair{
+        width:60px;
+        margin-left: 110px;
+        margin-top: 30px
+    }
+    inside-box{
+        width: 30%
+    }
+    button#signup{
+        height: 30px;
+        margin-top: 15px;
+    }
+}
+
+@media(min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 16px; 
+    }
+    .signup-box {
+        width: 40%;
+        height: 100vh;
+    }
+    #boy-in-chair{
+        width: 90px;
+        margin-top: 60px;
+    }
+    button#signup{
+        margin-top: 0px;
+        transform: translateY(-30%);
+        height: 9vh;
+    }
+    input.formbox{
+        transform: translateY(-100%);
+    }
 }

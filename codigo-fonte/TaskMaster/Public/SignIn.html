@@ -42,13 +42,21 @@
                     <input type="password" id="confirm_password" class="formbox" autocomplete="current-password" placeholder="Confirm Password">
                 </div>
                 <div class="signup-button">
-                    <button type="submit" id="signup" value="Signup">
-                        Sign up
-                        <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
-                        alt="Signup Icon" class="image" id="signup-icon">
                     </button>
                 </div>
             </form>
+            <button type="submit" id="signup" value="Signup" formaction="../Public/Login.Html">
+                Sign up
+                <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
+                alt="Signup Icon" class="image" id="signup-icon">
+            </button>
+            <script>
+                //gambiarra enquanto meu script não funciona
+                document.getElementById("signup").addEventListener("click", function() {
+                    window.location.href = "../Public/Login.Html";
+                });
+            </script>
+            <p id="redireciona"> Já tem uma conta? <a href="../Public/Login.html" style="color: blue;">Logar</a></p>
         </div>
     </div>
 </body>
