@@ -123,6 +123,8 @@ nav {
   flex-direction: column;
   align-items: center;
   padding: 30px;
+  outline: 10px solid #bfd3f2;
+  border-radius: 15px;
 }
 
 .btn{
@@ -194,7 +196,7 @@ textarea#project-description{
 .modal-content input,
 .modal-content textarea{
   padding: 5px 10px;
-  border-radius: 15px;
+  border-radius: 5px;
   font-size: 1.2rem;
   border: 1px solid #a2cde9;
   border-color: #bbceff;
@@ -215,8 +217,12 @@ textarea#project-description{
 }
 
 .modal-content h1{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.modal-content h1 > span{
   padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .error-name-project{
