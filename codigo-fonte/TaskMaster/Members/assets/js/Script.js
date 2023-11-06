@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var cancelProject = document.getElementById('cancel')
     var errorNameProject = document.getElementById('project-name')
     var errorCardTitle = document.getElementById('project-card-title')
+    var listSettings = document.querySelector('.list-settings')
+
     var containerCount = 1
 
     const toggleModal = () =>{
@@ -85,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function(){
             secondRow.className = "description"
             secondRow.innerText = cardText1
             editButton.id = "edit-project"
+            editButton.onclick = toggleSettings
             editButton.innerHTML = "•••"
             descriptionProject.id = "p-description"
             descriptionProject.innerText = descriptionRow
@@ -119,9 +122,12 @@ document.addEventListener("DOMContentLoaded", function(){
             containerCount++
         }
     })
-
+    
+    function toggleSettings(){
+        listSettings.classList.toggle("hide")
+    }
+    
 })
-
 
 
 
