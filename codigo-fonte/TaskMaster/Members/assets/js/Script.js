@@ -81,14 +81,19 @@ document.addEventListener("DOMContentLoaded", function(){
         if(cardText1){
             const secondRow = document.createElement("div")
             const descriptionProject = document.createElement("p")
+            const editButton = document.createElement("div")
             secondRow.className = "description"
             secondRow.innerText = cardText1
+            editButton.id = "edit-project"
+            editButton.innerHTML = "•••"
             descriptionProject.id = "p-description"
             descriptionProject.innerText = descriptionRow
             
             secondRow.appendChild(descriptionProject)
 
             containerDiv.appendChild(secondRow)
+
+            secondRow.prepend(editButton)
 
             var cardTitleError = document.querySelector('.error-card-title')
             if(cardTitleError){

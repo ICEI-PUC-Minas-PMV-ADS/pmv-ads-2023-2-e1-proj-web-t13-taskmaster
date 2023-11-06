@@ -24,6 +24,7 @@ nav {
 .sidenav{
   overflow: auto;
   padding-right: 5px;
+  overflow-x: hidden;
 }
 
 .content {
@@ -73,10 +74,12 @@ nav {
   row-gap: 20px;
   padding: 5px;
   padding-left: 15px;
+  padding-right: 15px;
   height: auto;
   text-align: left;
   border-radius: 8px;
   word-wrap: break-word;
+  position: relative;
 }
 
 #p-description {
@@ -84,6 +87,18 @@ nav {
   opacity: 0.5;
 }
 
+#edit-project{
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  transform: rotate(180deg);
+  line-height: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 5px;
+  cursor: pointer;
+  opacity: 0.5;
+}
 
 /* Modal Style */
 .add-button {
