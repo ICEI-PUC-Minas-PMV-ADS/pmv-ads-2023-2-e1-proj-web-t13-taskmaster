@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         var isValid = true;
 
-        const cardText = document.getElementById('project-name').value
+        const cardText = document.getElementById('projectname').value
         if (cardText) {
             const card = document.createElement("div")
             card.className = "card"
