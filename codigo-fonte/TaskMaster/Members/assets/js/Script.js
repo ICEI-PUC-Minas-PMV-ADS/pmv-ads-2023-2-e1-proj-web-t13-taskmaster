@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const toggleModal = () =>{
         modal.classList.toggle("hide")
         fade.classList.toggle("hide") 
+        projectname.focus()
 
         var inputModal = document.querySelectorAll('input')
         var textDescrition = document.querySelectorAll('textarea')
