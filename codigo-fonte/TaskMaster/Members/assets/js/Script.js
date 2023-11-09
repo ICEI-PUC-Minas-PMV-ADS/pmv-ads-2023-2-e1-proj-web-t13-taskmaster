@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var modal = document.querySelector('.modal')
     var createProject = document.getElementById('create-project')
     var cancelProject = document.getElementById('cancel')
-    var errorNameProject = document.getElementById('project-name')
+    var errorNameProject = document.getElementById('projectname')
     var errorCardTitle = document.getElementById('project-card-title')
     var listSettings = document.querySelector('.list-settings')
 
