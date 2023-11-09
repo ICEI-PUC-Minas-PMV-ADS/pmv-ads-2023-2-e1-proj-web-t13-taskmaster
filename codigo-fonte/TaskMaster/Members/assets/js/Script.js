@@ -124,10 +124,31 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
     
-    function toggleSettings(){
+    function toggleSettings(e){
         listSettings.classList.toggle("hide")
+        const element = e.target
+        const rect = element.getBoundingClientRect();
+
+        let xPos = rect.left
+        let yPos = rect.top
+
+        listSettings.style.position = "absolute"
+        listSettings.style.left = (xPos - 95) + "px"
+        listSettings.style.top = yPos + "px"
     }
-    
+
+    document.addEventListener('click', function handleClickOutsideBox(event) {
+        if(event.target.id !== 'edit-project'){
+            const listSettings = document.getElementsByClassName('list-settings');
+            for(setting of listSettings) {
+                if(!setting.classList.contains("hide")){
+                    if (!setting.contains(event.target)) {
+                        setting.classList.toggle("hide");
+                    }
+                }
+            }
+        }
+      });
 })
 
 

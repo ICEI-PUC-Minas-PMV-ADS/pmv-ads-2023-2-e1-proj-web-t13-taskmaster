@@ -87,6 +87,8 @@ nav {
   opacity: 0.5;
 }
 
+/*  */
+
 #edit-project{
   position: absolute;
   right: 5px;
@@ -100,6 +102,15 @@ nav {
   opacity: 0.5;
 }
 
+.list-settings-project{
+  border: 0.1px solid;
+  padding: 2px 5px;
+  margin-left: 30px;
+}
+
+li{
+  list-style-type: none;
+}
 /* Modal Style */
 .add-button {
   width: 70%;
