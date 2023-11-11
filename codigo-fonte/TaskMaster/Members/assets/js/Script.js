@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var errorNameProject = document.getElementById('projectname')
     var errorCardTitle = document.getElementById('project-card-title')
     var listSettings = document.querySelector('.list-settings')
+    var deleteProject = document.getElementById('delete-project')
+    var editContext = null
 
     var containerCount = 1
 
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function(){
         const cardText = document.getElementById('projectname').value
         if (cardText) {
             const card = document.createElement("div")
-            card.className = "card"
+            card.className = "card shadow-v1"
             card.innerText = cardText;
 
             containerDiv.appendChild(card);
@@ -85,9 +87,11 @@ document.addEventListener("DOMContentLoaded", function(){
             const secondRow = document.createElement("div")
             const descriptionProject = document.createElement("p")
             const editButton = document.createElement("div")
-            secondRow.className = "description"
+            secondRow.className = "description shadow-v1"
             secondRow.innerText = cardText1
-            editButton.id = "edit-project"
+            editButton.className = "edit-project-button"
+            editButton.id = "edit-project" + containerCount
+            editButton.dataset.projectId = containerDiv.id
             editButton.onclick = toggleSettings
             editButton.innerHTML = "•••"
             descriptionProject.id = "p-description"
@@ -116,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
 
+        // Checa se as opções de titulo de projeto e subtítulo foram criadas antes de criar projeto
         if(isValid == true){
             projects.appendChild(containerDiv)
             toggleModal()
@@ -124,10 +129,12 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
     
+    // Função para exibir a lista de edição de projeto 
     function toggleSettings(e){
         listSettings.classList.toggle("hide")
         const element = e.target
         const rect = element.getBoundingClientRect();
+        editContext = element.dataset.projectId
 
         let xPos = rect.left
         let yPos = rect.top
@@ -135,10 +142,18 @@ document.addEventListener("DOMContentLoaded", function(){
         listSettings.style.position = "absolute"
         listSettings.style.left = (xPos - 95) + "px"
         listSettings.style.top = yPos + "px"
+        console.log(element)
     }
 
+    // Função para deletar o projeto
+    deleteProject.addEventListener("click", function(){
+        document.getElementById(editContext).remove()
+        listSettings.classList.toggle("hide")
+    })
+
+    // Função para fecha a lista de edição de projeto
     document.addEventListener('click', function handleClickOutsideBox(event) {
-        if(event.target.id !== 'edit-project'){
+        if(!event.target.classList.contains('edit-project-button')){
             const listSettings = document.getElementsByClassName('list-settings');
             for(setting of listSettings) {
                 if(!setting.classList.contains("hide")){
