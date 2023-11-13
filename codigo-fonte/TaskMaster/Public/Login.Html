@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <div class="signup-box"> 
-        <div class="upper-box"> 
+    <div class="signup-box">
+        <div class="upper-box">
             <div class="figure" id="figure_1"></div>
             <div class="figure" id="figure_2"></div>
             <div class="figure" id="figure_3"></div>
@@ -19,61 +19,63 @@
             <img src="Assets/Img/menino logo.png" alt="young man on chair with laptop" class="image" id="boy-in-chair">
         </div>
         <div class="inside-box">
-            <form action="../Public/Login.Html" method="post" id="myForm">
+            <form id="myForm">
                 <div id="my_email" class="textbox">
                     <label for="email" style="visibility: hidden;">Email:</label>
-                   
-                    <input type="email" id="email" class="formbox" autocomplete="email" placeholder="Email">
+
+                    <input type="email" id="IN-email" class="formbox" autocomplete="email" placeholder="Email">
                 </div>
                 <div id="my_password" class="textbox">
                     <label for="password" style="visibility: hidden;">Password:</label>
-                    <input type="password" id="password" class="formbox" autocomplete="current-password" placeholder="Password">
+                    <input type="password" id="IN-password" class="formbox" autocomplete="current-password"
+                        placeholder="Password">
                 </div>
-                
+
                 <div class="senha">
-                    
+
                     <div id="remember">
-                        
-                        <label><input type="checkbox"></label> 
-               
+
+                        <label><input type="checkbox"></label>
+
                         <div id="Remember-Me">Remember Me</div>
                     </div>
-    
+
                     <div id="criar-pass">
                         <br>
                         <a href="#"> Forgot Password ? </a>
                     </div>
                 </div>
-                
-            <button type="submit" id="signup" value="Signup" formaction="#">
-                Login
-                <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
-                    alt="Signup Icon" class="image" id="signup-icon">
-            </button>
-            
-            <div id="criar-conta">
-            <p> Don’t have an Account ?<a href="../Public/SignIn.html"> Sign up </a></p>
+
+                <button type="submit" id="signup" value="Signup" formaction="#" onclick="validateLogin()">
+                    Login
+                    <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
+                        alt="Signup Icon" class="image" id="signup-icon">
+                </button>
+
+                <div id="criar-conta">
+                    <p> Don’t have an Account ?<a href="../Public/SignIn.html"> Sign up </a></p>
+                </div>
         </div>
     </div>
-    </div>
-</form>
+    </form>
 
-<script>
-    function validateLogin() {
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
+    <script>
 
-        if (email === "admin@exemplo.com" && password === "admin") {
-            
-            window.location.href = "http://127.0.0.1:5501/codigo-fonte/TaskMaster/Members/TaskMaster.html";
-            return false; 
-        } else {
-            
+        async function validateLogin() {
+            let email = document.getElementById("IN-email").value;
+            let password = document.getElementById("IN-password").value
+
+            if (email === "admin@exemplo.com" && password === "admin") {
+                setTimeout (() => {
+                   window.location.href = "../Members/TaskMaster.html";
+               },150);
+                return;
+            }
+
             alert("Credenciais inválidas. Por favor, tente novamente.");
-            return false; 
         }
-    }
-</script>
+
+    </script>
 </body>
 
 </html>
