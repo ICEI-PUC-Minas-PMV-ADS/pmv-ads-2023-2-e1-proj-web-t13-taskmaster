@@ -213,6 +213,29 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+const addColumnDiv = document.getElementById("add-column");
+const board = document.querySelector(".board");
+
+addColumnDiv.addEventListener("click", function() {
+    const userInput = window.prompt("Digite o nome da coluna:");
+
+    if (userInput) {
+        const columnDiv = document.createElement("div");
+        columnDiv.className = "column";
+        columnDiv.innerHTML = `
+            <h2>${userInput}</h2>
+            <div class="cards-container"></div>
+            <div class="add-card-btn">+</div>
+        `;
+        
+        // Insere a nova coluna acima do botão 'Adicionar coluna'
+        board.insertBefore(columnDiv, addColumnDiv);
+
+        makeColumnSortable(columnDiv); // Torna a coluna e seus cartões arrastáveis
+    }
+});
+
+// Função para criar um novo cartão
 function createCard(column) {
     const cardText = window.prompt("Digite o título do cartão:");
     if (cardText) {
@@ -221,18 +244,19 @@ function createCard(column) {
         card.draggable = true;
         card.innerText = cardText;
 
-        makeCardDraggable(card);
-
-        
-        column.appendChild(card);
+        column.querySelector('.cards-container').appendChild(card);
+        makeCardDraggable(card); // Torna o novo cartão arrastável
     }
 }
-document.querySelectorAll('.add-card-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const currentColumn = btn.closest('.column');
-        createCard(currentColumn);
+
+function makeColumnSortable(column) {
+    column.addEventListener('click', function(event) {
+        const target = event.target;
+        if (target.classList.contains('add-card-btn')) {
+            createCard(column);
+        }
     });
-});
+}
 
 let draggedCard = null;
 

@@ -45,7 +45,7 @@ nav {
   grid-template-rows: 90vh;
 }
 
-#add-project {
+#add-project, .add-card-btn {
   background-color: #a9a3a3;
   margin-top: 30px;
   border-radius: 30px;
@@ -376,15 +376,12 @@ textarea#project-description{
   font-size: 19px;
 }
 
-.add-card-btn {
-  background-color: #e2e4e6;
-  border: none;
-  color: #5e6c84;
-  padding: 10px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 15px 2px;
+#add-column {
+  background-color: #a9a3a3;
+  margin-bottom: 45%;
+  width: 300px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: white;
   cursor: pointer;
 }
