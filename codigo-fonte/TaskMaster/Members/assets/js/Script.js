@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var errorCardTitle = document.getElementById('project-card-title')
     var listSettings = document.querySelector('.list-settings')
     var deleteProject = document.getElementById('delete-project')
+    var changeProject = document.getElementById('change-project')
     var editContext = null
 
     var containerCount = 1
@@ -20,12 +21,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
         var inputModal = document.querySelectorAll('input')
         var textDescrition = document.querySelectorAll('textarea')
-
-        for(var element of inputModal){
-            element.value = ""
-        }
-        for(var element of textDescrition){
-            element.value = ""
+        
+        if(editContext == null){
+            for(var element of inputModal){
+                element.value = ""
+            }
+            for(var element of textDescrition){
+                element.value = ""
+            }
         }
 
         
@@ -42,7 +45,12 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     [addProjectButton, cancelProject, fade, modal].forEach(el => {
-        el.addEventListener("click", () => toggleModal())
+        el.addEventListener("click", function(){
+            var projecName1 = document.getElementById('projectname')
+            projecName1.removeAttribute("value")
+
+            toggleModal()
+        })
     });
     
     modal.querySelector('.modal-content').addEventListener('click', function(event) {
@@ -94,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function(){
             editButton.dataset.projectId = containerDiv.id
             editButton.onclick = toggleSettings
             editButton.innerHTML = "•••"
-            descriptionProject.id = "p-description"
+            descriptionProject.className = "p-description"
             descriptionProject.innerText = descriptionRow
             
             secondRow.appendChild(descriptionProject)
@@ -143,12 +151,49 @@ document.addEventListener("DOMContentLoaded", function(){
         listSettings.style.left = (xPos - 95) + "px"
         listSettings.style.top = yPos + "px"
         console.log(element)
+        console.log(editContext)
     }
 
     // Função para deletar o projeto
     deleteProject.addEventListener("click", function(){
         document.getElementById(editContext).remove()
         listSettings.classList.toggle("hide")
+        editContext = null
+    })
+
+    // Função para editar projeto
+    changeProject.addEventListener("click", function(){
+        var informationProject = document.getElementById(editContext)
+        var cardText = informationProject.getElementsByClassName('card')[0].textContent
+        var cardText1 = informationProject.getElementsByClassName('description')[0].textContent.replace('•••', '')
+        var descriptionRow = informationProject.getElementsByClassName('p-description')[0].textContent
+
+        if(descriptionRow.length > 0){
+            // Pega o valor do tamanho de <p> e subtrai para adicionar só o 'project-card-title'
+            var descriptionLength = descriptionRow.length
+            var cardTextUse = cardText1.slice(0, -descriptionLength)
+
+            var projectName = document.getElementById('projectname')
+            var projectCardTtile = document.getElementById('project-card-title')
+            var projectDescription = document.getElementById('project-description')
+            projectName.value += cardText
+            projectCardTtile.value += cardTextUse
+            projectDescription.value += descriptionRow
+            toggleModal()
+            listSettings.classList.toggle("hide")
+            editContext = null    
+        }
+        else{
+            var projectName = document.getElementById('projectname')
+            var projectCardTtile = document.getElementById('project-card-title')
+
+            projectName.value += cardText
+            projectCardTtile.value += cardText1
+
+            toggleModal()
+            listSettings.classList.toggle("hide")
+            editContext = null    
+        }
     })
 
     // Função para fecha a lista de edição de projeto

@@ -90,7 +90,7 @@ nav {
   position: relative;
 }
 
-#p-description {
+.p-description {
   margin-top: 10px;
   opacity: 0.5;
 }
@@ -130,6 +130,19 @@ nav {
   margin-top: 5px;
   padding-top: 5px;
 }
+.list-settings-project #delete-project:hover{
+  font-weight: bold;
+}
+
+.list-settings-project #change-project{
+  cursor: pointer;
+}
+
+.list-settings-project #change-project:hover{
+  font-weight: bold;
+}
+
+
 
 /* Modal Style */
 .add-button {
