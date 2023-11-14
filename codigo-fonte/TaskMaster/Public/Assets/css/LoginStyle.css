@@ -1,8 +1,7 @@
 body {
     margin: 0;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+    display: grid;
+    place-items: center; 
     min-height: 100vh; 
     background-color: #f2f2f2;
 }
@@ -12,6 +11,7 @@ body {
     background-color: #ffffff; 
     border-radius: 20px; 
     width: 20%; 
+    max-width: 300px;
     height: 80vh; 
     overflow: hidden;
 }
@@ -20,15 +20,13 @@ body {
     background-color: #d8d8d8;
     border-radius: 30px 30px 20px 20px;
     width: 100%;
-    height: 50vh;
-    position: absolute; 
-    bottom: 0;
+    height: 100%;
+    margin-top: 211px;
     box-shadow: 0px -3px 3px #B2B2B2;
-    padding-left: 4.5px ;
-    
+    padding-left: 4.5px;
 }
 
-.textbox{
+.textbox {
     width: 91%;
     height: 7vh;
     margin: 10px;
@@ -37,7 +35,7 @@ body {
     background: transparent;
 }
 
-input{
+input {
     background-color: transparent;
     width: 96%;
     transform: translateY(60%);
@@ -45,7 +43,7 @@ input{
     outline: 0;
 }
 
-button#signup{
+button#signup {
     width: 90%;
     height: 10%;
     background-color: #146C94;
@@ -60,34 +58,35 @@ button#signup{
     cursor: pointer;
     box-shadow: 0px 2.5px 2.5px rgb(0, 0, 0, 0.25);
     padding-bottom: 10px;
-    
 }
+
 .senha {
     display: flex;
     justify-content: space-around;
-    
-    
 }
-#criar-conta{
+
+#criar-conta {
     margin-left: 25px;
     margin-bottom: 15px;
 }
 
-#remember{
+#remember {
     display: flex;     
     font-size: 12px;
     margin-top: 5px;
     margin-left: -20px;
-    
 }
-#Remember-Me{
+
+#Remember-Me {
     margin-top: 10px;
     margin-left: 5px;
 }
-#criar-pass{
+
+#criar-pass {
     font-size: 12px;
 }
-input.formbox{
+
+input.formbox {
     border-bottom: 1px solid #000;
     font-family: 'Nunito', sans-serif;
     color: #000;
@@ -97,15 +96,12 @@ input.formbox::placeholder {
     color: #514A4A;
 }
 
-#boy-in-chair{
-    position: absolute;
-    width: 60%;
-    margin-top: 95px;
-    margin-left: 60px;
-    z-index: 1;
+
+#boy-in-chair {
+    width: 80%;
 }
 
-#figure_1{
+#figure_1 {
     position: absolute;
     width: 45%;
     height: 25%;
@@ -115,7 +111,7 @@ input.formbox::placeholder {
     box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.25);
 }
 
-#figure_2{
+#figure_2 {
     position: absolute;
     width: 47%;
     height: 17.5%;
@@ -125,7 +121,7 @@ input.formbox::placeholder {
     box-shadow: 0px 2.5px 2.5px rgb(0, 0, 0, 0.2);
 }
 
-#figure_3{
+#figure_3 {
     position: absolute;
     width: 260px;
     height: 120px;
@@ -134,7 +130,8 @@ input.formbox::placeholder {
     transform: translateX(-1%) translateY(-40%) rotate(11.51deg);
     box-shadow: 0px 2.5px 2.5px rgb(0, 0, 0, 0.25);
 }
-#figure_4{
+
+#figure_4 {
     position: absolute;
     width: 260px;
     height: 120px;
@@ -144,7 +141,7 @@ input.formbox::placeholder {
     box-shadow: 0px 2.5px 2.5px rgb(0, 0, 0, 0.25);
 }
 
-#signup-text{
+#signup-text {
     position: absolute;
     width: 140px;
     height: 60px;
@@ -155,68 +152,18 @@ input.formbox::placeholder {
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
     cursor: default;
 }
-
-#signup-icon{
+.menino-logo{
+    position: absolute;
+    margin-top: 85px;
+    text-align: center;
+}
+#signup-icon {
     height: 20px;
     width: 20px;
     transform: translateY(25%);
-    
 }
-#redireciona{
+
+#redireciona {
     margin-left: 25px;
     margin-bottom: 15px;
-    
-}
-
-
-@media(max-width:480px){
-    body{
-        font-size: 1px;
-    }
-    .signup-box{
-        width: 60%;
-        height:100vh;
-    }
-    .textbox{
-        margin: 10px;
-        height: 10px;
-    }
-    #boy-in-chair{
-        width:60px;
-        margin-left: 110px;
-        margin-top: 30px
-    }
-    inside-box{
-        width: 30%
-    }
-    button#signup{
-        height: 30px;
-        margin-top: 15px;
-    }
-}
-
-@media(min-width: 481px) and (max-width: 768px) {
-    body {
-        font-size: 16px; 
-    }
-    .signup-box {
-        width: 40%;
-        height: 100vh;
-    }
-    #boy-in-chair{
-        width: 90px;
-        margin-top: 60px;
-    }
-    button#signup{
-        margin-top: 0px;
-        transform: translateY(-30%);
-        height: 9vh;
-    }
-    input.formbox{
-        transform: translateY(-100%);
-    }
-   .conteiner{
-    display: flex;
-    justify-content: space-around;
-   }
 }
