@@ -213,20 +213,30 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+
+const addColumnDiv = document.getElementById("add-column");
+const board = document.querySelector(".board");
+var countColumn = 1
+var countCard = 1
+
 function makeColumnInteractive(column) {
     // Função para criar um novo cartão
     function createCard() {
         const cardText = window.prompt("Digite o título do cartão:");
         if (cardText) {
             const card = document.createElement("div");
-            card.className = "card1";
+            card.className = "card";
+            card.id = "card" + countCard
             card.draggable = true;
             card.innerText = cardText;
 
             column.querySelector('.cards-container').appendChild(card);
             makeCardDraggable(card); // Torna o novo cartão arrastável
+
+            countCard ++
         }
     }
+
 
     // Adiciona um cartão quando o botão é clicado
     column.addEventListener('click', function(event) {
@@ -237,33 +247,25 @@ function makeColumnInteractive(column) {
     });
 }
 
-const addColumnDiv = document.getElementById("add-column");
-const columns = document.getElementById("columns");
-const board = document.querySelector(".board");
-
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:");
 
     if (userInput) {
         const columnDiv = document.createElement("div");
         columnDiv.className = "column";
+        columnDiv.id = "column" + countColumn;
         columnDiv.innerHTML = `
             <h2>${userInput}</h2>
             <div class="cards-container"></div>
             <div class="add-card-btn">+</div>
         `;
+        
+        // Insere a nova coluna acima do botão 'Adicionar coluna'
+        board.insertBefore(columnDiv, addColumnDiv);
 
-        columns.appendChild(columnDiv);
+        makeColumnInteractive(columnDiv); // Torna a coluna e seus cartões arrastáveis
 
-        // Move o botão add-column para a próxima posição dentro do board
-        const nextSibling = addColumnDiv.nextElementSibling;
-        board.insertBefore(addColumnDiv, nextSibling);
-
-        // Redimensionamento de columns para acomodar as novas colunas
-        columns.style.display = "flex";
-        columns.style.flexWrap = "wrap";
-
-        makeColumnInteractive(columnDiv);
+        countColumn ++
     }
 });
 
