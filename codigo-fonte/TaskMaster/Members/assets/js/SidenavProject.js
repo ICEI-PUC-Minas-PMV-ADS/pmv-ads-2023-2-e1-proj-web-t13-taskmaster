@@ -215,18 +215,61 @@ document.addEventListener("DOMContentLoaded", function(){
         // Função do botão para salvar alteração no projeto
         function saveProject(){
             var projectName = document.getElementById('projectname').value
+            if(projectName){
+                var textCard = informationProject.getElementsByClassName('card')[0]
+
+                var projectNameError = document.querySelector('.error-name-project')
+                if (projectNameError){
+                    projectNameError.remove();
+                }
+            }
+            else{
+                isValid = false;
+                var isProjectNameValid = document.querySelector('.error-name-project')
+                if(isProjectNameValid == null){
+                    const error = document.createElement("div") 
+                    error.className = "error-name-project"
+                    error.innerHTML = "* Título do projeto obrigatório"
+    
+                    errorNameProject.before(error)
+                }            
+            }
+
             var projectCardTtile = document.getElementById('project-card-title').value
-            var projectDescription = document.getElementById('project-description').value
+            if(projectCardTtile){
+                var textCard1 = informationProject.getElementsByClassName('subtitle')[0]
+    
+                var cardTitleError = document.querySelector('.error-card-title')
+                if(cardTitleError){
+                    cardTitleError.remove()
+                }
+            }
+            else{
+                isValid = false;
+                var isCardTitleValid = document.querySelector('.error-card-title')
+                if(isCardTitleValid == null){
+                    const error = document.createElement("div")
+                    error.className = "error-card-title"
+                    error.innerHTML = "* Título do card obrigatório"
 
-            var textCard = informationProject.getElementsByClassName('card')[0]
-            var textCard1 = informationProject.getElementsByClassName('subtitle')[0]
-            var textDescrition = informationProject.getElementsByClassName('p-description')[0]
+                    errorCardTitle.before(error)
+                }
+            }
 
-            textCard.textContent = projectName
-            textCard1.textContent = projectCardTtile
-            textDescrition.textContent = projectDescription
+            // Checa se teve alteração nos dois valores para poder validar o save
+            if(projectName && projectCardTtile){
+                isValid = true
+            }
 
-            toggleModal()
+            if(isValid == true){
+                var projectDescription = document.getElementById('project-description').value
+                var textDescrition = informationProject.getElementsByClassName('p-description')[0]
+                textCard.textContent = projectName
+                textCard1.textContent = projectCardTtile
+                textDescrition.textContent = projectDescription
+                
+                toggleModal()
+            }
         }
     })
 
