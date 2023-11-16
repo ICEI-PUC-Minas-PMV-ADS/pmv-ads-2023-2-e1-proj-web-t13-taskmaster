@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var projects = document.getElementById('projects' )
     var fade = document.querySelector('#fade')
     var modal = document.querySelector('.modal')
-    var createProject = document.getElementById('create-project')
+    var createProjectButton = document.getElementById('create-project')
+    var saveProjectButton = document.getElementById('save-project')
     var cancelProject = document.getElementById('cancel')
     var errorNameProject = document.getElementById('projectname')
     var errorCardTitle = document.getElementById('project-card-title')
@@ -46,9 +47,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     [addProjectButton, cancelProject, fade, modal].forEach(el => {
         el.addEventListener("click", function(){
-            var projecName1 = document.getElementById('projectname')
-            projecName1.removeAttribute("value")
-
+            if(createProjectButton.style.display == "none"){
+                createProjectButton.style.display = "block"
+            }
+            saveProjectButton.style.display = "none"
             toggleModal()
         })
     });
@@ -57,7 +59,10 @@ document.addEventListener("DOMContentLoaded", function(){
         event.stopPropagation();
     });
 
-    createProject.addEventListener("click", function(){
+    createProjectButton.onclick = createProject
+    // saveProjectButton.onclick = saveProject
+
+    function createProject(){
         const containerDiv = document.createElement("div")
         containerDiv.className = "project" 
         containerDiv.id = "project-" + containerCount
@@ -135,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
             containerCount++
         }
-    })
+    }
     
     // Função para exibir a lista de edição de projeto 
     function toggleSettings(e){
@@ -167,6 +172,9 @@ document.addEventListener("DOMContentLoaded", function(){
         var cardText = informationProject.getElementsByClassName('card')[0].textContent
         var cardText1 = informationProject.getElementsByClassName('description')[0].textContent.replace('•••', '')
         var descriptionRow = informationProject.getElementsByClassName('p-description')[0].textContent
+
+        createProjectButton.style.display = "none"
+        saveProjectButton.style.display = "block"
 
         if(descriptionRow.length > 0){
             // Pega o valor do tamanho de <p> e subtrai para adicionar só o 'project-card-title'
