@@ -101,7 +101,7 @@ input.formbox::placeholder {
 
 
 #boy-in-chair {
-    width: 80%;
+    width: 110%;
 }
 
 #figure_1 {
@@ -157,7 +157,8 @@ input.formbox::placeholder {
 }
 .menino-logo{
     position: absolute;
-    margin-top: 85px;
+    margin-top: 100px;
+    margin-left: 8px;
     text-align: center;
 }
 #signup-icon {
@@ -170,3 +171,6 @@ input.formbox::placeholder {
     margin-left: 25px;
     margin-bottom: 15px;
 }
+    #myForm{
+        margin-top: 300px;
+    }
