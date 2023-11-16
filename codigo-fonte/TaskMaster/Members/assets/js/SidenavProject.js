@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var containerCount = 1
 
+    // Função para exibir modal de criação de card 
     const toggleModal = () =>{
         modal.classList.toggle("hide")
         fade.classList.toggle("hide") 
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     [addProjectButton, cancelProject, fade, modal].forEach(el => {
         el.addEventListener("click", function(){
+            // Exibi o botão de criar projeto no modal
             if(createProjectButton.style.display == "none"){
                 createProjectButton.style.display = "block"
             }
@@ -60,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     createProjectButton.onclick = createProject
-    // saveProjectButton.onclick = saveProject
 
+    // Função de criar card de projeto
     function createProject(){
         const containerDiv = document.createElement("div")
         containerDiv.className = "project" 
@@ -98,10 +100,12 @@ document.addEventListener("DOMContentLoaded", function(){
         const descriptionRow = document.getElementById('project-description').value
         if(cardText1){
             const secondRow = document.createElement("div")
+            const description = document.createElement("div")
             const descriptionProject = document.createElement("p")
             const editButton = document.createElement("div")
             secondRow.className = "description shadow-v1"
-            secondRow.innerText = cardText1
+            description.className = "subtitle"
+            description.innerText = cardText1
             editButton.className = "edit-project-button"
             editButton.id = "edit-project" + containerCount
             editButton.dataset.projectId = containerDiv.id
@@ -110,6 +114,8 @@ document.addEventListener("DOMContentLoaded", function(){
             descriptionProject.className = "p-description"
             descriptionProject.innerText = descriptionRow
             
+            secondRow.appendChild(description)
+
             secondRow.appendChild(descriptionProject)
 
             containerDiv.appendChild(secondRow)
@@ -166,13 +172,14 @@ document.addEventListener("DOMContentLoaded", function(){
         editContext = null
     })
 
-    // Função para editar projeto
+    // Função de seleção para editar projeto
     changeProject.addEventListener("click", function(){
         var informationProject = document.getElementById(editContext)
         var cardText = informationProject.getElementsByClassName('card')[0].textContent
         var cardText1 = informationProject.getElementsByClassName('description')[0].textContent.replace('•••', '')
         var descriptionRow = informationProject.getElementsByClassName('p-description')[0].textContent
 
+        // exibi o botão de salvar alteração de projeto
         createProjectButton.style.display = "none"
         saveProjectButton.style.display = "block"
 
@@ -201,6 +208,25 @@ document.addEventListener("DOMContentLoaded", function(){
             toggleModal()
             listSettings.classList.toggle("hide")
             editContext = null    
+        }
+
+        saveProjectButton.onclick = saveProject
+        
+        // Função do botão para salvar alteração no projeto
+        function saveProject(){
+            var projectName = document.getElementById('projectname').value
+            var projectCardTtile = document.getElementById('project-card-title').value
+            var projectDescription = document.getElementById('project-description').value
+
+            var textCard = informationProject.getElementsByClassName('card')[0]
+            var textCard1 = informationProject.getElementsByClassName('subtitle')[0]
+            var textDescrition = informationProject.getElementsByClassName('p-description')[0]
+
+            textCard.textContent = projectName
+            textCard1.textContent = projectCardTtile
+            textDescrition.textContent = projectDescription
+
+            toggleModal()
         }
     })
 
