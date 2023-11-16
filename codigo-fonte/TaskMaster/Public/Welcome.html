@@ -1,62 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>TaskMaster</title>
-    <link rel="stylesheet" href="Assets/css/WelcomeStyle.css">
-    <head>
-    <body>
-        <div class="container">
-            <div class="box">
-            </div>
-    </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Public/Assets/css/WelcomeStyle.css">
+    <title>Welcome</title>
 </head>
-</html>
-<style>
-    body {
-        background-color: #F6F1F1;
-        align-items: center;
-    }
-
-    h1 {
-        color: black;
-    }
-
-    .center {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
-</style>
-
-<head></head>
 
 <body>
-    <div id="body" <p><img src="Assets/Img/bonecos.png" alt="Welcome" class="justify" width="300px"
-            height="300px">
-        </p>
-        <h1> Olá!</h1>
-        <h2> Seja bem vindo ao TaskMaster! </h2>
-        <p>O TaskMaster é sua mais nova ferramenta de gerenciamento de atividades. Ela irá lhe auxiliar no planejamento
-            e gestão das tarefas diárias, tonando seu dia mais produtivo e sua rotina mais leve! É um prazer poder fazer
-            parte do seu dia-a-dia!
-        </p>
-        <p>
-            <button id="btnCriar uma conta" onclick="btnSingInClicked()">
-                Criar uma conta
-            </button>
-        </p>
-        <p>
-            <button id="btnLogin" onclick="btnLoginClicked()">
-                Login
-            </button>
-        </p>
-    </div>
-    <script>
+    <div class="signup-box">
 
-    </script>
-    <script src="Assets/js/WelcomeScript.js"></script>
+        <div class="upper-box">
+
+        </div>
+        <div class="menino-logo">
+            <img src="../Public/Assets/Img/bonecos.png" alt="young man on chair with laptop" class="image" id="boy-in-chair">
+        </div>
+        <div class="textogeral">
+            </p>
+            <h1> Olá!</h1>
+            <h2> Seja bem vindo ao TaskMaster! </h2>
+            <p>O TaskMaster é sua mais nova ferramenta de gerenciamento de atividades. Ela irá lhe auxiliar no
+                planejamento
+                e gestão das tarefas diárias, tonando seu dia mais produtivo e sua rotina mais leve! É um prazer poder
+                fazer
+                parte do seu dia-a-dia!
+            </p>
+            <p>
+       
+            <div class="botoes">
+                <button type="submit" id="signup" value="Signup" formaction="#" onclick="validateLogin()">
+                    Criar uma conta
+                    <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
+                        alt="Signup Icon" class="image" id="signup-icon">
+                </button>
+
+                <button type="submit" id="login1" value="Signup" formaction="#" onclick="validateLogin()">
+                    Login
+                    <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
+                        alt="Signup Icon" class="image" id="signup-icon">
+                </button>
+
+            </div>
+        </div>
+    </div>
+    </form>
+
+
 </body>
 
 </html>
