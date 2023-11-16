@@ -219,6 +219,7 @@ const board = document.querySelector(".board");
 var countColumn = 1
 var countCard = 1
 
+
 function makeColumnInteractive(column) {
     // Função para criar um novo cartão
     function createCard() {
@@ -236,7 +237,6 @@ function makeColumnInteractive(column) {
             countCard ++
         }
     }
-
 
     // Adiciona um cartão quando o botão é clicado
     column.addEventListener('click', function(event) {
@@ -256,6 +256,7 @@ addColumnDiv.addEventListener("click", function() {
         columnDiv.id = "column" + countColumn;
         columnDiv.innerHTML = `
             <h2>${userInput}</h2>
+            <button class="edit-column-button" id="edit-column${countColumn}">•••</button>
             <div class="cards-container"></div>
             <div class="add-card-btn">+</div>
         `;
