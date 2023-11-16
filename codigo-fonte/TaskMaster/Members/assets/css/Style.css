@@ -33,6 +33,7 @@ nav {
   overflow: auto;
   padding-right: 5px;
   overflow-x: hidden;
+  min-width: 253px;
 }
 
 .content {
@@ -203,6 +204,10 @@ nav {
   margin-left: 220.9px;
 }
 
+#save-project{
+  margin-left: 220.9px;
+}
+
 #fade{
   position: fixed;
   top: 0;
@@ -273,6 +278,10 @@ textarea#project-description{
 
 .btn#cancel:hover{
   background-color: #f30022;
+}
+
+.btn#save-project:hover{
+  background-color: #00ce4a ;
 }
 
 .modal-content h1{
