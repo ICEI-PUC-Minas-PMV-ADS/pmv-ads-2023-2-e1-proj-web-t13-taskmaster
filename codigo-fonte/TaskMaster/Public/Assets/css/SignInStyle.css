@@ -11,8 +11,8 @@
     background-color: #ffffff; 
     border-radius: 20px; 
     width: 20%; 
-    max-width: 300px;
     height: 80vh; 
+    max-width: 300px;
     overflow: hidden;
     max-height: 614px;
     min-height: 614px;
@@ -36,9 +36,9 @@
     
 }
 
-.textbox{
+.textbox {
     width: 91%;
-    height: 7vh;
+    height: 100%;
     margin: 10px;
     background-color: #BFBFBF;
 }
@@ -50,7 +50,9 @@ input{
     border: none;
     outline: 0; 
 }
-
+#boy-in-chair {
+    width: 85%;
+}
 button#signup{
     width: 90%;
     height: 10%;
@@ -126,6 +128,7 @@ input.formbox::placeholder {
     margin-top: 120px;
     margin-left: 60px;
     text-align: center;
+    z-index: 1;
 }
 #signup-icon{
     height: 20px;
