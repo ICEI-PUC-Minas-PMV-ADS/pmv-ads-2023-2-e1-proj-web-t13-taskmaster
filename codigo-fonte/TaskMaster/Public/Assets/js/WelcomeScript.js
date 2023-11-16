@@ -17,12 +17,12 @@ function eventos() {
   
   function elementos() {}
   
-  function btnSingInClicked() {
+  function validateLogin() {
     console.log("Botão singIn foi clicado!");
     window.location.href = "SignIn.html";
   }
   
-  function btnLoginClicked() {
+  function validateLogin1() {
     console.log("Botão Login foi clicado!");
     window.location.href = "Login.Html";
   }

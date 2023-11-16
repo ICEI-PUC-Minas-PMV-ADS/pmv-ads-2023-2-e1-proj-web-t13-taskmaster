@@ -14,6 +14,9 @@ body {
     width: 20%; /* Define a largura da box como 20% da largura da tela */
     height: 80vh; /* Define a altura como 80% da altura da tela */
     overflow: hidden;
+    max-height: 614px;
+    min-height: 614px;
+    min-width: 300px
 }
 
 .inside-box {
