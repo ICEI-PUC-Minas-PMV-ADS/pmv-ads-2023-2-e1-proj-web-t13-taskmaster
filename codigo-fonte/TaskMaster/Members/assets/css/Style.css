@@ -33,6 +33,7 @@ nav {
   overflow: auto;
   padding-right: 5px;
   overflow-x: hidden;
+  min-width: 253px;
 }
 
 .content {
@@ -199,10 +200,6 @@ nav {
   font-weight: bold;
 }
 
-#create-project{
-  margin-left: 220.9px;
-}
-
 #fade{
   position: fixed;
   top: 0;
@@ -230,6 +227,7 @@ nav {
 #creat-modal{
   width: 100%;
   justify-content: space-between;
+  display: flex;
 }
 
 input#projectname{
@@ -273,6 +271,10 @@ textarea#project-description{
 
 .btn#cancel:hover{
   background-color: #f30022;
+}
+
+.btn#save-project:hover{
+  background-color: #00ce4a ;
 }
 
 .modal-content h1{
@@ -358,11 +360,12 @@ textarea#project-description{
   height: 100%;
 }
 
-.column h2 {
+.column h2{
   margin: 0;
   padding: 0;
   font-size: 21px;
   text-align: left;
+  width: 50px;
 }
 
 .card1 {
@@ -385,4 +388,18 @@ textarea#project-description{
   font-weight: bold;
   color: white;
   cursor: pointer;
+}
+
+.edit-column-button{
+  position: relative;
+  margin-left: 280px;
+  bottom: 40px;
+  transform: rotate(90deg);
+  border: none;
+  line-height: 0px;
+  font-size: 25px;
+  font-weight: bold;
+  width: 5px;
+  cursor: pointer;
+  opacity: 0.5;
 }
