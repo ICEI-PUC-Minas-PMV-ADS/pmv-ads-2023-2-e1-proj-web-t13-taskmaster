@@ -167,6 +167,7 @@ function toggleSettings(e){
 // Função para deletar o projeto
 deleteProject.addEventListener("click", function(){
     document.getElementById(editContext).remove()
+    removeProjectList(editContext)
     listSettings.classList.toggle("hide")
     editContext = null
 })
