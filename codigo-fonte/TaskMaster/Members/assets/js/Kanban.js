@@ -34,6 +34,14 @@ function makeColumnInteractive(column) {
     });
 }
 
+function openModal() {
+    const modal = document.getElementById('exampleModal');
+    if (modal) {
+        const modalInstance = new bootstrap.Modal(modal);
+        modalInstance.show(); // Abre o modal
+    }
+}
+
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:");
 
@@ -45,13 +53,13 @@ addColumnDiv.addEventListener("click", function() {
             <h2>${userInput}</h2>
             <button class="edit-column-button" id="edit-column${countColumn}">•••</button>
             <div class="cards-container"></div>
-            <div class="add-card-btn">+</div>
+            <div class="add-card-btn" onclick="openModal()">+</div>
         `;
         
         // Insere a nova coluna acima do botão 'Adicionar coluna'
         board.insertBefore(columnDiv, addColumnDiv);
 
-        makeColumnInteractive(columnDiv); // Torna a coluna e seus cartões arrastáveis
+        // makeColumnInteractive(columnDiv); // Torna a coluna e seus cartões arrastáveis
 
         countColumn ++
     }
