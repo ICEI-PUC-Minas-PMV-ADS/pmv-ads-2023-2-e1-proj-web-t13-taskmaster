@@ -12,15 +12,19 @@ var deleteProject = document.getElementById('delete-project')
 var changeProject = document.getElementById('change-project')
 var editContext = null
 
-// Função para exibir modal de criação de card 
+// Função para exibir modal de criação de card
 const toggleModal = () =>{
     modal.classList.toggle("hide")
-    fade.classList.toggle("hide") 
+    fade.classList.toggle("hide")
     projectname.focus()
+
+    if(modal.classList.contains("hide")){
+        editContext = null
+    }
 
     var inputModal = document.querySelectorAll('input')
     var textDescrition = document.querySelectorAll('textarea')
-    
+
     if(editContext == null){
         for(var element of inputModal){
             element.value = ""
@@ -30,7 +34,6 @@ const toggleModal = () =>{
         }
     }
 
-    
     var projectNameError = document.querySelector('.error-name-project')
     var cardTitleError = document.querySelector('.error-card-title')
 
@@ -40,7 +43,6 @@ const toggleModal = () =>{
     if(cardTitleError){
         cardTitleError.remove()
     }
-    
 }
 
 [addProjectButton, cancelProject, fade, modal].forEach(el => {
@@ -65,9 +67,8 @@ function createProject(){
     var projectId = generateId()
 
     const containerDiv = document.createElement("div")
-    containerDiv.className = "project" 
+    containerDiv.className = "project"
     containerDiv.id = "project-" + projectId
-
 
     var isValid = true;
 
@@ -88,14 +89,14 @@ function createProject(){
         isValid = false;
         var isProjectNameValid = document.querySelector('.error-name-project')
         if(isProjectNameValid == null){
-            const error = document.createElement("div") 
+            const error = document.createElement("div")
             error.className = "error-name-project"
             error.innerHTML = "* Título do projeto obrigatório"
 
             errorNameProject.before(error)
-        }            
+        }
     }
-    
+
     const cardText1 = document.getElementById('project-card-title').value
     const descriptionRow = document.getElementById('project-description').value
     if(cardText1){
@@ -113,7 +114,7 @@ function createProject(){
         editButton.innerHTML = "•••"
         descriptionProject.className = "p-description"
         descriptionProject.innerText = descriptionRow
-        
+
         secondRow.appendChild(description)
 
         secondRow.appendChild(descriptionProject)
@@ -147,7 +148,7 @@ function createProject(){
     }
 }
 
-// Função para exibir a lista de edição de projeto 
+// Função para exibir a lista de edição de projeto
 function toggleSettings(e){
     listSettings.classList.toggle("hide")
     const element = e.target
@@ -176,42 +177,24 @@ deleteProject.addEventListener("click", function(){
 changeProject.addEventListener("click", function(){
     var informationProject = document.getElementById(editContext)
     var cardText = informationProject.getElementsByClassName('card')[0].textContent
-    var cardText1 = informationProject.getElementsByClassName('description')[0].textContent.replace('•••', '')
+    var cardText1 = informationProject.getElementsByClassName('subtitle')[0].textContent
     var descriptionRow = informationProject.getElementsByClassName('p-description')[0].textContent
 
     // exibi o botão de salvar alteração de projeto
     createProjectButton.style.display = "none"
     saveProjectButton.style.display = "block"
 
-    if(descriptionRow.length > 0){
-        // Pega o valor do tamanho de <p> e subtrai para adicionar só o 'project-card-title'
-        var descriptionLength = descriptionRow.length
-        var cardTextUse = cardText1.slice(0, -descriptionLength)
-
-        var projectName = document.getElementById('projectname')
-        var projectCardTtile = document.getElementById('project-card-title')
-        var projectDescription = document.getElementById('project-description')
-        projectName.value += cardText
-        projectCardTtile.value += cardTextUse
-        projectDescription.value += descriptionRow
-        toggleModal()
-        listSettings.classList.toggle("hide")
-        editContext = null    
-    }
-    else{
-        var projectName = document.getElementById('projectname')
-        var projectCardTtile = document.getElementById('project-card-title')
-
-        projectName.value += cardText
-        projectCardTtile.value += cardText1
-
-        toggleModal()
-        listSettings.classList.toggle("hide")
-        editContext = null    
-    }
+    var projectName = document.getElementById('projectname')
+    var projectCardTtile = document.getElementById('project-card-title')
+    var projectDescription = document.getElementById('project-description')
+    projectName.value += cardText
+    projectCardTtile.value += cardText1
+    projectDescription.value += descriptionRow
+    toggleModal()
+    listSettings.classList.toggle("hide")
 
     saveProjectButton.onclick = saveProject
-    
+
     // Função do botão para salvar alteração no projeto
     function saveProject(){
         var projectName = document.getElementById('projectname').value
@@ -227,12 +210,12 @@ changeProject.addEventListener("click", function(){
             isValid = false;
             var isProjectNameValid = document.querySelector('.error-name-project')
             if(isProjectNameValid == null){
-                const error = document.createElement("div") 
+                const error = document.createElement("div")
                 error.className = "error-name-project"
                 error.innerHTML = "* Título do projeto obrigatório"
 
                 errorNameProject.before(error)
-            }            
+            }
         }
 
         var projectCardTtile = document.getElementById('project-card-title').value
@@ -267,7 +250,8 @@ changeProject.addEventListener("click", function(){
             textCard.textContent = projectName
             textCard1.textContent = projectCardTtile
             textDescrition.textContent = projectDescription
-            
+            editProjectList(editContext, projectName, projectCardTtile, projectDescription)
+
             toggleModal()
         }
     }

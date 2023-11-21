@@ -40,6 +40,17 @@ function removeProjectList(editContext){
     updateLocalStorageProjectList()
 }
 
+// Função para salvar alteração no localstorage
+function editProjectList(editContext, projectName, projectCardTtile, projectDescription){
+    const editContextId = editContext.replace('project-', '');
+    var findIdProject = projectsList.findIndex((element) => element.id == editContextId)
+    var projectFind = projectsList[findIdProject]
+    projectFind.title = projectName
+    projectFind.subtitle = projectCardTtile
+    projectFind.description = projectDescription
+    updateLocalStorageProjectList()
+}
+
 for(i = 0; i < projectsList.length; i++){
     let project = projectsList[i]
     createCard(project.title, project.subtitle, project.description, project.id)
