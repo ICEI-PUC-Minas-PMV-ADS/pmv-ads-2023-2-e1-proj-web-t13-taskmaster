@@ -4,7 +4,7 @@ Teste da primeira interface:
 
 | Caso de Teste    | Tela de “Welcome” |
 | Requisitos Associados | Criação de conta de acesso e login; |
-| Objetivo do Teste | Verificar se ao solicitar a criação dos dados de acesso, se o usuário será direcionado para o procedimento; |
+| Obetivo do Teste | Verificar se ao solicitar a criação dos dados de acesso, se o usuário será direcionado para o procedimento; |
 | Passos | Clicar no botão: “Criar uma conta” e no botão “Login”; |
 | Critérios de êxito | Ao clicar em “Criar uma conta”, o usuário deve ser direcionado para a tela de “SignUp”; Ao clicar no botão “Login”, o usuário será direcionado para a tela de “Login” para acesso ao aplicativo;  |
 | Responsável pela elaborar do caso de Teste | Marilda Inêz de Araújo Pereira |
