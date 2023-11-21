@@ -3,6 +3,7 @@
 Teste da primeira interface: 
 
 | Caso de Teste    | Tela de “Welcome” |
+|:---|:---|
 | Requisitos Associados | Criação de conta de acesso e login; |
 | Objetivo do Teste | Verificar se ao solicitar a criação dos dados de acesso, se o usuário será direcionado para o procedimento; |
 | Passos | Clicar no botão: “Criar uma conta” e no botão “Login”; |
@@ -10,6 +11,7 @@ Teste da primeira interface:
 | Responsável pela elaborar do caso de Teste | Marilda Inêz de Araújo Pereira |
  
 | Caso de Teste    | Tela de “SignUp” |
+|:---|:---|
 | Requisitos Associados | Preenchimento dos dados para criação de conta e login ao aplicativo; Testar o botão “Já tem uma conta?”|
 | Objetivo do Teste | Verificar se ao preencher os campos para criar cadastro e senha, o acesso será criado corretamente; Verificar se o botão “Já tem uma conta?” direciona para a tela de “Login”; |
 | Passos | Clicar no botão: Preencher os campos: e-mail, username, password e confirm password, depois clicar em “SignUp”; Clicar na frase “Já tem uma conta?” |
@@ -17,6 +19,7 @@ Teste da primeira interface:
 | Responsável pela elaborar do caso de Teste | Marilda Inêz de Araújo Pereira |
 
 | Caso de Teste    | Tela de “Login” |
+|:---|:---|
 | Requisitos Associados | Conferir se os dados cadastrados para login estão funcionando corretamente e chegando ao acesso da página; Testar se os botões de “Remember Me” e “Forgot Password”; Verificar se o retorno à página de cadastro “SignUp” está funcionando corretamente;|
 | Objetivo do Teste | Se certificar se será possível acessar o site com os dados cadastrados; |
 | Passos | Inserir os dados cadastrados nos campos Email e Password e clicar no botão “Login”; Marcar o campo da opção Remember Me; Clicar sobre “ForgotPassword”  e depois no botão “Login”; clicar em SignUp caso queira voltar ao processo anterior; |
@@ -24,6 +27,7 @@ Teste da primeira interface:
 | Responsável pela elaborar do caso de Teste | Marilda Inêz de Araújo Pereira |
 
 | Caso de Teste    | Tráfego entre as telas |
+|:---|:---|
 | Requisitos Associados | Verificar o tráfego entre as páginas;|
 | Objetivo do Teste | Se certificar de que o sistema irá responder aos comandos de acesso à página seguinte; |
 | Passos | Ao “navegar” por cada uma das páginas; |
