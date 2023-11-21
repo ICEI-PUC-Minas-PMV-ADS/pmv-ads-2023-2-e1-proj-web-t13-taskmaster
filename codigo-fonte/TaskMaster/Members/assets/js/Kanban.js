@@ -29,16 +29,25 @@ function makeColumnInteractive(column) {
     column.addEventListener('click', function(event) {
         const target = event.target;
         if (target.classList.contains('add-card-btn')) {
-            createCard();
+            openModal();
         }
     });
 }
 
+var fadeModalProject = document.querySelector('.fade')
+var modalCard = document.getElementById('exampleModal');
+
+fadeModalProject.addEventListener("click", function(){
+    fadeModalProject.classList.toggle("hide")
+    modalCard.classList.toggle("show")
+    modalCard.style.display = "none"
+})
+
 function openModal() {
-    const modal = document.getElementById('exampleModal');
-    if (modal) {
-        const modalInstance = new bootstrap.Modal(modal);
+    if (modalCard) {
+        const modalInstance = new bootstrap.Modal(modalCard);
         modalInstance.show(); // Abre o modal
+        fadeModalProject.classList.toggle("hide")
     }
 }
 

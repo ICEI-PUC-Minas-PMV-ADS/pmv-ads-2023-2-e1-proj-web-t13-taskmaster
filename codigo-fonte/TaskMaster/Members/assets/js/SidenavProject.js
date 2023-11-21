@@ -1,7 +1,7 @@
 var addProjectButton = document.getElementById('add-project')
 var projects = document.getElementById('projects' )
-var fade = document.querySelector('#fade')
-var modal = document.querySelector('.modal')
+var fade = document.querySelector('#fade-modal-project')
+var modal = document.querySelector('.modal-sidenav')
 var createProjectButton = document.getElementById('create-project')
 var saveProjectButton = document.getElementById('save-project')
 var cancelProject = document.getElementById('cancel')
@@ -56,7 +56,7 @@ const toggleModal = () =>{
     })
 });
 
-modal.querySelector('.modal-content').addEventListener('click', function(event) {
+modal.querySelector('.modal-project').addEventListener('click', function(event) {
     event.stopPropagation();
 });
 

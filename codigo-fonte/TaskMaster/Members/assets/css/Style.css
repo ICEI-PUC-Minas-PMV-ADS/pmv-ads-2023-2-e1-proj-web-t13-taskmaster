@@ -74,7 +74,7 @@ nav {
   margin-top: 10px;
   row-gap: 20px;
   padding: 5px;
-  padding-left: 15px;
+  padding-left: 10px;
   text-align: left;
   border-radius: 8px;
   font-weight: bold;
@@ -86,7 +86,7 @@ nav {
   margin-top: 10px;
   row-gap: 20px;
   padding: 5px;
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 15px;
   height: auto;
   text-align: left;
@@ -160,11 +160,26 @@ nav {
   border-radius: 20px;
 }
 
-#fade,
-.modal{
+#fade-modal-project,
+.modal-sidenav{
   transition: 0.2s;
   opacity: 1;
   pointer-events: all;
+}
+
+.modal-sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: 450px;
+  min-height: 250px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ddd;
+  border-radius: 15px;
 }
 
 .modal {
@@ -182,7 +197,16 @@ nav {
   border-radius: 15px;
 }
 
-.modal-content {
+.modal-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  outline: 10px solid #bfd3f2;
+  border-radius: 15px;
+}
+
+.modal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -204,7 +228,16 @@ nav {
   font-weight: bold;
 }
 
-#fade{
+#fade-modal-project{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.fade{
   position: fixed;
   top: 0;
   left: 0;
@@ -219,7 +252,7 @@ nav {
 }
 
 .hide,
-#fade.hide{
+#fade-modal-project.hide{
   opacity: 0;
   pointer-events: none;
 }
@@ -254,8 +287,8 @@ textarea#project-description{
   padding-top: 10px;
 }
 
-.modal-content input,
-.modal-content textarea{
+.modal-project input,
+.modal-project textarea{
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -263,8 +296,8 @@ textarea#project-description{
   border-color: #bbceff;
 }
 
-.modal-content input:focus,
-.modal-content textarea:focus{
+.modal-project input:focus,
+.modal-project textarea:focus{
   box-shadow: 3px 3px 12px 0px #a6a5cf;
   border: 1px solid blue;
 }
@@ -281,11 +314,11 @@ textarea#project-description{
   background-color: #00ce4a ;
 }
 
-.modal-content h1{
+.modal-project h1{
   width: 100%;
 }
 
-.modal-content h1 > span{
+.modal-project h1 > span{
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -334,7 +367,7 @@ textarea#project-description{
     grid-template-rows: 88vh;
   }  
 
-  .modal{
+  .modal-sidenav{
     top: 40%;
   }
 }
