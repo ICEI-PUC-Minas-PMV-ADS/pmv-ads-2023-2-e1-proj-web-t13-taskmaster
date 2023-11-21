@@ -21,68 +21,61 @@ Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “Welcome.h
 #### Estrutura de Dados
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>TaskMaster</title>
-    <link rel="stylesheet" href="Assets/css/WelcomeStyle.css">
-    <head>
-    <body>
-        <div class="container">
-            <div class="box">
-            </div>
-    </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Public/Assets/css/WelcomeStyle.css">
+    <title>Welcome</title>
 </head>
-</html>
-<style>
-    body {
-        background-color: #F6F1F1;
-        align-items: center;
-    }
-
-    h1 {
-        color: black;
-    }
-
-    .center {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
-</style>
-
-<head></head>
 
 <body>
-    <div id="body" <p><img src="Assets/Img/bonecos.png" alt="Welcome" class="justify" width="300px"
-            height="300px">
-        </p>
-        <h1> Olá!</h1>
-        <h2> Seja bem vindo ao TaskMaster! </h2>
-        <p>O TaskMaster é sua mais nova ferramenta de gerenciamento de atividades. Ela irá lhe auxiliar no planejamento
-            e gestão das tarefas diárias, tonando seu dia mais produtivo e sua rotina mais leve! É um prazer poder fazer
-            parte do seu dia-a-dia!
-        </p>
-        <p>
-            <button id="btnCriar uma conta" onclick="btnSingInClicked()">
-                Criar uma conta
-            </button>
-        </p>
-        <p>
-            <button id="btnLogin" onclick="btnLoginClicked()">
-                Login
-            </button>
-        </p>
+    <div class="signup-box">
+
+        <div class="upper-box">
+
+        </div>
+        <div class="menino-logo">
+            <img src="../Public/Assets/Img/young_men_at_work.png" alt="young man on chair with laptop" class="image" id="boy-in-chair">
+        </div>
+        <div class="textogeral">
+            </p>
+            <h1> Olá!</h1>
+            <h2> Seja bem vindo ao TaskMaster! </h2>
+            <p>O TaskMaster é sua mais nova ferramenta de gerenciamento de atividades. Ela irá lhe auxiliar no
+                planejamento
+                e gestão das tarefas diárias, tonando seu dia mais produtivo e sua rotina mais leve! É um prazer poder
+                fazer
+                parte do seu dia-a-dia!
+            </p>
+            <p>
+       
+            <div class="botoes">
+                <button type="submit" id="signup" value="Signup" formaction="#" onclick="validateLogin()">
+                    Criar uma conta
+                    <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
+                        alt="Signup Icon" class="image" id="signup-icon">
+                </button>
+
+                <button type="submit" id="login1" value="Signup" formaction="#" onclick="validateLogin1()">
+                    Login
+                    <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
+                        alt="Signup Icon" class="image" id="signup-icon">
+                </button>
+
+            </div>
+        </div>
     </div>
+    </form>
     <script>
 
     </script>
     <script src="Assets/js/WelcomeScript.js"></script>
+
 </body>
 
 </html>
-
 
 #### Instruções de acesso
 
@@ -126,20 +119,21 @@ Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “SignIn.ht
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@300&family=Preahvihear&display=swap" rel="stylesheet">
     <script src="Assets/js/SignInScript.js"></script>
-    <title>Document</title>
+    <title>Sign Up</title>
 </head>
 <body>
-    <div class="signup-box"> <!--Estrutura Geral da Área SignUp-->
-        <div class="upper-box"> <!--Estrutura da área não-interativa do SignUp Box-->
+    <div class="signup-box"> 
+        <div class="upper-box"> 
             <div class="figure" id="figure_1"></div>
             <div class="figure" id="figure_2"></div>
             <div class="figure" id="figure_3"></div>
             <div class="text" id="signup-text">Sign up</div>
-            <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/young%20man%20with%20laptop%20on%20chair.png"
-            alt="young man on chair with laptop" class="image" id="boy-in-chair"> 
         </div>
-        <div class="inside-box"> <!--Estrutura da área interativa do SignUp Box-->
-            <!--Abaixo estão os formulários de preenchimento-->
+        <div class="imagem">
+        <img src="../Public/Assets/Img/young_man_with_laptop_on_chair.png"
+        alt="young man on chair with laptop" class="image" id="boy-in-chair"> 
+    </div>
+        <div class="inside-box"> 
             <form action="../Public/Login.Html" method="post" id="myForm">
                 <div id="my_email" class="textbox">
                     <label for="email" style="visibility: hidden;">Email:</label>
@@ -167,18 +161,15 @@ Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “SignIn.ht
                 alt="Signup Icon" class="image" id="signup-icon">
             </button>
             <script>
-                //gambiarra enquanto meu script não funciona
                 document.getElementById("signup").addEventListener("click", function() {
                     window.location.href = "../Public/Login.Html";
                 });
             </script>
-            <p id="redireciona"> Já tem uma conta? <a href="../Public/Login.html" style="color: blue;">Logar</a></p>
+            <p id="redireciona"> Already have an account? <a href="../Public/Login.html" style="color: blue;">log into</a></p>
         </div>
     </div>
 </body>
 </html>
-
-
 #### Instruções de acesso
 
 A funcionalidade será acessada a partir da Tela de “Welcome”. 
