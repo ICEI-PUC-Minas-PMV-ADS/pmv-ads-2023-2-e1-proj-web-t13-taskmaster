@@ -1,11 +1,83 @@
-
-
-
 const addColumnDiv = document.getElementById("add-column");
 const board = document.querySelector(".board");
+var fadeModalProject = document.querySelector('.fade')
+var modalCard = document.querySelector('.modal');
+var cardName = document.getElementById("card-name")
+var cardDescription = document.getElementById("card-description")
+var highPriority = document.getElementById("high-priority")
+var mediumPriority = document.getElementById("medium-priority")
+var lowPriority = document.getElementById("low-priority")
+var closeCard = document.getElementById("close-button")
+var saveCard = document.getElementById("save-button")
 var countColumn = 1
 var countCard = 1
 
+//Modal
+
+fadeModalProject.addEventListener("click", function(){
+    fadeModalProject.classList.toggle("hide")
+    modalCard.classList.toggle("hide")
+})
+
+closeCard.addEventListener("click", function(){
+    fadeModalProject.classList.toggle("hide")
+    modalCard.classList.toggle("hide")
+})
+
+function openModal() {
+    if (modalCard) {
+        modalCard.classList.toggle("hide")
+        fadeModalProject.classList.toggle("hide")
+    }
+}
+
+highPriority.addEventListener("click", function(){
+    if (highPriority.classList.contains("active")){
+        highPriority.classList.remove("active")
+    }
+    else{
+        mediumPriority.classList.remove("active")
+        lowPriority.classList.remove("active")
+        highPriority.classList.add("active")
+    }
+})
+
+mediumPriority.addEventListener("click", function(){
+    if (mediumPriority.classList.contains("active")){
+        mediumPriority.classList.remove("active")
+    }
+    else{
+        highPriority.classList.remove("active")
+        lowPriority.classList.remove("active")
+        mediumPriority.classList.add("active")
+    }
+})
+
+lowPriority.addEventListener("click", function(){
+    if (lowPriority.classList.contains("active")){
+        lowPriority.classList.remove("active")
+    }
+    else{
+        highPriority.classList.remove("active")
+        mediumPriority.classList.remove("active")
+        lowPriority.classList.add("active")
+    }
+})
+
+function saveModal(){
+    if(cardName.value.trim() !== '' & cardDescription.value.trim() !==''){
+        let nameValue = cardName.value
+        let descriptionValue = cardDescription.value
+        let priorityValue = document.querySelector(".active")
+        fadeModalProject.classList.toggle("hide")
+        modalCard.classList.toggle("hide")
+        return [nameValue, descriptionValue, priorityValue]
+    }
+}
+
+saveCard.addEventListener("click", function(){
+    let [nameValue, descriptionValue, priorityValue] = saveModal()
+})
 
 function makeColumnInteractive(column) {
     // Função para criar um novo cartão
@@ -34,25 +106,6 @@ function makeColumnInteractive(column) {
     });
 }
 
-var fadeModalProject = document.querySelector('.fade')
-var modalCard = document.querySelector('.modal');
-
-fadeModalProject.addEventListener("click", function(){
-    fadeModalProject.classList.toggle("hide")
-    modalCard.classList.toggle("hide")
-})
-
-function openModal() {
-    if (modalCard) {
-        modalCard.classList.toggle("hide")
-        fadeModalProject.classList.toggle("hide")
-    }
-}
-
-// modalCard.querySelector('.modal-project').addEventListener('click', function(event) {
-//     event.stopPropagation();
-// });
-
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:");
 
@@ -70,7 +123,6 @@ addColumnDiv.addEventListener("click", function() {
         // Insere a nova coluna acima do botão 'Adicionar coluna'
         board.insertBefore(columnDiv, addColumnDiv);
 
-        // makeColumnInteractive(columnDiv); // Torna a coluna e seus cartões arrastáveis
 
         countColumn ++
     }

@@ -567,21 +567,21 @@ textarea#project-description{
 }
 
 #high-priority:hover,
-#high-priority:active{
+#high-priority.active{
   background-color: #E65F5F;
   color: #fff;
   cursor: pointer;
 }
 
 #medium-priority:hover,
-#medium-priority:active{
+#medium-priority.active{
   background-color: #FFBA53;
   color: #fff;
   cursor: pointer;
 }
 
 #low-priority:hover,
-#low-priority:active{
+#low-priority.active{
   background-color: #2BA700;
   color: #fff;
   cursor: pointer;
