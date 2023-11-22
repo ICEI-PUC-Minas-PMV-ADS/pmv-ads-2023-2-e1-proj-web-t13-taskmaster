@@ -35,21 +35,23 @@ function makeColumnInteractive(column) {
 }
 
 var fadeModalProject = document.querySelector('.fade')
-var modalCard = document.getElementById('exampleModal');
+var modalCard = document.querySelector('.modal');
 
 fadeModalProject.addEventListener("click", function(){
     fadeModalProject.classList.toggle("hide")
-    modalCard.classList.toggle("show")
-    modalCard.style.display = "none"
+    modalCard.classList.toggle("hide")
 })
 
 function openModal() {
     if (modalCard) {
-        const modalInstance = new bootstrap.Modal(modalCard);
-        modalInstance.show(); // Abre o modal
+        modalCard.classList.toggle("hide")
         fadeModalProject.classList.toggle("hide")
     }
 }
+
+// modalCard.querySelector('.modal-project').addEventListener('click', function(event) {
+//     event.stopPropagation();
+// });
 
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:");
