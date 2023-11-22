@@ -58,16 +58,22 @@
             <h1 class="modal-title" id="exampleModalLabel">Novo Card</h1>
           </div>
           <div class="modal-body">
-            <input type="text" maxlength="30" id="card-name" placeholder="Nome do Card">
-            <input type="text" maxlength="100" id="card-description" placeholder="Descrição do Card">
-            <h5 class="priority">Priority</h5>
-            <button class="priority-btn" id="high-priority">High</button>
-            <button class="priority-btn" id="medium-priority">Medium</button>
-            <button class="priority-btn" id="low-priority">Low</button>
+            <div class="card-name-class">
+              <input type="text" maxlength="30" id="card-name" placeholder="Nome do Card">
+            </div>
+            <div class="card-description-class">
+              <input type="text" maxlength="100" id="card-description" placeholder="Descrição do Card">
+            </div>
+            <div class="priority">
+              <span class="priority-text">Prioridade</span>
+              <button class="priority-btn" id="high-priority">Alta</button>
+              <button class="priority-btn" id="medium-priority">Media</button>
+              <button class="priority-btn" id="low-priority">Baixa</button>
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn" id="close-button" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn" id="save-button">Criar</button>
+            <button type="button" class="card-btn" id="close-button" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="card-btn" id="save-button">Criar</button>
           </div>
         </div>
       </div>
