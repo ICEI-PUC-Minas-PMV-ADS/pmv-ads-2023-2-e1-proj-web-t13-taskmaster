@@ -9,6 +9,7 @@ var mediumPriority = document.getElementById("medium-priority")
 var lowPriority = document.getElementById("low-priority")
 var closeCard = document.getElementById("close-button")
 var saveCard = document.getElementById("save-button")
+var columnDiv
 var countColumn = 1
 var countCard = 1
 
@@ -28,6 +29,11 @@ function openModal() {
     if (modalCard) {
         modalCard.classList.toggle("hide")
         fadeModalProject.classList.toggle("hide")
+        cardName.value = ''
+        cardDescription.value = ''
+        lowPriority.classList.remove("active")
+        mediumPriority.classList.remove("active")
+        highPriority.classList.remove("active")
     }
 }
 
@@ -69,6 +75,15 @@ function saveModal(){
         let nameValue = cardName.value
         let descriptionValue = cardDescription.value
         let priorityValue = document.querySelector(".active")
+        if (priorityValue.id === "low-priority"){
+            priorityValue = "low-priority-card"
+        }
+        if (priorityValue.id === "medium-priority"){
+            priorityValue = "medium-priority-card"
+        }
+        if (priorityValue.id === "high-priority"){
+            priorityValue = "high-priority-card"
+        }
         fadeModalProject.classList.toggle("hide")
         modalCard.classList.toggle("hide")
         return [nameValue, descriptionValue, priorityValue]
@@ -76,27 +91,25 @@ function saveModal(){
 }
 
 saveCard.addEventListener("click", function(){
-    let [nameValue, descriptionValue, priorityValue] = saveModal()
+    if (columnDiv) {
+        let [nameValue, descriptionValue, priorityValue] = saveModal()
+        const card = document.createElement("div")
+        card.className = "card"
+        card.id = "card" + countCard
+        card.innerHTML = `
+            <h3>${nameValue}</h3>
+            <p>${descriptionValue}</p>
+            <span class="valor" id=${priorityValue}></span>`;
+
+        columnDiv.querySelector('.cards-container').appendChild(card);
+        
+        countCard++;
+    } else {
+        console.log("Nenhuma columnDiv foi criada ainda.");
+    }
 })
 
-function makeColumnInteractive(column) {
-    // Função para criar um novo cartão
-    function createCard() {
-        const cardText = window.prompt("Digite o título do cartão:");
-        if (cardText) {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.id = "card" + countCard
-            card.draggable = true;
-            card.innerText = cardText;
-
-            column.querySelector('.cards-container').appendChild(card);
-            makeCardDraggable(card); // Torna o novo cartão arrastável
-
-            countCard ++
-        }
-    }
-
+function addCardOpenModal(column) {
     // Adiciona um cartão quando o botão é clicado
     column.addEventListener('click', function(event) {
         const target = event.target;
@@ -110,7 +123,7 @@ addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:");
 
     if (userInput) {
-        const columnDiv = document.createElement("div");
+        columnDiv = document.createElement("div");
         columnDiv.className = "column";
         columnDiv.id = "column" + countColumn;
         columnDiv.innerHTML = `
@@ -122,7 +135,6 @@ addColumnDiv.addEventListener("click", function() {
         
         // Insere a nova coluna acima do botão 'Adicionar coluna'
         board.insertBefore(columnDiv, addColumnDiv);
-
 
         countColumn ++
     }

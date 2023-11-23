@@ -346,7 +346,7 @@ textarea#project-description{
   }  
 }
 
-
+/* Cards Columns Style */
 
 .board {
   display: flex;
@@ -372,7 +372,7 @@ textarea#project-description{
   width: 50px;
 }
 
-.card1 {
+.card {
   background-color: #fff;
   margin: 10px 0;
   padding: 8px;
@@ -409,6 +409,12 @@ textarea#project-description{
 }
 
 /* Card Modal Style */
+
+.fade,
+.modal{
+  transition: opacity 0.2s ease-in-out;
+}
+
 .modal {
   display: flex;
   flex-direction: column;
