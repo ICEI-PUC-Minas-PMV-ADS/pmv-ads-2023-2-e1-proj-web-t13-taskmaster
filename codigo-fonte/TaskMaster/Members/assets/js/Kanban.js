@@ -9,6 +9,7 @@ var mediumPriority = document.getElementById("medium-priority")
 var lowPriority = document.getElementById("low-priority")
 var closeCard = document.getElementById("close-button")
 var saveCard = document.getElementById("save-button")
+var cardIDTask
 var columnDiv
 var countColumn = 1
 var countCard = 1
@@ -38,11 +39,13 @@ function openModal() {
 }
 
 function openEditModal(nameValue, descriptionValue, priorityValue) {
+    
     modalCard.classList.toggle("hide")
     fadeModalProject.classList.toggle("hide")
     saveCard.textContent = "Salvar"
     cardName.value = nameValue
     cardDescription.value = descriptionValue
+    edit
     if (priorityValue === "low-priority-card") {
         lowPriority.classList.add("active")
         mediumPriority.classList.remove("active")
@@ -62,17 +65,6 @@ function openEditModal(nameValue, descriptionValue, priorityValue) {
     if (cardNameError) {
         cardNameError.remove();
     }
-    saveCard.addEventListener("click", function(){
-        if (saveCard.textContent === "Salvar") {
-            if (columnDiv) {
-                let [nameValue, descriptionValue, priorityValue] = saveModal()
-                let card = document.getElementById(cardID)
-                card.querySelector(".card-name-value").textContent = nameValue
-                card.querySelector(".card-description-value").textContent = descriptionValue
-                card.querySelector(".priority-value").id = priorityValue
-            }
-        }
-    })
 }
 
 highPriority.addEventListener("click", function(){
@@ -134,19 +126,25 @@ saveCard.addEventListener("click", function(){
             <p class="card-description-value">${descriptionValue}</p>
             <span class="priority-value" id=${priorityValue}></span>
             <button class="edit-card-btn" data-name="${nameValue}" data-description="${descriptionValue}" 
-            data-priority="${priorityValue}">editar</button>`
+            data-priority="${priorityValue}" data-cardid="card${countCard}">editar</button>`
 
-        columnDiv.querySelector('.cards-container').appendChild(card);
+        columnDiv.querySelector('.cards-container').appendChild(card)
             
-        countCard++;
+        countCard++
         } else {
-            console.log("Nenhuma columnDiv foi criada ainda.");
+            console.log("Nenhuma columnDiv foi criada ainda.")
         }
     }
     if (saveCard.textContent === "Salvar"){
         if (columnDiv) {
             let [nameValue, descriptionValue, priorityValue] = saveModal()
-            //aqui eu vou receber o card que eu modifiquei no openEditModal
+            let cardAux = document.getElementById(cardIDTask)
+            cardAux.querySelector(".card-name-value").textContent = nameValue
+            cardAux.querySelector(".card-description-value").textContent = descriptionValue
+            cardAux.querySelector(".priority-value").id = priorityValue
+            cardAux.querySelector(".edit-card-btn").dataset.name = nameValue
+            cardAux.querySelector(".edit-card-btn").dataset.description = descriptionValue
+            cardAux.querySelector(".edit-card-btn").dataset.priority = priorityValue
         }
     }
 })
@@ -161,9 +159,11 @@ document.addEventListener("click", function(event) {
         const name = event.target.dataset.name
         const description = event.target.dataset.description
         const priority = event.target.dataset.priority
+        cardIDTask = event.target.dataset.cardid
 
         // Chame a função editModal() passando os valores recuperados
-        editModal(name, description, priority);
+        openEditModal(name, description, priority)
+        
     }
 });
 
@@ -172,7 +172,7 @@ function addCardOpenModal(column) {
     column.addEventListener('click', function(event) {
         const target = event.target;
         if (target.classList.contains('add-card-btn')) {
-            openModal();
+            openModal()
         }
     });
 }
