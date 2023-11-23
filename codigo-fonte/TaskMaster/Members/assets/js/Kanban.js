@@ -20,58 +20,81 @@ fadeModalProject.addEventListener("click", function(){
     modalCard.classList.toggle("hide")
 })
 
-closeCard.addEventListener("click", function(){
-    fadeModalProject.classList.toggle("hide")
-    modalCard.classList.toggle("hide")
-})
-
 function openModal() {
     if (modalCard) {
         modalCard.classList.toggle("hide")
         fadeModalProject.classList.toggle("hide")
+        saveCard.textContent = "Criar"
         cardName.value = ''
         cardDescription.value = ''
         lowPriority.classList.remove("active")
-        mediumPriority.classList.remove("active")
+        mediumPriority.classList.add("active")
         highPriority.classList.remove("active")
+        let cardNameError = modalCard.querySelector(".card-name-error")
+        if (cardNameError) {
+            cardNameError.remove();
+        }    
     }
 }
 
-highPriority.addEventListener("click", function(){
-    if (highPriority.classList.contains("active")){
+function openEditModal(nameValue, descriptionValue, priorityValue) {
+    modalCard.classList.toggle("hide")
+    fadeModalProject.classList.toggle("hide")
+    saveCard.textContent = "Salvar"
+    cardName.value = nameValue
+    cardDescription.value = descriptionValue
+    if (priorityValue === "low-priority-card") {
+        lowPriority.classList.add("active")
+        mediumPriority.classList.remove("active")
         highPriority.classList.remove("active")
     }
-    else{
+    if (priorityValue === "medium-priority-card") {
+        mediumPriority.classList.add("active")
+        lowPriority.classList.remove("active")
+        highPriority.classList.remove("active")
+    }
+    if (priorityValue === "high-priority-card") {
+        highPriority.classList.add("active")
+        lowPriority.classList.remove("active")
+        mediumPriority.classList.remove("active")
+    }
+    let cardNameError = modalCard.querySelector(".card-name-error")
+    if (cardNameError) {
+        cardNameError.remove();
+    }
+    saveCard.addEventListener("click", function(){
+        if (saveCard.textContent === "Salvar") {
+            if (columnDiv) {
+                let [nameValue, descriptionValue, priorityValue] = saveModal()
+                let card = document.getElementById(cardID)
+                card.querySelector(".card-name-value").textContent = nameValue
+                card.querySelector(".card-description-value").textContent = descriptionValue
+                card.querySelector(".priority-value").id = priorityValue
+            }
+        }
+    })
+}
+
+highPriority.addEventListener("click", function(){
         mediumPriority.classList.remove("active")
         lowPriority.classList.remove("active")
         highPriority.classList.add("active")
-    }
 })
 
 mediumPriority.addEventListener("click", function(){
-    if (mediumPriority.classList.contains("active")){
-        mediumPriority.classList.remove("active")
-    }
-    else{
         highPriority.classList.remove("active")
         lowPriority.classList.remove("active")
         mediumPriority.classList.add("active")
-    }
 })
 
 lowPriority.addEventListener("click", function(){
-    if (lowPriority.classList.contains("active")){
-        lowPriority.classList.remove("active")
-    }
-    else{
         highPriority.classList.remove("active")
         mediumPriority.classList.remove("active")
         lowPriority.classList.add("active")
-    }
 })
 
 function saveModal(){
-    if(cardName.value.trim() !== '' & cardDescription.value.trim() !==''){
+    if(cardName.value.trim() !== ''){
         let nameValue = cardName.value
         let descriptionValue = cardDescription.value
         let priorityValue = document.querySelector(".active")
@@ -88,26 +111,61 @@ function saveModal(){
         modalCard.classList.toggle("hide")
         return [nameValue, descriptionValue, priorityValue]
     }
+    else{
+        let cardNameError = modalCard.querySelector(".card-name-error")
+        if (!cardNameError){
+            cardNameError = document.createElement("div")
+            cardNameError.classList.add("card-name-error")
+            cardNameError.textContent = "Nome do card obrigatório"
+            modalCard.querySelector(".card-name-class").appendChild(cardNameError)
+        }
+    }
 }
-
+    
 saveCard.addEventListener("click", function(){
-    if (columnDiv) {
+    if (saveCard.textContent === "Criar"){
+        if (columnDiv) {
         let [nameValue, descriptionValue, priorityValue] = saveModal()
-        const card = document.createElement("div")
+        let card = document.createElement("div")
         card.className = "card-task"
         card.id = "card" + countCard
         card.innerHTML = `
-            <h3>${nameValue}</h3>
-            <p>${descriptionValue}</p>
-            <span class="valor" id=${priorityValue}></span>`;
+            <h3 class="card-name-value">${nameValue}</h3>
+            <p class="card-description-value">${descriptionValue}</p>
+            <span class="priority-value" id=${priorityValue}></span>
+            <button class="edit-card-btn" data-name="${nameValue}" data-description="${descriptionValue}" 
+            data-priority="${priorityValue}">editar</button>`
 
         columnDiv.querySelector('.cards-container').appendChild(card);
-        
+            
         countCard++;
-    } else {
-        console.log("Nenhuma columnDiv foi criada ainda.");
+        } else {
+            console.log("Nenhuma columnDiv foi criada ainda.");
+        }
+    }
+    if (saveCard.textContent === "Salvar"){
+        if (columnDiv) {
+            let [nameValue, descriptionValue, priorityValue] = saveModal()
+            //aqui eu vou receber o card que eu modifiquei no openEditModal
+        }
     }
 })
+
+closeCard.addEventListener("click", function(){
+    fadeModalProject.classList.toggle("hide")
+    modalCard.classList.toggle("hide")
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains('edit-card-btn')) {
+        const name = event.target.dataset.name
+        const description = event.target.dataset.description
+        const priority = event.target.dataset.priority
+
+        // Chame a função editModal() passando os valores recuperados
+        editModal(name, description, priority);
+    }
+});
 
 function addCardOpenModal(column) {
     // Adiciona um cartão quando o botão é clicado
