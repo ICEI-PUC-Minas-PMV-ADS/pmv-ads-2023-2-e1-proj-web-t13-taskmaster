@@ -94,7 +94,7 @@ saveCard.addEventListener("click", function(){
     if (columnDiv) {
         let [nameValue, descriptionValue, priorityValue] = saveModal()
         const card = document.createElement("div")
-        card.className = "card"
+        card.className = "card-task"
         card.id = "card" + countCard
         card.innerHTML = `
             <h3>${nameValue}</h3>
