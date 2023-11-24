@@ -51,6 +51,14 @@ function editProjectList(editContext, projectName, projectCardTtile, projectDesc
     updateLocalStorageProjectList()
 }
 
+// Função de seleção de card
+function projectSelect(editContext){
+    const editContextId = editContext.replace('project-', '')
+    var findProject = projectsList.findIndex((e) => e.id == editContextId)
+    var findIdTitleProject = projectsList[findProject]
+    return findIdTitleProject.title
+}
+
 for(i = 0; i < projectsList.length; i++){
     let project = projectsList[i]
     createCard(project.title, project.subtitle, project.description, project.id)
@@ -61,6 +69,7 @@ function createCard(title, subtitle, description, id){
     const containerDiv = document.createElement("div")
     containerDiv.className = "project" 
     containerDiv.id = "project-" + id
+    containerDiv.onclick = selectProject
 
     const cardText = title
     const card = document.createElement("div")

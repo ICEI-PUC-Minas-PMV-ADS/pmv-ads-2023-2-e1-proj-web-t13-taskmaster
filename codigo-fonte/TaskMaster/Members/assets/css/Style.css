@@ -59,14 +59,24 @@ nav {
   cursor: pointer;
 }
 
-#name-project {
+#taskMaster {
   text-align: left;
   margin-left: 20px;
+}
+
+#name-project{
+  position: absolute;
+  padding-bottom: 5px;
+  margin-left: 306px;
+  text-align: left;
+  width: auto;
+  border-bottom: 2px solid #A9A3A3;
 }
 
 .project {
   width: 100%;
   max-width: 100%;
+  cursor: pointer;
 }
 
 .card {

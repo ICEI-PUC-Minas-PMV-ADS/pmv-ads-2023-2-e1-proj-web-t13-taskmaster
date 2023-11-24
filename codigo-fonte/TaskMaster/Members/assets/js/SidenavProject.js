@@ -69,6 +69,7 @@ function createProject(){
     const containerDiv = document.createElement("div")
     containerDiv.className = "project"
     containerDiv.id = "project-" + projectId
+    containerDiv.onclick = selectProject
 
     var isValid = true;
 
@@ -145,6 +146,7 @@ function createProject(){
         projects.appendChild(containerDiv)
         addProject(cardText, cardText1, descriptionRow, projectId)
         toggleModal()
+        
     }
 }
 
@@ -256,6 +258,17 @@ changeProject.addEventListener("click", function(){
         }
     }
 })
+
+function selectProject(e){
+    const element = e.currentTarget
+    editContext = element.id
+    var nameProject = document.getElementById('name-project')
+    
+    var projectTitle = projectSelect(editContext)
+    
+    nameProject.textContent = projectTitle
+    nameProject.style.paddingRight = "20px"
+}
 
 // Função para fecha a lista de edição de projeto
 document.addEventListener('click', function handleClickOutsideBox(event) {
