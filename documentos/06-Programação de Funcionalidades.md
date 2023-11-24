@@ -5,7 +5,7 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 ### Tela de “Welcome”
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/14ff84f5-acb6-4aa2-8091-bb31b694c6de)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/fd09be6b-b77e-4305-aaf9-35e66c74fe98)
 
 
 #### Requisito atendido
@@ -79,7 +79,7 @@ Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “Welcome.h
 
 #### Instruções de acesso
 
-- Acessar o site pelo endereço: http://127.0.0.1:5500/codigo-fonte/TaskMaster/Public/Welcome.html 
+- Acessar o site pelo endereço: http://127.0.0.1:5501/codigo-fonte/TaskMaster/Public/Welcome.html 
 - Utilizar o botão “Criar uma conta” caso ainda não tenha acesso;
 -	Se já possuir uma conta, utilizar o botão login;
 -	Após a utilização das alternativas apresentadas, o site direcionará para a tela de login para realização do cadastro.
@@ -91,7 +91,7 @@ Nome: Marilda Inêz de Araújo Pereira
 
 ### Tela de “Sign Up”
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/78017d0a-36e9-4661-8f0e-888cc38a8dd6)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/d5cd2e7a-5019-4e48-aaff-fa2b29051997)
 
 
 #### Requisito atendido
@@ -170,6 +170,7 @@ Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “SignIn.ht
     </div>
 </body>
 </html>
+
 #### Instruções de acesso
 
 A funcionalidade será acessada a partir da Tela de “Welcome”. 
@@ -183,7 +184,7 @@ Nome: Thiago Rodrigues Silva de Oliveira
 
 ### 6.3.	Tela de “Login”
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/c3dc24ee-2298-4e3c-8b72-8e84dbc5f6a0)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/1ff01d3e-c7c2-41b6-9485-c2d1da64a571)
 
 
 #### Requisito atendido
@@ -205,64 +206,79 @@ Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “Login.htm
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/css/LoginStyle.css">
-    <title>LOGIN</title>
+    <title>Login</title>
 </head>
 
 <body>
+    <div class="signup-box">
+        
+        <div class="upper-box">
+            <div class="figure" id="figure_1"></div>
+            <div class="figure" id="figure_2"></div>
+            <div class="figure" id="figure_3"></div>
+            <div class="figure" id="figure_4"></div>
+            <div class="text" id="signup-text">Login</div>
+        </div>
+        <div class="menino-logo">
+            <img src="Assets/Img/menino logo.png" alt="young man on chair with laptop" class="image" id="boy-in-chair">
+        </div>
+        <div class="inside-box">
+            <form id="myForm">
+                <div id="my_email" class="textbox">
+                    <label for="email" style="visibility: hidden;">Email:</label>
 
-    <main class="container">
-        <div class="corpo">
-            <div id="login-Corpo">
-            </div>
-            <div id="login-Corpo2">
-            </div>
-            <div id="login-Corpo3">
-            </div>
-            <div id="login-Corpo4">
-            </div>
-        </div>
-        <div id="titulo">
-            <h1>Login</h1>
-            <br><br>
-        </div>
-        <div class="login">
-            <div id="logo">
-                <img src="Assets/Img/menino logo.png" alt="Logo do menino">
-            </div>
-            <input type="text" id="email" placeholder="Email">
-            <br><br>
-            <input type="password" id="password" placeholder="Password">
-            <br><br>
-            <div class="senha">
-                <div id="remember">
-                    <label><input type="checkbox"> Remember Me</label>
+                    <input type="email" id="IN-email" class="formbox" autocomplete="email" placeholder="Email">
+                </div>
+                <div id="my_password" class="textbox">
+                    <label for="password" style="visibility: hidden;">Password:</label>
+                    <input type="password" id="IN-password" class="formbox" autocomplete="current-password"
+                        placeholder="Password">
                 </div>
 
-                <div id="criar-pass">
+                <div class="senha">
 
-                    <a href="#"> Forgot Password ? </a>
+                    <div id="remember">
+
+                        <label><input type="checkbox"></label>
+
+                        <div id="Remember-Me">Remember Me</div>
+                    </div>
+
+                    <div id="criar-pass">
+                        <br>
+                        <a href="#"> Forgot Password ? </a>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <button class="botao-login" id="login-button">Login</button>
 
-                    <p>Don’t have an Account ?<a href="../Public/SignIn.html"> Sign up </a></p>
-            </div>
+                <button type="submit" id="signup" value="Signup" formaction="#" onclick="validateLogin()">
+                    Login
+                    <img src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/main/documentos/img/Login.png"
+                        alt="Signup Icon" class="image" id="signup-icon">
+                </button>
+
+                <div id="criar-conta">
+                    <p> Don’t have an Account ?<a href="../Public/SignIn.html"> Sign up </a></p>
+                </div>
         </div>
-    </main>
+    </div>
+    </form>
+
     <script>
-        document.getElementById("login-button").onclick = function () {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-    
-            if (email === "" || password === "") {
-                alert("Por favor, preencha todos os campos.");
-            } else {
-                
-                
-                window.location.href = "http://127.0.0.1:5500/codigo-fonte/TaskMaster/Members/TaskMaster.html";
+
+        async function validateLogin() {
+            let email = document.getElementById("IN-email").value;
+            let password = document.getElementById("IN-password").value
+
+            if (email === "admin@exemplo.com" && password === "admin") {
+                setTimeout (() => {
+                   window.location.href = "../Members/TaskMaster.html";
+               },150);
+                return;
             }
-        };
+
+            alert("Credenciais inválidas. Por favor, tente novamente.");
+        }
+
     </script>
 </body>
 
