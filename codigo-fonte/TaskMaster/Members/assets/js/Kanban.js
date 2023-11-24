@@ -12,6 +12,7 @@ var saveCard = document.getElementById("save-button")
 var modalName = document.querySelector(".modal-title")
 var cardIDTask
 var columnDiv
+var cardContainer
 var countColumn = 1
 var countCard = 1
 
@@ -127,7 +128,7 @@ saveCard.addEventListener("click", function(){
             <button class="edit-card-btn" data-name="${nameValue}" data-description="${descriptionValue}" 
             data-priority="${priorityValue}" data-cardid="card${countCard}">editar</button>`
 
-        columnDiv.querySelector('.cards-container').appendChild(card)
+        cardContainer.appendChild(card)
             
         countCard++
         } else {
@@ -166,15 +167,13 @@ document.addEventListener("click", function(event) {
     }
 })
 
-function addCardOpenModal(column) {
-    // Adiciona um cartão quando o botão é clicado
-    column.addEventListener('click', function(event) {
-        const target = event.target
-        if (target.classList.contains('add-card-btn')) {
-            openModal()
-        }
-    })
-}
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains('add-card-btn')) {
+        openModal()
+        const column = event.target.closest('.column')
+        cardContainer = column.querySelector('.cards-container')
+    }
+})
 
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:")
@@ -187,9 +186,9 @@ addColumnDiv.addEventListener("click", function() {
             <h2>${userInput}</h2>
             <button class="edit-column-button" id="edit-column${countColumn}">•••</button>
             <div class="cards-container"></div>
-            <div class="add-card-btn" onclick="openModal()">+</div>
+            <div class="add-card-btn">+</div>
         `
-        
+
         // Insere a nova coluna acima do botão 'Adicionar coluna'
         board.insertBefore(columnDiv, addColumnDiv)
 
