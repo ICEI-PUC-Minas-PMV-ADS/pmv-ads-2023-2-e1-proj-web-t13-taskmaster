@@ -33,3 +33,11 @@ Teste da primeira interface:
 | Passos | Ao “navegar” por cada uma das páginas; |
 | Critérios de êxito | Ao “navegar” por cada uma das páginas, deverá haver uma comunicação entre as mesmas, possibilitando a mudança da página e os próximos passos; |
 | Responsável pela elaborar do caso de Teste | Marilda Inêz de Araújo Pereira |
+
+| Caso de Teste    | Tela do aplicativo TaskMaster |
+|:---|:---|
+|Requisitos Associados	| Cadastro, inclusão, exclusão e edição no aplicativo; |
+|Objetivo do Teste	|Se certificar de que o sistema irá responder aos comandos de cadastro entre outros; |
+|Passos |	Adicionar novas telas, conforme necessidade de controle; |
+|Critérios de êxito |	Ao utilizar o aplicativo, ao realizar o cadastro todas as telas devem estar funcionando corretamente. |
+|Responsável pela elaborar do caso de Teste |	Marilda Inêz de Araújo Pereira |
