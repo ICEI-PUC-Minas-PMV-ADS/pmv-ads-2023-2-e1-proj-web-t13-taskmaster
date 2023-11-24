@@ -9,6 +9,7 @@ var mediumPriority = document.getElementById("medium-priority")
 var lowPriority = document.getElementById("low-priority")
 var closeCard = document.getElementById("close-button")
 var saveCard = document.getElementById("save-button")
+var modalName = document.querySelector(".modal-title")
 var cardIDTask
 var columnDiv
 var countColumn = 1
@@ -22,6 +23,8 @@ fadeModalProject.addEventListener("click", function(){
 })
 
 function openModal() {
+
+    modalName.textContent = "Novo Card" 
     if (modalCard) {
         modalCard.classList.toggle("hide")
         fadeModalProject.classList.toggle("hide")
@@ -33,13 +36,14 @@ function openModal() {
         highPriority.classList.remove("active")
         let cardNameError = modalCard.querySelector(".card-name-error")
         if (cardNameError) {
-            cardNameError.remove();
+            modalCard.querySelector(".card-name-class").removeChild(cardNameError)
         }    
     }
 }
 
 function openEditModal(nameValue, descriptionValue, priorityValue) {
     
+    modalName.textContent = "Editar Card"
     modalCard.classList.toggle("hide")
     fadeModalProject.classList.toggle("hide")
     saveCard.textContent = "Salvar"
@@ -61,9 +65,9 @@ function openEditModal(nameValue, descriptionValue, priorityValue) {
         lowPriority.classList.remove("active")
         mediumPriority.classList.remove("active")
     }
-    let cardNameError = modalCard.querySelector(".card-name-error")
-    if (cardNameError) {
-        cardNameError.remove();
+    let cardEditNameError = modalCard.querySelector(".card-name-error")
+    if (cardEditNameError) {
+        modalCard.querySelector(".card-name-class").removeChild(cardEditNameError)
     }
 }
 
