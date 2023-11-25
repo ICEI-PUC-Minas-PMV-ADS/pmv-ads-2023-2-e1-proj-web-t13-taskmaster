@@ -22,7 +22,7 @@ Tela inicial de Boas Vindas ao usuário TaskMaster. Por meio dela o usuário pod
 
  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/ce2d15a8-248d-4af5-8603-24479a851fd1)
 
-Figura 11 – Tela de Welcome
+Figura 12 – Tela de Welcome
 
 ## Tela de SignUp: 
 
@@ -30,7 +30,7 @@ Figura 11 – Tela de Welcome
 
  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/b6b6379f-d9a3-478e-b22a-392ce8f7df85)
 
-Figura 12 – Tela de SignUp
+Figura 13 – Tela de SignUp
 
 ## Tela de Login
 
@@ -38,7 +38,7 @@ Nesta tela o usuário irá entrar com seus dados cadastrados anteriormente para 
 
  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/15189eb8-a3a9-4937-98c3-62db89609fb6)
 
-Figura 13 – Tela de Login
+Figura 14 – Tela de Login
 
 ## Tela do aplicativo TaskMaster
 
@@ -47,13 +47,13 @@ Esta tela será o gerenciador de tarefas e atividades diárias. Nela o usuário 
 
  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/0d638104-f3af-430f-a43b-290cb08cff35)
 
-Figura 14 – Tela inicial do TaskMaster
+Figura 15 – Tela inicial do TaskMaster
 
  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/a7963017-021a-4eae-920a-50228530162f)
 
-Figura 15 – Tela de adição dos projetos do TaskMaster
+Figura 16 – Tela de adição dos projetos do TaskMaster
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/3d066129-e8fe-4034-b333-d3e55125f4bc)
 
- Figura 16 – Tela de gerenciamento das tarefas do TaskMaster
+ Figura 17 – Tela de gerenciamento das tarefas do TaskMaster
 
