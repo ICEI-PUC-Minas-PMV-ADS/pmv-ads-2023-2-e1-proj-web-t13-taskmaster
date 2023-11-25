@@ -126,7 +126,8 @@ saveCard.addEventListener("click", function(){
             <p class="card-description-value">${descriptionValue}</p>
             <span class="priority-value" id=${priorityValue}></span>
             <button class="edit-card-btn" data-name="${nameValue}" data-description="${descriptionValue}" 
-            data-priority="${priorityValue}" data-cardid="card${countCard}">editar</button>`
+            data-priority="${priorityValue}" data-cardid="card${countCard}">Editar</button>
+            <button class="delete-card-btn">Deletar</button>`
 
         cardContainer.appendChild(card)
             
@@ -155,7 +156,7 @@ closeCard.addEventListener("click", function(){
 })
 
 document.addEventListener("click", function(event) {
-    if (event.target.classList.contains('edit-card-btn')) {
+    if (event.target.classList.contains("edit-card-btn")) {
         const name = event.target.dataset.name
         const description = event.target.dataset.description
         const priority = event.target.dataset.priority
@@ -168,10 +169,17 @@ document.addEventListener("click", function(event) {
 })
 
 document.addEventListener("click", function(event) {
-    if (event.target.classList.contains('add-card-btn')) {
+    if (event.target.classList.contains("delete-card-btn")) {
+        const cardToDelete = event.target.closest(".card-task")
+        cardToDelete.remove()
+    }
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("add-card-btn")) {
         openModal()
-        const column = event.target.closest('.column')
-        cardContainer = column.querySelector('.cards-container')
+        const column = event.target.closest(".column")
+        cardContainer = column.querySelector(".cards-container")
     }
 })
 
