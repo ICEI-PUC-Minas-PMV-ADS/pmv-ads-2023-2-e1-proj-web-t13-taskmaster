@@ -7,6 +7,7 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/fd09be6b-b77e-4305-aaf9-35e66c74fe98)
 
+Figura 18 – Tela Oficial Welcome
 
 #### Requisito atendido
 
@@ -93,6 +94,7 @@ Nome: Marilda Inêz de Araújo Pereira
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/d5cd2e7a-5019-4e48-aaff-fa2b29051997)
 
+Figura 19 – Tela Oficial SignUp
 
 #### Requisito atendido
 
@@ -186,6 +188,7 @@ Nome: Thiago Rodrigues Silva de Oliveira
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/1ff01d3e-c7c2-41b6-9485-c2d1da64a571)
 
+Figura 20: Tela Oficial Login
 
 #### Requisito atendido
 

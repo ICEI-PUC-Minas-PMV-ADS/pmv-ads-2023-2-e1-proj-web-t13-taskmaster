@@ -9,6 +9,7 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/a5a396f9-085d-4b61-a709-43b732c6e76d)
 
+Figura 21: Tela Oficial Welcome - Testes
 
 |Caso de Teste	|Tela de “SignUp”|
 |:---|:---|
@@ -17,6 +18,7 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/36bc9fca-8b77-4caf-b9ad-5bd61dfd1017)
 
+ Figura 22: Tela Oficial SignUp - Testes
  
 |Caso de Teste	|Tela de “Login”|
 |:---|:---|
@@ -25,6 +27,7 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/fab27849-8d71-4f37-b971-e03a2f6547fb)
 
+ Figura 23: Tela Oficial Login- Testes
  
 |Caso de Teste	|Tráfego entre as telas|
 |:---|:---|
@@ -33,12 +36,16 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/7b95f792-5ac7-4064-9ee3-192b1d257087)
 
+Figura 24: Tela Oficial TaskMaster- Testes
+
 |Caso de Teste	|Criação de Projeto Taskmaster no Aplicativo|
 |:---|:---|
 |Resultados obtidos |	Ao acessar o aplicativo e adicionar novo projeto, a tela de cadastro foi exibida com sucesso, permitindo o cadastro de 01 ou mais atividades; As opções de “Editar” e “Deletar” estão funcionando; |
 |Responsável pela execução do caso de Teste |	Marilda Inêz de Araújo Pereira |
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/4c084d11-a820-4f0c-bb5b-860732d524da)
+
+Figura 25: Tela Oficial TaskMaster- Testes
 
 |Caso de Teste	|Criação de fases de acompanhamento dos projetos/atividades|
 |:---|:---|
@@ -47,6 +54,8 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/373cdea3-20d2-448a-ba03-b3d438f3b622)
 
+Figura 26: Tela Oficial TaskMaster - Testes
+
 |Caso de Teste	|Acompanhamento das atividades |
 |:---|:---|
 |Resultados obtidos |	Ao clicar sobre o sinal +, uma nova tela se abre permitindo o cadastro dos cards. Para acompanhamento das atividades foram criadas as fases de execução, onde as atividades deverão ser movidas conforme evolução da tarefa; em cada fase é possível criar novo card, classificando a prioridade; É possível excluir e editar os tags e também classificar conforme prioridade;|
@@ -54,4 +63,9 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/010b6d4d-591a-4827-91b4-3d9bceb39cae)
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/f38ef499-7ead-4808-84ad-e1ee0755c6fb)
+Figura 27: Tela Oficial TaskMaster - Testes
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/3162fee5-06cc-4894-9c56-20f733f27bd5)
+
+Figura 28: Tela Oficial TaskMaster - Testes
+
