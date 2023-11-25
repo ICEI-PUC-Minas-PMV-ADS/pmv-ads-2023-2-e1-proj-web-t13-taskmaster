@@ -10,9 +10,14 @@ var lowPriority = document.getElementById("low-priority")
 var closeCard = document.getElementById("close-button")
 var saveCard = document.getElementById("save-button")
 var modalName = document.querySelector(".modal-title")
+var columnSettings = document.querySelector(".column-settings")
+var cardSettings = document.querySelector(".card-settings")
+var editCardButton = document.querySelector(".edit-card-btn")
+var deleteCardButton = document.querySelector(".delete-card-btn")
 var cardIDTask
 var columnDiv
 var cardContainer
+var settingsButton
 var countColumn = 1
 var countCard = 1
 
@@ -125,9 +130,8 @@ saveCard.addEventListener("click", function(){
             <h3 class="card-name-value">${nameValue}</h3>
             <p class="card-description-value">${descriptionValue}</p>
             <span class="priority-value" id=${priorityValue}></span>
-            <button class="edit-card-btn" data-name="${nameValue}" data-description="${descriptionValue}" 
-            data-priority="${priorityValue}" data-cardid="card${countCard}">Editar</button>
-            <button class="delete-card-btn">Deletar</button>`
+            <button class="open-card-settings" data-name="${nameValue}" data-description="${descriptionValue}" 
+            data-priority="${priorityValue}" data-cardid="card${countCard}">•••</button>`
 
         cardContainer.appendChild(card)
             
@@ -143,9 +147,9 @@ saveCard.addEventListener("click", function(){
             cardAux.querySelector(".card-name-value").textContent = nameValue
             cardAux.querySelector(".card-description-value").textContent = descriptionValue
             cardAux.querySelector(".priority-value").id = priorityValue
-            cardAux.querySelector(".edit-card-btn").dataset.name = nameValue
-            cardAux.querySelector(".edit-card-btn").dataset.description = descriptionValue
-            cardAux.querySelector(".edit-card-btn").dataset.priority = priorityValue
+            settingsButton.dataset.name = nameValue
+            settingsButton.dataset.description = descriptionValue
+            settingsButton.dataset.priority = priorityValue
         }
     }
 })
@@ -156,23 +160,54 @@ closeCard.addEventListener("click", function(){
 })
 
 document.addEventListener("click", function(event) {
-    if (event.target.classList.contains("edit-card-btn")) {
-        const name = event.target.dataset.name
-        const description = event.target.dataset.description
-        const priority = event.target.dataset.priority
-        cardIDTask = event.target.dataset.cardid
+    if (event.target.classList.contains("open-card-settings")) {
+        settingsButton = event.target
+        editCardButton.setAttribute("data-name", settingsButton.dataset.name)
+        editCardButton.setAttribute("data-description", settingsButton.dataset.description)
+        editCardButton.setAttribute("data-priority", settingsButton.dataset.priority)
+        editCardButton.setAttribute("data-cardid", settingsButton.dataset.cardid)
+        deleteCardButton.setAttribute("data-cardid", settingsButton.dataset.cardid)
 
-        // Chame a função editModal() passando os valores recuperados
-        openEditModal(name, description, priority)
-        
+        // Exibe ou oculta o cardSettings
+        cardSettings.classList.toggle("hide")
+
+        // Obtém as dimensões do settingsButton
+        const buttonRect = settingsButton.getBoundingClientRect()
+        const buttonLeft = buttonRect.left
+        const buttonTop = buttonRect.top
+        const buttonWidth = buttonRect.width
+        const buttonHeight = buttonRect.height
+
+        // Calcula a posição para exibir o cardSettings ao lado esquerdo do settingsButton
+        const cardSettingsWidth = cardSettings.offsetWidth
+        const cardSettingsHeight = cardSettings.offsetHeight
+        const cardSettingsLeft = buttonLeft - cardSettingsWidth - 5 // Posiciona à esquerda do settingsButton
+        const cardSettingsTop = buttonTop + 10
+        // Define a posição do cardSettings
+        cardSettings.style.position = 'absolute'
+        cardSettings.style.left = cardSettingsLeft + 'px'
+        cardSettings.style.top = cardSettingsTop + 'px'
     }
 })
 
 document.addEventListener("click", function(event) {
-    if (event.target.classList.contains("delete-card-btn")) {
-        const cardToDelete = event.target.closest(".card-task")
-        cardToDelete.remove()
+    if (!event.target.classList.contains("open-card-settings")) {
+        cardSettings.classList.add("hide")
     }
+})
+
+editCardButton.addEventListener("click", function() {
+    const name = editCardButton.dataset.name
+    const description = editCardButton.dataset.description
+    const priority = editCardButton.dataset.priority
+    cardIDTask = editCardButton.dataset.cardid
+
+    // Chame a função editModal() passando os valores recuperados
+    openEditModal(name, description, priority)
+})
+
+deleteCardButton.addEventListener("click", function() {
+        document.getElementById(deleteCardButton.dataset.cardid).remove()
 })
 
 document.addEventListener("click", function(event) {
@@ -183,6 +218,52 @@ document.addEventListener("click", function(event) {
     }
 })
 
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("edit-column-class")){
+        const column = settingsButton.closest(".column")
+        const userInput = window.prompt("Digite o nome da coluna:")
+        column.querySelector(".column-title").textContent = userInput
+    }
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("delete-column")) {
+        const columnToDelete = settingsButton.closest(".column")
+        columnToDelete.remove()
+    }
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("open-settings-button")){
+        settingsButton = event.target
+
+        // Exibe ou oculta o columnSettings
+        columnSettings.classList.toggle("hide")
+
+        // Obtém as dimensões do settingsButton
+        const buttonRect = settingsButton.getBoundingClientRect()
+        const buttonLeft = buttonRect.left
+        const buttonTop = buttonRect.top
+        const buttonWidth = buttonRect.width
+        const buttonHeight = buttonRect.height
+
+        // Calcula a posição para exibir o columnSettings ao lado esquerdo do settingsButton
+        const columnSettingsWidth = columnSettings.offsetWidth
+        const columnSettingsHeight = columnSettings.offsetHeight
+        const columnSettingsLeft = buttonLeft - columnSettingsWidth - 5 // Posiciona à esquerda do settingsButton
+        const columnSettingsTop = buttonTop + 10
+        // Define a posição do columnSettings
+        columnSettings.style.position = 'absolute'
+        columnSettings.style.left = columnSettingsLeft + 'px'
+        columnSettings.style.top = columnSettingsTop + 'px'
+    }
+})
+
+document.addEventListener("click", function(event) {
+    if (!columnSettings.classList.contains("hide") & !columnSettings.contains(event.target) & event.target != document.querySelector(".open-settings-button"))
+        columnSettings.classList.add("hide")
+})
+
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:")
 
@@ -191,11 +272,10 @@ addColumnDiv.addEventListener("click", function() {
         columnDiv.className = "column"
         columnDiv.id = "column" + countColumn
         columnDiv.innerHTML = `
-            <h2>${userInput}</h2>
-            <button class="edit-column-button" id="edit-column${countColumn}">•••</button>
+            <h2 class="column-title">${userInput}</h2>
+            <button class="open-settings-button" id="open-settings${countColumn}">•••</button>
             <div class="cards-container"></div>
-            <div class="add-card-btn">+</div>
-        `
+            <div class="add-card-btn">+</div>`
 
         // Insere a nova coluna acima do botão 'Adicionar coluna'
         board.insertBefore(columnDiv, addColumnDiv)
