@@ -130,6 +130,7 @@ saveCard.addEventListener("click", function(){
         card.id = "card-" + cardId
         card.innerHTML = `
             <h3 class="card-name-value">${nameValue}</h3>
+            <div class="border-card"></div>
             <p class="card-description-value">${descriptionValue}</p>
             <span class="priority-value" id=${priorityValue}></span>
             <button class="open-card-settings" data-name="${nameValue}" data-description="${descriptionValue}" 
@@ -295,5 +296,3 @@ addColumnDiv.addEventListener("click", function() {
         addColumns(userInput, editContext, columnId)
     }
 })
-
-
