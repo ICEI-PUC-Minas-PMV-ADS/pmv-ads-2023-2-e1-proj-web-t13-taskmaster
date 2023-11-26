@@ -423,6 +423,8 @@ Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “TaskMaste
 
 Após realizar o cadastro na tela de “SignUp” e fazer o “Login”, o usuário será direcionado à tela do “TaskMaster” no endereço http://127.0.0.1:5501/codigo-fonte/TaskMaster/Members/TaskMaster.html acessando assim o aplicativo. Nesta tela o usuário fazer o uso do aplicativo, adicionando projetos e cards conforme finalidade desejada. A tela segue modelo do Kanban onde o usuário poderá gerir suas tarefas diárias conforme prioridades de fazer o devido acompanhamento da execução das mesmas.
 
-#### Responsável
+#### Responsáveis
+
+Nome: Bruno Cesar Dias Santos
 
 Nome: Felipe Van Oorschot Gamarra
