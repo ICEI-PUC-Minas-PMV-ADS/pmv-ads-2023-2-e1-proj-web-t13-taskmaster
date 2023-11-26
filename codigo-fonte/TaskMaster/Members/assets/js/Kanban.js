@@ -20,6 +20,7 @@ var cardContainer
 var settingsButton
 var countColumn = 1
 var countCard = 1
+var columnContext = null
 
 //Modal
 
@@ -120,26 +121,24 @@ function saveModal(){
 }
     
 saveCard.addEventListener("click", function(){
+    var cardId = generateCardId()
     if (saveCard.textContent === "Criar"){
         if (columnDiv) {
         let [nameValue, descriptionValue, priorityValue] = saveModal()
         let card = document.createElement("div")
         card.className = "card-task"
-        card.id = "card" + countCard
+        card.id = "card-" + cardId
         card.innerHTML = `
             <h3 class="card-name-value">${nameValue}</h3>
             <p class="card-description-value">${descriptionValue}</p>
             <span class="priority-value" id=${priorityValue}></span>
             <button class="open-card-settings" data-name="${nameValue}" data-description="${descriptionValue}" 
-            data-priority="${priorityValue}" data-cardid="card${countCard}">•••</button>`
+            data-priority="${priorityValue}" data-cardid="card${cardId}">•••</button>`
 
-        cardContainer.appendChild(card);
-
-        makeCardDraggable(card); 
-       
-            
-        countCard++
-        } else {
+        cardContainer.appendChild(card)
+        setCard(editContext, columnContext, nameValue, descriptionValue, priorityValue, cardId)
+        } 
+        else {
             console.log("Nenhuma columnDiv foi criada ainda.")
         }
     }
@@ -213,21 +212,24 @@ deleteCardButton.addEventListener("click", function() {
         document.getElementById(deleteCardButton.dataset.cardid).remove()
 })
 
-document.addEventListener("click", function(event) {
+function addCardColumn(event) {
     if (event.target.classList.contains("add-card-btn")) {
         openModal()
         const column = event.target.closest(".column")
         cardContainer = column.querySelector(".cards-container")
-
-        
+        const element = event.currentTarget
+        columnContext = element.id
+        getColumn(editContext, columnContext)
     }
-})
+}
 
 document.addEventListener("click", function(event) {
     if (event.target.classList.contains("edit-column-class")){
         const column = settingsButton.closest(".column")
         const userInput = window.prompt("Digite o nome da coluna:")
+        if(userInput){
         column.querySelector(".column-title").textContent = userInput
+        }
     }
 })
 
@@ -265,76 +267,28 @@ document.addEventListener("click", function(event) {
 })
 
 document.addEventListener("click", function(event) {
-    if (!columnSettings.classList.contains("hide") & !columnSettings.contains(event.target) & event.target != document.querySelector(".open-settings-button"))
+    if (!columnSettings.classList.contains("hide") && !event.target.classList.contains("open-settings-button")) {
         columnSettings.classList.add("hide")
+    }
 })
 
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:")
+    var columnId = generateColumnId() 
 
     if (userInput) {
         columnDiv = document.createElement("div")
         columnDiv.className = "column"
-        columnDiv.id = "column" + countColumn
+        columnDiv.id = "column-" + columnId
+        columnDiv.onclick = addCardColumn
         columnDiv.innerHTML = `
             <h2 class="column-title">${userInput}</h2>
-            <button class="open-settings-button" id="open-settings${countColumn}">•••</button>
+            <button class="open-settings-button" id="open-settings${columnId}">•••</button>
             <div class="cards-container"></div>
             <div class="add-card-btn">+</div>`
 
         // Insere a nova coluna acima do botão 'Adicionar coluna'
         board.insertBefore(columnDiv, addColumnDiv)
-
-        countColumn ++
+        addColumns(userInput, editContext, columnId)
     }
 })
-
-let draggedCard = null;
-
-function makeCardDraggable(card) { card.draggable = true;
-
-card.addEventListener('dragstart', (e) => {
-    draggedCard = card;
-    e.dataTransfer.setData('text/plain', card.id);
-    card.style.opacity = '0.5';
-    card.classList.add('dragging');
-});
-
-card.addEventListener('dragend', () => {
-    card.style.opacity = '';
-    card.classList.remove('dragging');
-});
-}
-
-document.addEventListener('DOMContentLoaded', function () { document.querySelectorAll('.card-task').forEach(makeCardDraggable);
-
-document.addEventListener('dragenter', (e) => {
-    e.preventDefault();
-    if (e.target.classList.contains('column')) {
-        e.target.classList.add('dragover');
-    }
-});
-
-document.addEventListener('dragleave', (e) => {
-    if (e.target.classList.contains('column')) {
-        e.target.classList.remove('dragover');
-    }
-});
-
-document.addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
-
-document.addEventListener('drop', (e) => {
-    e.preventDefault();
-    if (e.target.classList.contains('column')) {
-        const cardId = e.dataTransfer.getData('text/plain');
-        const card = document.getElementById(cardId);
-        if (card) {
-            const column = e.target;
-            column.classList.remove('dragover');
-            column.querySelector('.cards-container').appendChild(card);
-        }
-    }
-});
-});
