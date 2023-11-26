@@ -235,11 +235,12 @@ document.addEventListener("click", function(event) {
     }
 })
 
-document.addEventListener("click", function(event) {
-    if (event.target.classList.contains("delete-column")) {
-        const columnToDelete = settingsButton.closest(".column")
-        columnToDelete.remove()
-    }
+var deleteColumn = document.querySelector(".delete-column")
+deleteColumn.addEventListener("click", function(event) {
+    const columnToDelete = settingsButton.closest(".column")
+    columnToDelete.remove()
+    columnContext = columnToDelete.id
+    removeColumnList(editContext, columnContext)
 })
 
 document.addEventListener("click", function(event) {

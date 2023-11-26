@@ -120,6 +120,14 @@ function setPageTitle(title){
     nameProject.style.paddingRight = "20px"
 }
 
+function removeColumnList(editContext){
+    var project = getProject(editContext)
+    var columnProject = columnContext.replace('column-', '')
+    var findColumn = project.columns.findIndex((e) => e.columnId == columnProject)
+    project.columns.splice(findColumn, 1)
+    updateLocalStorageProjectList()
+}
+
 for(i = 0; i < projectsList.length; i++){
     let project = projectsList[i]
     createCard(project.title, project.subtitle, project.description, project.id)
