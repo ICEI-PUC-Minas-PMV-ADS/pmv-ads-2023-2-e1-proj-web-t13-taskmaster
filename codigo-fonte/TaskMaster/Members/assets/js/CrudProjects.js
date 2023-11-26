@@ -120,6 +120,7 @@ function setPageTitle(title){
     nameProject.style.paddingRight = "20px"
 }
 
+// Função para remover a coluna do local storage
 function removeColumnList(editContext){
     var project = getProject(editContext)
     var columnProject = columnContext.replace('column-', '')
@@ -127,6 +128,20 @@ function removeColumnList(editContext){
     project.columns.splice(findColumn, 1)
     updateLocalStorageProjectList()
 }
+
+// Função para mudar o nome da coluna
+function changeColumnTitle(editContext, columnContext, userInput){
+    var project = getProject(editContext)
+    var columnProject = columnContext.replace('column-', '')
+    var findColumn = project.columns.findIndex((e) => e.columnId == columnProject)
+    var columnPosition = project.columns[findColumn]
+    columnPosition.title = userInput
+    updateLocalStorageProjectList()
+}
+
+// Função para excluir o card
+// function removeCardOnColumn(editContext, columnContext, cardContext){
+// }
 
 for(i = 0; i < projectsList.length; i++){
     let project = projectsList[i]
