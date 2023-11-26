@@ -184,7 +184,7 @@ Após inserir os dados na tela inicial, o usuário será direcionado para a tela
 Nome: Thiago Rodrigues Silva de Oliveira
 
 
-### 6.3.	Tela de “Login”
+### Tela de “Login”
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/1ff01d3e-c7c2-41b6-9485-c2d1da64a571)
 
@@ -295,3 +295,134 @@ Após realizar o cadastro na tela de “SignUp”, o usuário será direcionado 
 #### Responsável
 
 Nome: Ettore Motta Gazzinelli
+
+### Tela Aplicativo "TaskMaster"
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/assets/145122642/63cf1596-e977-40bf-94a0-965e1a1746c7)
+
+
+#### Requisito atendido
+
+Requisito Funcional – Criar projetos e cards  com a finalidade de acompanhamento da rotina diária de tarefas; adicionar as rotinas e tarefas diárias; acompanhar as tarefas fazendo a gestão das atividades.
+
+#### Artefatos da funcionalidade
+
+Arquivos relacionados ao desenvolvimento da funcionalidade: Arquivo “TaskMaster.html”
+
+#### Estrutura de Dados
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/Style.css" />    
+    <title>TaskMaster</title>
+    
+  </head>
+  
+  <body>
+    <nav class="item">
+      <h1 id="taskMaster">TaskMaster</h1>
+      <h3 id="name-project"></h3>
+    </nav>
+
+    <div class="container grid-template-areas">
+      <div class="item sidenav">
+        <div id="projects"></div>
+        <div id="add-project">+</div>
+      </div>
+
+      <div class="item content">
+        <div class="board">
+          <div id="add-column">+</div>
+        </div>          
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="hide" id="fade-modal-project"></div>
+    <div class="modal-sidenav hide">
+      <div class="modal-project">
+        <h1><span>Criar Projeto</span></h1>
+        <input type="text" maxlength="30" id="projectname" placeholder="Nome do Projeto"><br>
+        <input type="text" maxlength="30" id="project-card-title" placeholder="Título do Card"><br>
+        <textarea type="text" maxlength="100" id="project-description" placeholder="Descrição do Projeto"></textarea><br>
+        <div id="creat-modal">
+          <button class="btn" id="cancel">Cancelar</button>
+          <button class="btn" id="create-project">Criar</button>
+          <button class="btn" id="save-project">Salvar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings list -->
+    <div class="list-settings hide">
+      <ul class="list-settings-project shadow-v2">
+        <li id="change-project">Editar</li>
+        <li id="delete-project">Deletar</li>
+      </ul>
+    </div>
+
+    <!-- Modal Kanban -->
+    <div class="fade hide"></div>
+    <div class="modal hide" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="example-modal-label">Novo Card</h1>
+          </div>
+          <div class="modal-body">
+            <div class="card-name-class">
+              <input type="text" maxlength="30" id="card-name" placeholder="Nome do Card">
+            </div>
+            <div class="card-description-class">
+              <textarea type="text" maxlength="437" id="card-description" placeholder="Descrição do Card"></textarea><br>
+            </div>
+            <div class="priority">
+              <span class="priority-text">Prioridade</span>
+              <button class="priority-btn" id="high-priority">Alta</button>
+              <button class="priority-btn" id="medium-priority">Media</button>
+              <button class="priority-btn" id="low-priority">Baixa</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="card-btn" id="close-button" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="card-btn" id="save-button">Criar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column Settings -->
+    <div class="column-settings hide">
+      <ul class="column-settings-list">
+        <li class="edit-column-class">Editar</li>
+        <li class="delete-column">Deletar</li>
+      </ul>
+    </div>
+
+    <!-- Card Settings -->
+    <div class="card-settings hide">
+      <ul class="card-settings-list">
+        <li class="edit-card-btn">Editar</li>
+        <li class="delete-card-btn">Deletar</li>
+      </ul>
+    </div>
+
+    
+
+  </body>
+  <script src="assets/js/SidenavProject.js"></script>
+  <script src="assets/js/Kanban.js"></script>
+  <script src="assets/js/CrudProjects.js"></script>
+  <script src="assets/js/Dragged.Js"></script>
+  </html>
+
+#### Instruções de acesso
+
+Após realizar o cadastro na tela de “SignUp” e fazer o “Login”, o usuário será direcionado à tela do “TaskMaster” no endereço http://127.0.0.1:5501/codigo-fonte/TaskMaster/Members/TaskMaster.html acessando assim o aplicativo. Nesta tela o usuário fazer o uso do aplicativo, adicionando projetos e cards conforme finalidade desejada. A tela segue modelo do Kanban onde o usuário poderá gerir suas tarefas diárias conforme prioridades de fazer o devido acompanhamento da execução das mesmas.
+
+#### Responsável
+
+Nome: Felipe Van Oorschot Gamarra
