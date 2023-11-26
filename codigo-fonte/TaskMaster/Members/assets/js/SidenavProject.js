@@ -259,6 +259,7 @@ changeProject.addEventListener("click", function(){
     }
 })
 
+// Função de seleção de card
 function selectProject(e){
     const element = e.currentTarget
     editContext = element.id
@@ -268,7 +269,7 @@ function selectProject(e){
     setPageTitle(selectedProject.title)
 
     var removeColumn = document.getElementsByClassName('column')
-    for(i = 0; removeColumn.length > 0; i++){
+    for(i = removeColumn.length - 1; i >= 0; i--){
         removeColumn[i].remove()
     }
 

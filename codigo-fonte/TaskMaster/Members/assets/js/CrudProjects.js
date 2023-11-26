@@ -101,15 +101,18 @@ function setCard(editContext, columnContext, nameValue, descriptionValue, priori
 
 var selectedProjectOnLoad = getSelectedProject()
 
+// Função que definir meu id
 function setSelectedProject(editContext){
     const editContextId = editContext.replace('project-', '')
     localStorage.setItem('selectedProject', editContextId)
 }
 
+// Função para pegar o valor do meu id
 function getSelectedProject(){
     return localStorage.getItem('selectedProject')
 }
 
+// Função para exibir o titulo do card
 function setPageTitle(title){
     var nameProject = document.getElementById('name-project')
 
