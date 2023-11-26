@@ -136,6 +136,8 @@ saveCard.addEventListener("click", function(){
             data-priority="${priorityValue}" data-cardid="card${cardId}">•••</button>`
 
         cardContainer.appendChild(card)
+
+        makeCardDraggable(card)
         setCard(editContext, columnContext, nameValue, descriptionValue, priorityValue, cardId)
         } 
         else {
@@ -292,3 +294,5 @@ addColumnDiv.addEventListener("click", function() {
         addColumns(userInput, editContext, columnId)
     }
 })
+
+
