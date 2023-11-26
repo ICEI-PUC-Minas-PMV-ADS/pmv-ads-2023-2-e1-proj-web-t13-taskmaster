@@ -133,7 +133,10 @@ saveCard.addEventListener("click", function(){
             <button class="open-card-settings" data-name="${nameValue}" data-description="${descriptionValue}" 
             data-priority="${priorityValue}" data-cardid="card${countCard}">•••</button>`
 
-        cardContainer.appendChild(card)
+        cardContainer.appendChild(card);
+
+        makeCardDraggable(card); 
+       
             
         countCard++
         } else {
@@ -215,6 +218,8 @@ document.addEventListener("click", function(event) {
         openModal()
         const column = event.target.closest(".column")
         cardContainer = column.querySelector(".cards-container")
+
+        
     }
 })
 
@@ -284,39 +289,52 @@ addColumnDiv.addEventListener("click", function() {
     }
 })
 
-let draggedCard = null
+let draggedCard = null;
 
-function makeCardDraggable(card) {
-    card.addEventListener('dragstart', () => {
-        draggedCard = card
-        setTimeout(() => {
-            card.style.display = 'none'
-        }, 0)
-    })
+function makeCardDraggable(card) { card.draggable = true;
 
-    card.addEventListener('dragend', () => {
-        setTimeout(() => {
-            card.style.display = 'block'
-            draggedCard = null
-        }, 0)
-    })
+card.addEventListener('dragstart', (e) => {
+    draggedCard = card;
+    e.dataTransfer.setData('text/plain', card.id);
+    card.style.opacity = '0.5';
+    card.classList.add('dragging');
+});
+
+card.addEventListener('dragend', () => {
+    card.style.opacity = '';
+    card.classList.remove('dragging');
+});
 }
 
+document.addEventListener('DOMContentLoaded', function () { document.querySelectorAll('.card-task').forEach(makeCardDraggable);
 
-document.querySelectorAll('.column').forEach(column => {
-    column.addEventListener('dragover', (e) => {
-        e.preventDefault()
-    })
+document.addEventListener('dragenter', (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains('column')) {
+        e.target.classList.add('dragover');
+    }
+});
 
-    column.addEventListener('drop', (e) => {
-        e.preventDefault()
-        if (draggedCard) {
-            column.appendChild(draggedCard)
+document.addEventListener('dragleave', (e) => {
+    if (e.target.classList.contains('column')) {
+        e.target.classList.remove('dragover');
+    }
+});
+
+document.addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener('drop', (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains('column')) {
+        const cardId = e.dataTransfer.getData('text/plain');
+        const card = document.getElementById(cardId);
+        if (card) {
+            const column = e.target;
+            column.classList.remove('dragover');
+            column.querySelector('.cards-container').appendChild(card);
         }
-    })
-})
-
-document.querySelectorAll('.card1').forEach(card => {
-    makeCardDraggable(card)
-})
-
+    }
+});
+});
