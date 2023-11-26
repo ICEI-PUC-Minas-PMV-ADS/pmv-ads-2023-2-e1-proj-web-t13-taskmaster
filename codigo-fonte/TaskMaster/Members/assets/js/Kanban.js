@@ -21,6 +21,7 @@ var settingsButton
 var countColumn = 1
 var countCard = 1
 var columnContext = null
+var cardContext = null
 
 //Modal
 
@@ -166,6 +167,7 @@ closeCard.addEventListener("click", function(){
 document.addEventListener("click", function(event) {
     if (event.target.classList.contains("open-card-settings")) {
         settingsButton = event.target
+        cardContext = settingsButton.parentElement.id
         editCardButton.setAttribute("data-name", settingsButton.dataset.name)
         editCardButton.setAttribute("data-description", settingsButton.dataset.description)
         editCardButton.setAttribute("data-priority", settingsButton.dataset.priority)
@@ -210,8 +212,11 @@ editCardButton.addEventListener("click", function() {
     openEditModal(name, description, priority)
 })
 
-deleteCardButton.addEventListener("click", function() {
-        document.getElementById(deleteCardButton.dataset.cardid).remove()
+deleteCardButton.addEventListener("click", function(event) {
+    document.getElementById(cardContext).remove()
+    const element = settingsButton.closest(".card-task")
+    columnContext = element.id
+    // removeCardOnColumn(editContext, columnContext, cardContext)
 })
 
 function addCardColumn(event) {

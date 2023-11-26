@@ -139,6 +139,10 @@ function changeColumnTitle(editContext, columnContext, userInput){
     updateLocalStorageProjectList()
 }
 
+// Função para excluir o card
+// function removeCardOnColumn(editContext, columnContext, cardContext){
+// }
+
 for(i = 0; i < projectsList.length; i++){
     let project = projectsList[i]
     createCard(project.title, project.subtitle, project.description, project.id)
