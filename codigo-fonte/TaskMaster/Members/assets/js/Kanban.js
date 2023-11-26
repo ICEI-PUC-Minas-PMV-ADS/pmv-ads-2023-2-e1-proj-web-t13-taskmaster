@@ -227,7 +227,9 @@ document.addEventListener("click", function(event) {
     if (event.target.classList.contains("edit-column-class")){
         const column = settingsButton.closest(".column")
         const userInput = window.prompt("Digite o nome da coluna:")
+        if (userInput){
         column.querySelector(".column-title").textContent = userInput
+        }
     }
 })
 
@@ -265,8 +267,9 @@ document.addEventListener("click", function(event) {
 })
 
 document.addEventListener("click", function(event) {
-    if (!columnSettings.classList.contains("hide") & !columnSettings.contains(event.target) & event.target != document.querySelector(".open-settings-button"))
+    if (!columnSettings.classList.contains("hide") && !event.target.classList.contains("open-settings-button")) {
         columnSettings.classList.add("hide")
+    }    
 })
 
 addColumnDiv.addEventListener("click", function() {
