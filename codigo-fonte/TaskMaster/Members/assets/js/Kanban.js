@@ -20,6 +20,7 @@ var cardContainer
 var settingsButton
 var countColumn = 1
 var countCard = 1
+var columnContext = null
 
 //Modal
 
@@ -120,23 +121,24 @@ function saveModal(){
 }
     
 saveCard.addEventListener("click", function(){
+    var cardId = generateCardId()
     if (saveCard.textContent === "Criar"){
         if (columnDiv) {
         let [nameValue, descriptionValue, priorityValue] = saveModal()
         let card = document.createElement("div")
         card.className = "card-task"
-        card.id = "card" + countCard
+        card.id = "card-" + cardId
         card.innerHTML = `
             <h3 class="card-name-value">${nameValue}</h3>
             <p class="card-description-value">${descriptionValue}</p>
             <span class="priority-value" id=${priorityValue}></span>
             <button class="open-card-settings" data-name="${nameValue}" data-description="${descriptionValue}" 
-            data-priority="${priorityValue}" data-cardid="card${countCard}">•••</button>`
+            data-priority="${priorityValue}" data-cardid="card${cardId}">•••</button>`
 
         cardContainer.appendChild(card)
-            
-        countCard++
-        } else {
+        setCard(editContext, columnContext, nameValue, descriptionValue, priorityValue, cardId)
+        } 
+        else {
             console.log("Nenhuma columnDiv foi criada ainda.")
         }
     }
@@ -210,13 +212,16 @@ deleteCardButton.addEventListener("click", function() {
         document.getElementById(deleteCardButton.dataset.cardid).remove()
 })
 
-document.addEventListener("click", function(event) {
+function addCardColumn(event) {
     if (event.target.classList.contains("add-card-btn")) {
         openModal()
         const column = event.target.closest(".column")
         cardContainer = column.querySelector(".cards-container")
+        const element = event.currentTarget
+        columnContext = element.id
+        getColumn(editContext, columnContext)
     }
-})
+}
 
 document.addEventListener("click", function(event) {
     if (event.target.classList.contains("edit-column-class")){
@@ -266,21 +271,22 @@ document.addEventListener("click", function(event) {
 
 addColumnDiv.addEventListener("click", function() {
     const userInput = window.prompt("Digite o nome da coluna:")
+    var columnId = generateColumnId() 
 
     if (userInput) {
         columnDiv = document.createElement("div")
         columnDiv.className = "column"
-        columnDiv.id = "column" + countColumn
+        columnDiv.id = "column-" + columnId
+        columnDiv.onclick = addCardColumn
         columnDiv.innerHTML = `
             <h2 class="column-title">${userInput}</h2>
-            <button class="open-settings-button" id="open-settings${countColumn}">•••</button>
+            <button class="open-settings-button" id="open-settings${columnId}">•••</button>
             <div class="cards-container"></div>
             <div class="add-card-btn">+</div>`
 
         // Insere a nova coluna acima do botão 'Adicionar coluna'
         board.insertBefore(columnDiv, addColumnDiv)
-
-        countColumn ++
+        addColumns(userInput, editContext, columnId)
     }
 })
 

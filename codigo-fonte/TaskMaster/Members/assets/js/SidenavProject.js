@@ -262,12 +262,24 @@ changeProject.addEventListener("click", function(){
 function selectProject(e){
     const element = e.currentTarget
     editContext = element.id
-    var nameProject = document.getElementById('name-project')
+    setSelectedProject(editContext)
     
-    var projectTitle = projectSelect(editContext)
-    
-    nameProject.textContent = projectTitle
-    nameProject.style.paddingRight = "20px"
+    var selectedProject = getProject(editContext)
+    setPageTitle(selectedProject.title)
+
+    var removeColumn = document.getElementsByClassName('column')
+    for(i = 0; removeColumn.length > 0; i++){
+        removeColumn[i].remove()
+    }
+
+    for(i = 0; i < selectedProject.columns.length; i++){
+        var column = selectedProject.columns[i]
+        var cardContainer = generateColumnFromLocalStorage(column.title, column.columnId)
+        for(j = 0; j < column.cards.length; j++){
+            var card = column.cards[j]
+            generateCardFromLocalStorage(card.title, card.description, card.priority, card.cardId, cardContainer)
+        }
+    }
 }
 
 // Função para fecha a lista de edição de projeto
