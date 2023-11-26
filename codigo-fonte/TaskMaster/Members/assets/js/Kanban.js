@@ -228,9 +228,11 @@ function addCardColumn(event) {
 document.addEventListener("click", function(event) {
     if (event.target.classList.contains("edit-column-class")){
         const column = settingsButton.closest(".column")
+        columnContext = column.id
         const userInput = window.prompt("Digite o nome da coluna:")
         if(userInput){
         column.querySelector(".column-title").textContent = userInput
+        changeColumnTitle(editContext, columnContext, userInput)
         }
     }
 })
