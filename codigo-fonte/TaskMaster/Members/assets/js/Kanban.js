@@ -169,6 +169,8 @@ document.addEventListener("click", function(event) {
     if (event.target.classList.contains("open-card-settings")) {
         settingsButton = event.target
         cardContext = settingsButton.parentElement.id
+        const element = settingsButton.closest(".column")
+        columnContext = element.id
         editCardButton.setAttribute("data-name", settingsButton.dataset.name)
         editCardButton.setAttribute("data-description", settingsButton.dataset.description)
         editCardButton.setAttribute("data-priority", settingsButton.dataset.priority)
@@ -213,11 +215,10 @@ editCardButton.addEventListener("click", function() {
     openEditModal(name, description, priority)
 })
 
-deleteCardButton.addEventListener("click", function(event) {
+deleteCardButton.addEventListener("click", function() {
     document.getElementById(cardContext).remove()
     const element = settingsButton.closest(".card-task")
-    columnContext = element.id
-    // removeCardOnColumn(editContext, columnContext, cardContext)
+    removeCardOnColumn(editContext, columnContext, cardContext)
 })
 
 function addCardColumn(event) {
@@ -227,7 +228,6 @@ function addCardColumn(event) {
         cardContainer = column.querySelector(".cards-container")
         const element = event.currentTarget
         columnContext = element.id
-        getColumn(editContext, columnContext)
     }
 }
 
@@ -244,7 +244,7 @@ document.addEventListener("click", function(event) {
 })
 
 var deleteColumn = document.querySelector(".delete-column")
-deleteColumn.addEventListener("click", function(event) {
+deleteColumn.addEventListener("click", function() {
     const columnToDelete = settingsButton.closest(".column")
     columnToDelete.remove()
     columnContext = columnToDelete.id

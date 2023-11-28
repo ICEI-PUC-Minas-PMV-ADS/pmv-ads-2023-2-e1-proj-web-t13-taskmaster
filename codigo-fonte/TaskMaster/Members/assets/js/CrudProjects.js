@@ -69,7 +69,7 @@ function editProjectList(editContext, projectName, projectCardTtile, projectDesc
     updateLocalStorageProjectList()
 }
 
-// Função de seleção de card
+// Função de seleção do projeto
 function getProject(editContext){
     const editContextId = editContext.replace('project-', '')
     var findProject = projectsList.findIndex((e) => e.id == editContextId)
@@ -82,7 +82,15 @@ function getColumn(editContext, columnContext){
     var project = getProject(editContext)
     var columnProject = columnContext.replace('column-', '')
     var findColumn = project.columns.findIndex((e) => e.columnId == columnProject)
-    return project.columns[findColumn]
+    return {column: project.columns[findColumn], columnIndex: findColumn}
+}
+
+// Função para pegar o card
+function getCard(editContext, columnContext, cardContext){
+    var {column} = getColumn(editContext, columnContext)
+    var cardTask = cardContext.replace('card-', '')
+    var findCard = column.cards.findIndex((e) => e.cardId == cardTask)
+    return { card: column.cards[findCard], cardIndex: findCard}
 }
 
 // Função para adicionar a coluna no localstorage
@@ -94,7 +102,7 @@ function addColumns(title, editContext, columnId){
 
 // Função de adicionar card no localstorage
 function setCard(editContext, columnContext, nameValue, descriptionValue, priorityValue, cardId){
-    var column = getColumn(editContext, columnContext)
+    var {column} = getColumn(editContext, columnContext)
     column.cards.push({title: nameValue, description: descriptionValue, priority: priorityValue, cardId: cardId})
     updateLocalStorageProjectList()
 }
@@ -121,27 +129,30 @@ function setPageTitle(title){
 }
 
 // Função para remover a coluna do local storage
-function removeColumnList(editContext){
+function removeColumnList(editContext, columnContext){
     var project = getProject(editContext)
-    var columnProject = columnContext.replace('column-', '')
-    var findColumn = project.columns.findIndex((e) => e.columnId == columnProject)
-    project.columns.splice(findColumn, 1)
+    var {columnIndex} = getColumn(editContext, columnContext)
+    project.columns.splice(columnIndex, 1)
     updateLocalStorageProjectList()
 }
 
 // Função para mudar o nome da coluna
 function changeColumnTitle(editContext, columnContext, userInput){
-    var project = getProject(editContext)
-    var columnProject = columnContext.replace('column-', '')
-    var findColumn = project.columns.findIndex((e) => e.columnId == columnProject)
-    var columnPosition = project.columns[findColumn]
-    columnPosition.title = userInput
+    var {column} = getColumn(editContext, columnContext)
+    column.title = userInput
     updateLocalStorageProjectList()
 }
 
 // Função para excluir o card
-// function removeCardOnColumn(editContext, columnContext, cardContext){
-// }
+function removeCardOnColumn(editContext, columnContext, cardContext){
+    var {column} = getColumn(editContext, columnContext)
+    var {cardIndex} = getCard(editContext, columnContext, cardContext)
+    column.cards.splice(cardIndex, 1)    
+    updateLocalStorageProjectList()
+}
+
+// Função para editar os valores do card
+
 
 for(i = 0; i < projectsList.length; i++){
     let project = projectsList[i]
