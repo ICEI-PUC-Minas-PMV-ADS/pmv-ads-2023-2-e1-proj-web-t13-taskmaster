@@ -152,7 +152,13 @@ function removeCardOnColumn(editContext, columnContext, cardContext){
 }
 
 // Função para editar os valores do card
-
+function editCard(editContext, columnContext, cardContext, nameValue, descriptionValue, priorityValue){
+    var {card} = getCard(editContext, columnContext, cardContext)
+    card.title = nameValue
+    card.description = descriptionValue
+    card.priority = priorityValue
+    updateLocalStorageProjectList()
+}
 
 for(i = 0; i < projectsList.length; i++){
     let project = projectsList[i]

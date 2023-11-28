@@ -156,6 +156,7 @@ saveCard.addEventListener("click", function(){
             settingsButton.dataset.name = nameValue
             settingsButton.dataset.description = descriptionValue
             settingsButton.dataset.priority = priorityValue
+            editCard(editContext, columnContext, cardContext, nameValue, descriptionValue, priorityValue)
         }
     }
 })
@@ -205,19 +206,21 @@ document.addEventListener("click", function(event) {
     }
 })
 
+var cardIDTask = null
 editCardButton.addEventListener("click", function() {
     const name = editCardButton.dataset.name
     const description = editCardButton.dataset.description
     const priority = editCardButton.dataset.priority
-    cardIDTask = editCardButton.dataset.cardid
+    originalCardID = editCardButton.dataset.cardid
 
     // Chame a função editModal() passando os valores recuperados
     openEditModal(name, description, priority)
+
+    return cardIDTask = originalCardID.replace('card', 'card-');
 })
 
 deleteCardButton.addEventListener("click", function() {
     document.getElementById(cardContext).remove()
-    const element = settingsButton.closest(".card-task")
     removeCardOnColumn(editContext, columnContext, cardContext)
 })
 
