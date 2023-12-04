@@ -30,6 +30,31 @@ fadeModalProject.addEventListener("click", function(){
     modalCard.classList.toggle("hide")
 })
 
+function openCard(nameValue, descriptionValue, priorityValue) {
+
+    modalName.textContent = "Editar Card"
+    modalCard.classList.toggle("hide")
+    fadeModalProject.classList.toggle("hide")
+    saveCard.textContent = "Salvar"
+    cardName.value = nameValue
+    cardDescription.value = descriptionValue
+    if (priorityValue === "low-priority-card") {
+        lowPriority.classList.add("active")
+        mediumPriority.classList.remove("active")
+        highPriority.classList.remove("active")
+    }
+    if (priorityValue === "medium-priority-card") {
+        mediumPriority.classList.add("active")
+        lowPriority.classList.remove("active")
+        highPriority.classList.remove("active")
+    }
+    if (priorityValue === "high-priority-card") {
+        highPriority.classList.add("active")
+        lowPriority.classList.remove("active")
+        mediumPriority.classList.remove("active")
+    }
+}
+
 function openModal() {
 
     let cardNameError = modalCard.querySelector(".card-name-error")
@@ -115,7 +140,7 @@ function saveModal(){
         if (!cardNameError){
             cardNameError = document.createElement("div")
             cardNameError.classList.add("card-name-error")
-            cardNameError.textContent = "Nome do card obrigatório"
+            cardNameError.textContent = "* Nome do card obrigatório"
             modalCard.querySelector(".card-name-class").appendChild(cardNameError)
         }
     }
@@ -137,14 +162,11 @@ saveCard.addEventListener("click", function(){
             <button class="open-card-settings" data-name="${nameValue}" data-description="${descriptionValue}" 
             data-priority="${priorityValue}" data-cardid="card${cardId}">•••</button>`
 
-        cardContainer.appendChild(card)
+        addCardFunction(card, cardContainer)
 
         makeCardDraggable(card)
         setCard(editContext, columnContext, nameValue, descriptionValue, priorityValue, cardId)
         } 
-        else {
-            console.log("Nenhuma columnDiv foi criada ainda.")
-        }
     }
     if (saveCard.textContent === "Salvar"){
         if (columnDiv) {
@@ -166,6 +188,22 @@ closeCard.addEventListener("click", function(){
     modalCard.classList.toggle("hide")
 })
 
+function addCardFunction(card, cardContainer) {
+
+    let column = cardContainer.parentNode
+    cardContainer.appendChild(card)
+
+    let numberOfCards = cardContainer.childElementCount
+    let newHeight = 167 * numberOfCards + 120
+
+    if (newHeight <= 580){
+        column.style.height = newHeight + 'px'
+    }
+    else{
+        column.style.height = 580 + 'px'
+    }
+}
+
 document.addEventListener("click", function(event) {
     if (event.target.classList.contains("open-card-settings")) {
         settingsButton = event.target
@@ -183,20 +221,12 @@ document.addEventListener("click", function(event) {
 
         // Obtém as dimensões do settingsButton
         const buttonRect = settingsButton.getBoundingClientRect()
-        const buttonLeft = buttonRect.left
-        const buttonTop = buttonRect.top
-        const buttonWidth = buttonRect.width
-        const buttonHeight = buttonRect.height
+        let xPos = buttonRect.left
+        let yPos = buttonRect.top
 
-        // Calcula a posição para exibir o cardSettings ao lado esquerdo do settingsButton
-        const cardSettingsWidth = cardSettings.offsetWidth
-        const cardSettingsHeight = cardSettings.offsetHeight
-        const cardSettingsLeft = buttonLeft - cardSettingsWidth - 5 // Posiciona à esquerda do settingsButton
-        const cardSettingsTop = buttonTop + 10
-        // Define a posição do cardSettings
         cardSettings.style.position = 'absolute'
-        cardSettings.style.left = cardSettingsLeft + 'px'
-        cardSettings.style.top = cardSettingsTop + 'px'
+        cardSettings.style.left = (xPos-90) + 'px'
+        cardSettings.style.top = (yPos+10) + 'px'
     }
 })
 
@@ -254,30 +284,24 @@ deleteColumn.addEventListener("click", function() {
     removeColumnList(editContext, columnContext)
 })
 
-document.addEventListener("click", function(event) {
-    if (event.target.classList.contains("open-settings-button")){
-        settingsButton = event.target
+window.addEventListener('load', function() {
+    document.addEventListener("click", function(event) {
+        if (event.target.classList.contains("open-settings-button")){
+            settingsButton = event.target
 
-        // Exibe ou oculta o columnSettings
-        columnSettings.classList.toggle("hide")
+            // Exibe ou oculta o columnSettings
+            columnSettings.classList.toggle("hide")
 
-        // Obtém as dimensões do settingsButton
-        const buttonRect = settingsButton.getBoundingClientRect()
-        const buttonLeft = buttonRect.left
-        const buttonTop = buttonRect.top
-        const buttonWidth = buttonRect.width
-        const buttonHeight = buttonRect.height
+            // Obtém as dimensões do settingsButton
+            const buttonRect = settingsButton.getBoundingClientRect()
+            let xPos = buttonRect.left
+            let yPos = buttonRect.top
 
-        // Calcula a posição para exibir o columnSettings ao lado esquerdo do settingsButton
-        const columnSettingsWidth = columnSettings.offsetWidth
-        const columnSettingsHeight = columnSettings.offsetHeight
-        const columnSettingsLeft = buttonLeft - columnSettingsWidth - 5 // Posiciona à esquerda do settingsButton
-        const columnSettingsTop = buttonTop + 10
-        // Define a posição do columnSettings
-        columnSettings.style.position = 'absolute'
-        columnSettings.style.left = columnSettingsLeft + 'px'
-        columnSettings.style.top = columnSettingsTop + 'px'
-    }
+            columnSettings.style.position = 'absolute'
+            columnSettings.style.left = (xPos-85) + 'px'
+            columnSettings.style.top = (yPos+5) + 'px'
+        }
+    })
 })
 
 document.addEventListener("click", function(event) {
@@ -306,3 +330,4 @@ addColumnDiv.addEventListener("click", function() {
         addColumns(userInput, editContext, columnId)
     }
 })
+
