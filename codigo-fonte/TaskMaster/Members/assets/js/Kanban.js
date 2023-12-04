@@ -30,31 +30,6 @@ fadeModalProject.addEventListener("click", function(){
     modalCard.classList.toggle("hide")
 })
 
-function openCard(nameValue, descriptionValue, priorityValue) {
-
-    modalName.textContent = "Editar Card"
-    modalCard.classList.toggle("hide")
-    fadeModalProject.classList.toggle("hide")
-    saveCard.textContent = "Salvar"
-    cardName.value = nameValue
-    cardDescription.value = descriptionValue
-    if (priorityValue === "low-priority-card") {
-        lowPriority.classList.add("active")
-        mediumPriority.classList.remove("active")
-        highPriority.classList.remove("active")
-    }
-    if (priorityValue === "medium-priority-card") {
-        mediumPriority.classList.add("active")
-        lowPriority.classList.remove("active")
-        highPriority.classList.remove("active")
-    }
-    if (priorityValue === "high-priority-card") {
-        highPriority.classList.add("active")
-        lowPriority.classList.remove("active")
-        mediumPriority.classList.remove("active")
-    }
-}
-
 function openModal() {
 
     let cardNameError = modalCard.querySelector(".card-name-error")
@@ -181,6 +156,10 @@ saveCard.addEventListener("click", function(){
             editCard(editContext, columnContext, cardContext, nameValue, descriptionValue, priorityValue)
         }
     }
+    if (saveCard.textContent === "Fechar"){
+        modalCard.classList.toggle("hide")
+        fadeModalProject.classList.toggle("hide")
+    }
 })
 
 closeCard.addEventListener("click", function(){
@@ -305,7 +284,7 @@ window.addEventListener('load', function() {
 })
 
 document.addEventListener("click", function(event) {
-    if (!columnSettings.classList.contains("hide") && !event.target.classList.contains("open-settings-button")) {
+    if (!columnSettings.classList.contains("hide") && !event.target.classList.contains("open-settings-button") ) {
         columnSettings.classList.add("hide")
     }
 })
@@ -331,3 +310,42 @@ addColumnDiv.addEventListener("click", function() {
     }
 })
 
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("card-task")) {
+        openCard(event.target)
+    }
+    else if (event.target.parentNode.classList.contains("card-task") && !event.target.classList.contains("open-card-settings")) {
+        openCard(event.target.parentNode)
+    }
+})
+
+function openCard(card){
+    nameValue = card.querySelector(".card-name-value").textContent
+    descriptionValue = card.querySelector(".card-description-value").textContent
+    priorityValue = card.querySelector(".priority-value").id
+    let cardEditNameError = modalCard.querySelector(".card-name-error")
+    if (cardEditNameError) {
+        modalCard.querySelector(".card-name-class").removeChild(cardEditNameError)
+    }
+    modalName.textContent = "Card"
+    modalCard.classList.toggle("hide")
+    fadeModalProject.classList.toggle("hide")
+    saveCard.textContent = "Fechar"
+    cardName.value = nameValue
+    cardDescription.value = descriptionValue
+    if (priorityValue === "low-priority-card") {
+        lowPriority.classList.add("active")
+        mediumPriority.classList.remove("active")
+        highPriority.classList.remove("active")
+    }
+    if (priorityValue === "medium-priority-card") {
+        mediumPriority.classList.add("active")
+        lowPriority.classList.remove("active")
+        highPriority.classList.remove("active")
+    }
+    if (priorityValue === "high-priority-card") {
+        highPriority.classList.add("active")
+        lowPriority.classList.remove("active")
+        mediumPriority.classList.remove("active")
+    }
+}

@@ -247,5 +247,21 @@ function generateCardFromLocalStorage(title, description, priority, cardId, card
         <button class="open-card-settings" data-name="${title}" data-description="${description}" 
         data-priority="${priority}" data-cardid="card${cardId}">•••</button>`
 
+    addCardLocalStorage(card, cardContainer)
+}
+
+function addCardLocalStorage(card, cardContainer) {
+
+    let column = cardContainer.parentNode
     cardContainer.appendChild(card)
+
+    let numberOfCards = cardContainer.childElementCount
+    let newHeight = 167 * numberOfCards + 100
+
+    if (newHeight <= 580){
+        column.style.height = newHeight + 'px'
+    }
+    else{
+        column.style.height = 580 + 'px'
+    }
 }
