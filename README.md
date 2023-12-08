@@ -37,7 +37,8 @@ Seja como um projeto pessoal individual ou em equipe, seja no âmbito corporativ
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+A aplicação em HTML/CSS/JS é um projeto que pode ser utilizado tanto em servidores como em navegadores web. Clique aqui para acessá-lo.
+<a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2023-2-e1-proj-web-t13-taskmaster/codigo-fonte/TaskMaster/Public/Welcome.html">aqui</a>
 
 # Código-Fonte
 
