@@ -296,3 +296,28 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
         }
     }
     });
+
+    
+    card.addEventListener('dragend', function(event) {
+        // Get the source and target columns
+        var sourceColumn = event.target.parentElement;
+        var targetColumn = event.target.parentElement;
+    
+        // Calculate the new height of the source column
+        var sourceColumnHeight = sourceColumn.clientHeight - event.target.clientHeight;
+    
+        // Adjust the height of the source column to match the new height
+        sourceColumn.style.height = sourceColumnHeight + 'px';
+    });
+    
+    card.addEventListener('dragend', function(event) {
+        // Get the source and target columns
+        var sourceColumn = event.target.parentElement;
+        var targetColumn = event.target.parentElement;
+    
+        // Calculate the new height of the target column
+        var targetColumnHeight = targetColumn.clientHeight + event.target.clientHeight;
+    
+        // Adjust the height of the target column to match the new height
+        targetColumn.style.height = targetColumnHeight + 'px';
+    });
